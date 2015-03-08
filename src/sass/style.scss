@@ -1,0 +1,122 @@
+// Core variables and mixins
+@import "src/sass/variables"; // MODIFIED
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+// Reset and dependencies
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+
+// Core CSS
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/badges";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
+
+// Components w/ JavaScript
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+
+// Utility classes
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+// Custom Mixins
+@import "src/sass/mixin/offset-classes";
+
+@include optional-offset-classes("", 0 3 6 9 12 15 18 21 24);
+
+
+.text-handwriting {
+	font-family: 'Pacifico', cursive;
+}
+
+.text-headline {
+	font-family: 'Cabin', sans-serif;
+}
+
+.center-block {
+    float: none;
+}
+
+.bg-white {
+    background-color: pink;
+}
+
+.bg-blue {
+    background-color: rgba(220,247,243,.8);
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(128,88,65,1);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(128,88,65,1);
+    box-shadow: 0px 1px 1px 0px rgba(128,88,65,1);
+}
+
+.margin-top-127 {
+    margin-top: 127px;
+}
+
+.padding-top-60 {
+    padding-top: 60px;
+}
+
+.padding-top-40 {
+    padding-top: 40px;
+}
+
+.bg-texture-main {
+    background-image: url(../img/canvas.png);
+
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/canvas.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/canvas.png', sizingMethod='scale')";
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+
+.hvr-grow {
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
