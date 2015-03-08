@@ -1,19 +1,20 @@
 {
-  "name": "baby-click",
+  "name": "baby-click.de",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "webtobesocial",
+  "author": "Aurelius Wendelken",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-browser-sync": "^2.0.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-sass": "^0.9.2",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-scss-lint": "^0.3.4"
   },
   "dependencies": {
     "grunt-sync": "^0.2.3",

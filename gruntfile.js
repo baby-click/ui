@@ -5,26 +5,27 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		project: {
+			dist: ['app'],
 			base: ['src'],
-            jquery: ['node_modules/jquery/'],
-			bootstrap: ['node_modules/bootstrap-sass/assets/'],
-			sass: ['<%= project.base %>/sass/style.scss']
+            jquery: ['node_modules/jquery'],
+			bootstrap: ['node_modules/bootstrap-sass/assets']
 		},
 
         browserSync: {
             default_options: {
                 bsFiles: {
                     src: [
-                        "css/*.css",
-                        "js/*.js",
-                        "*.html"
+                        'css/*.css',
+                        'js/*.js',
+                        '*.html'
                     ]
                 },
 
                 options: {
                     watchTask: true,
+
                     server: {
-                        baseDir: "./app/"
+                        baseDir: './<%= project.dist %>/'
                     }
                 }
             }
@@ -32,13 +33,13 @@ module.exports = function (grunt) {
 
 		sass: {
 		    dev: {
-                options: {
-                    style: 'expanded',
-                    compass: false
-                },
-                files: {
-                    '<%= project.base %>/css/style.css':'<%= project.sass %>'
-                }
+                files: [{
+                    expand: true,
+                    cwd: './<%= project.base %>/sass',
+                    src: ['**/*.scss'],
+                    dest: './<%= project.base %>/css',
+                    ext: '.css'
+                }]
 		    }
 		},
 
@@ -46,52 +47,52 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {
-                        cwd: ".",
+                        cwd: '.',
                         src: ['*.{html, html}'],
-                        dest: "app"
+                        dest: './<%= project.dist %>/'
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.base %>/img",
+                        cwd: '<%= project.base %>/img',
                         src: ['**/*'],
-                        dest: "app/img" 
+                        dest: '<%= project.dist %>/img' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.base %>/css",
+                        cwd: '<%= project.base %>/css',
                         src: ['**/*.css'],
-                        dest: "app/css" 
+                        dest: '<%= project.dist %>/css' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.base %>/js",
+                        cwd: '<%= project.base %>/js',
                         src: ['**/*.js'],
-                        dest: "app/js" 
+                        dest: '<%= project.dist %>/js' 
                     },
 
                     {
                         expand: false,
-                        cwd: "<%= project.jquery %>/dist",
+                        cwd: '<%= project.jquery %>/dist',
                         src: ['*'],
-                        dest: "app/lib/jquery/",
+                        dest: '<%= project.dist %>/lib/jquery',
                         filter: 'isFile'
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.bootstrap %>/fonts/bootstrap", 
+                        cwd: '<%= project.bootstrap %>/fonts/bootstrap', 
                         src: ['*'],
-                        dest: "app/css/fonts/" 
+                        dest: '<%= project.dist %>/css/fonts' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.bootstrap %>/javascripts", 
+                        cwd: '<%= project.bootstrap %>/javascripts', 
                         src: ['*'],
-                        dest: "app/lib/bootstrap/",
+                        dest: '<%= project.dist %>/lib/bootstrap',
                         filter: 'isFile'
                     }
                 ],
@@ -105,75 +106,101 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {
-                        cwd: ".",
+                        cwd: '.',
                         src: ['*.{html, html}'],
-                        dest: "app"
+                        dest: './<%= project.dist %>/'
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.base %>/img",
+                        cwd: './<%= project.base %>/img',
                         src: ['**/*'],
-                        dest: "app/img" 
+                        dest: './<%= project.dist %>/img' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.base %>/css",
+                        cwd: './<%= project.base %>/css',
                         src: ['**/*.css'],
-                        dest: "app/css" 
+                        dest: './<%= project.dist %>/css' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.base %>/js",
+                        cwd: './<%= project.base %>/js',
                         src: ['**/*.js'],
-                        dest: "app/js" 
+                        dest: '<%= project.dist %>/js' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.jquery %>/dist",
+                        cwd: './<%= project.jquery %>/dist',
                         src: ['*'],
-                        dest: "app/lib/jquery/",
+                        dest: './<%= project.dist %>/lib/jquery',
                         filter: 'isFile'
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.bootstrap %>/fonts/bootstrap/**", 
-                        src: ['**/*'],
-                        dest: "app/css/fonts/" 
+                        cwd: './<%= project.bootstrap %>/fonts/bootstrap', 
+                        src: ['*'],
+                        dest: './<%= project.dist %>/css/fonts' 
                     },
 
                     {
                         expand: true,
-                        cwd: "<%= project.bootstrap %>/javascripts/**", 
-                        src: ['**/*'],
-                        dest: "app/lib/bootstrap/",
+                        cwd: './<%= project.bootstrap %>/javascripts', 
+                        src: ['*'],
+                        dest: './<%= project.dist %>/lib/bootstrap',
                         filter: 'isFile'
                     }
                 ]
             }
         },
 
+        scsslint: {
+			files: [
+                './<%= project.base %>/sass/**/*.scss',
+            ],
+
+            options: {
+                colorizeOutput: true
+            }
+        },
+
 		watch: {
 		    sass: {
-                files: '<%= project.base %>/sass/{,*/}*.{scss, sass}',
-                tasks: ['sass:dev']
+                files: './<%= project.base %>/sass/**/*.scss',
+
+                tasks: [
+					'sass:dev',
+					'sync'
+				],
+
+				options: {
+					spawn: false
+				}
 		    }
 		}
 	});
 
+	grunt.event.on('watch', function(action, filepath) {
+		grunt.config('sync.main.files', filepath);
+	});
+
     grunt.loadNpmTasks('grunt-sync');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-scss-lint');
 
     grunt.registerTask('default', [
         'browserSync',
-        'watch',
-        'sync'
+        'watch'
+    ]);
+
+    grunt.registerTask('build', [
+        'scsslint'
     ]);
 };
