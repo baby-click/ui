@@ -7,6 +7,7 @@ module.exports = function (grunt) {
 		project: {
 			dist: ['app'],
 			base: ['src'],
+			include: ['src/include'],
             jquery: ['node_modules/jquery'],
 			bootstrap: ['node_modules/bootstrap-sass/assets']
 		},
@@ -54,7 +55,7 @@ module.exports = function (grunt) {
         },
 
 		cssmin: {
-			target: {
+			all: {
 				files: [{
 					expand: true,
 					cwd: './<%= project.base %>/css',
@@ -64,7 +65,6 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-
 
         sync: {
             main: {
@@ -185,20 +185,28 @@ module.exports = function (grunt) {
             }
         },
 
+		includes: {
+			build: {
+				cwd: '.',
+				src: ['*.html'],
+				dest: './<%= project.dist %>/',
+
+				options: {
+					flatten: true,
+					includePath: './<%= project.base %>/include'
+				}
+			}
+		},
+
 		watch: {
 		    sass: {
                 files: './<%= project.base %>/sass/**/*.scss',
-				tasks: ['sass:dev']
+				tasks: ['sass:dev', 'cssmin:all', 'sync']
 		    },
-
-			css: {
-				files: './<%= project.base %>/css',
-				tasks: ['cssmin']
-			},
 
 			html: {
 				files: ['./*.html'],
-				tasks: ['sync']
+				tasks: ['sync', 'includes']
 			}
 		}
 	});
@@ -208,6 +216,7 @@ module.exports = function (grunt) {
 	});
 
     grunt.loadNpmTasks('grunt-sync');
+	grunt.loadNpmTasks('grunt-includes');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
