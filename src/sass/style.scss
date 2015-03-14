@@ -54,6 +54,26 @@
 
 @include optional-offset-classes("", 0 3 6 9 12 15 18 21 24);
 
+@media (min-width: $screen-sm-min) {
+	@include optional-offset-classes("sm", 0 3 6 9 12 15 18 21 24);
+}
+
+@media (min-width: $screen-md-min) {
+	@include optional-offset-classes("md", 0 3 6 9 12 15 18 21 24);
+}
+
+@media (min-width: $screen-lg-min) {
+	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin: 0;
+}
 
 .text-handwriting {
 	font-family: 'Pacifico', cursive;
@@ -111,7 +131,7 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
-    transition-duration: 0.3s;
+    transition-duration: .3s;
     transition-property: transform;
 }
 
@@ -119,4 +139,19 @@
 .hvr-grow:focus,
 .hvr-grow:active {
     transform: scale(1.1);
+}
+
+.hvr-glow {
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    backface-visibility: hidden;
+    transition-duration: .3s;
+    transition-property: box-shadow;
+}
+
+.hvr-glow:hover,
+.hvr-glow:focus,
+.hvr-glow:active {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
 }

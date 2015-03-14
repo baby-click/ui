@@ -30,6 +30,18 @@ module.exports = function (grunt) {
                 }
             }
         },
+		
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: './<%= project.base %>/css',
+					src: ['*.css', '!*.min.css'],
+					dest: './<%= project.base %>/css',
+					ext: '.min.css'
+				}]
+			}
+		},
 
 		sass: {
 		    dev: {
@@ -47,9 +59,11 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {
+						expand: true,
                         cwd: '.',
-                        src: ['*.{html, html}'],
-                        dest: './<%= project.dist %>/'
+                        src: ['*.html'],
+                        dest: './<%= project.dist %>/',
+                        filter: 'isFile'
                     },
 
                     {
@@ -106,9 +120,11 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {
+						expand: true,
                         cwd: '.',
-                        src: ['*.{html, html}'],
-                        dest: './<%= project.dist %>/'
+                        src: ['*.html'],
+                        dest: './<%= project.dist %>/',
+                        filter: 'isFile'
                     },
 
                     {
@@ -189,6 +205,7 @@ module.exports = function (grunt) {
 	});
 
     grunt.loadNpmTasks('grunt-sync');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
