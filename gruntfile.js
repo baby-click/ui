@@ -30,18 +30,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-		
-		cssmin: {
-			target: {
-				files: [{
-					expand: true,
-					cwd: './<%= project.base %>/css',
-					src: ['*.css', '!*.min.css'],
-					dest: './<%= project.base %>/css',
-					ext: '.min.css'
-				}]
-			}
-		},
 
 		sass: {
 		    dev: {
@@ -54,6 +42,29 @@ module.exports = function (grunt) {
                 }]
 		    }
 		},
+
+        scsslint: {
+			files: [
+                './<%= project.base %>/sass/**/*.scss',
+            ],
+
+            options: {
+                colorizeOutput: true
+            }
+        },
+
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: './<%= project.base %>/css',
+					src: ['*.css', '!*.min.css'],
+					dest: './<%= project.base %>/css',
+					ext: '.min.css'
+				}]
+			}
+		},
+
 
         sync: {
             main: {
@@ -174,29 +185,21 @@ module.exports = function (grunt) {
             }
         },
 
-        scsslint: {
-			files: [
-                './<%= project.base %>/sass/**/*.scss',
-            ],
-
-            options: {
-                colorizeOutput: true
-            }
-        },
-
 		watch: {
 		    sass: {
                 files: './<%= project.base %>/sass/**/*.scss',
+				tasks: ['sass:dev']
+		    },
 
-                tasks: [
-					'sass:dev',
-					'sync'
-				],
+			css: {
+				files: './<%= project.base %>/css',
+				tasks: ['cssmin']
+			},
 
-				options: {
-					spawn: false
-				}
-		    }
+			html: {
+				files: ['./*.html'],
+				tasks: ['sync']
+			}
 		}
 	});
 
@@ -213,7 +216,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-scss-lint');
 
     grunt.registerTask('default', [
-        'browserSync',
         'watch'
     ]);
 
