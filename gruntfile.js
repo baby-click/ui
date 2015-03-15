@@ -7,52 +7,51 @@ module.exports = function (grunt) {
 		project: {
 			dist: ['app'],
 			base: ['src'],
-			include: ['src/include'],
-            jquery: ['node_modules/jquery'],
+			jquery: ['node_modules/jquery'],
 			bootstrap: ['node_modules/bootstrap-sass/assets']
 		},
 
         browserSync: {
-            default_options: {
-                bsFiles: {
-                    src: [
-                        'css/*.css',
-                        'js/*.js',
-                        '*.html'
-                    ]
-                },
+			default_options: {
+				bsFiles: {
+					src: [
+						'css/*.css',
+						'js/*.js',
+						'*.html'
+					]
+				},
 
-                options: {
-                    watchTask: true,
+				options: {
+					watchTask: true,
 
-                    server: {
-                        baseDir: './<%= project.dist %>/'
-                    }
-                }
-            }
+					server: {
+						baseDir: './<%= project.dist %>/'
+					}
+				}
+			}
         },
 
 		sass: {
-		    dev: {
-                files: [{
-                    expand: true,
-                    cwd: './<%= project.base %>/sass',
-                    src: ['**/*.scss'],
-                    dest: './<%= project.base %>/css',
-                    ext: '.css'
-                }]
-		    }
+			dev: {
+				files: [{
+					expand: true,
+					cwd: './<%= project.base %>/sass',
+					src: ['**/*.scss'],
+					dest: './<%= project.base %>/css',
+					ext: '.css'
+				}]
+			}
 		},
 
-        scsslint: {
+		scsslint: {
 			files: [
-                './<%= project.base %>/sass/**/*.scss',
-            ],
+				'./<%= project.base %>/sass/**/*.scss',
+			],
 
-            options: {
-                colorizeOutput: true
-            }
-        },
+			options: {
+				colorizeOutput: true
+			}
+		},
 
 		cssmin: {
 			all: {
@@ -80,7 +79,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: '<%= project.base %>/img',
-                        src: ['**/*'],
+                        src: ['**/*', '!**/*.tiff'],
                         dest: '<%= project.dist %>/img' 
                     },
 
@@ -128,7 +127,7 @@ module.exports = function (grunt) {
         },
 
         copy: {
-            main: {
+            all: {
                 files: [
                     {
 						expand: true,
@@ -141,7 +140,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: './<%= project.base %>/img',
-                        src: ['**/*'],
+                        src: ['**/*', '!**/*.tiff'],
                         dest: './<%= project.dist %>/img' 
                     },
 
@@ -189,12 +188,18 @@ module.exports = function (grunt) {
 			build: {
 				cwd: '.',
 				src: ['*.html'],
-				dest: './<%= project.dist %>/',
+				dest: './<%= project.dist %>',
 
 				options: {
 					flatten: true,
 					includePath: './<%= project.base %>/include'
 				}
+			}
+		},
+
+		clean: {
+			build: {
+				src: ['./<%= project.dist %>']
 			}
 		},
 
@@ -215,20 +220,25 @@ module.exports = function (grunt) {
 		grunt.config('sync.main.files', filepath);
 	});
 
-    grunt.loadNpmTasks('grunt-sync');
+	grunt.loadNpmTasks('grunt-sync');
 	grunt.loadNpmTasks('grunt-includes');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-scss-lint');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-browser-sync');
+	grunt.loadNpmTasks('grunt-scss-lint');
 
     grunt.registerTask('default', [
         'watch'
     ]);
 
     grunt.registerTask('build', [
+		'clean:build', 'copy:all', 'includes'
+    ]);
+
+    grunt.registerTask('test', [
         'scsslint'
     ]);
 };
