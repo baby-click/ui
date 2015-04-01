@@ -242,15 +242,15 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-scss-lint');
 	grunt.loadNpmTasks('grunt-jscs');
 
-    grunt.registerTask('default', [
-        'watch'
-    ]);
+	grunt.registerTask('default', [
+		'watch'
+	]);
 
-    grunt.registerTask('build', [
+	grunt.registerTask('build', [
 		'clean:build', 'uglify:all', 'sass:dev', 'cssmin:all', 'copy:all', 'includes'
-    ]);
+	]);
 
-    grunt.registerTask('test', [
-        'scsslint', 'jscs'
-    ]);
+	grunt.registerTask('test', [
+		'scsslint', 'jscs'
+	]);
 };
