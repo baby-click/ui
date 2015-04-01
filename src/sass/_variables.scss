@@ -54,8 +54,8 @@ $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
 
 $font-size-h1:            47px !default; // MODIFIED
-$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h2:            36px !default; // MODIFIED
+$font-size-h3:            24px !default; // MODIFIED
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * .85)) !default; // ~12px
@@ -353,11 +353,11 @@ $container-lg:                 $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-$navbar-height:                    50px !default;
+$navbar-height:								50px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius-base !default;
-$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
-$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-padding-horizontal:        0 !default;
+$navbar-padding-vertical:          12px !default;
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             #777 !default;
@@ -369,13 +369,13 @@ $navbar-default-link-color:                #777 !default;
 $navbar-default-link-hover-color:          #333 !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #555 !default;
-$navbar-default-link-active-bg:            darken($navbar-default-bg,  6.5%) !default;
+$navbar-default-link-active-bg:            transparent !default;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
 // Navbar brand label
-$navbar-default-brand-color:               $navbar-default-link-color !default;
-$navbar-default-brand-hover-color:         darken($navbar-default-brand-color,  10%) !default;
+$navbar-default-brand-color:               $brand-primary !default;
+$navbar-default-brand-hover-color:         $brand-primary !default;
 $navbar-default-brand-hover-bg:            transparent !default;
 
 // Navbar toggle
@@ -550,9 +550,9 @@ $popover-arrow-color:                 $popover-bg !default;
 //** Popover outer arrow width
 $popover-arrow-outer-width:           ($popover-arrow-width + 1) !default;
 //** Popover outer arrow color
-$popover-arrow-outer-color:           fade_in($popover-border-color,  .05) !default;
+$popover-arrow-outer-color:				fade_in($popover-border-color,  .05) !default;
 //** Popover outer arrow fallback color
-$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color,  20%) !default;
+$popover-arrow-outer-fallback-color:	darken($popover-fallback-border-color,  20%) !default;
 
 
 //== Labels
@@ -560,22 +560,22 @@ $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color,  20
 //##
 
 //** Default label background color
-$label-default-bg:            $gray-light !default;
+$label-default-bg:						$gray-light !default;
 //** Primary label background color
-$label-primary-bg:            $brand-primary !default;
+$label-primary-bg:						$brand-primary !default;
 //** Success label background color
-$label-success-bg:            $brand-success !default;
+$label-success-bg:						$brand-success !default;
 //** Info label background color
-$label-info-bg:               $brand-info !default;
+$label-info-bg:							$brand-info !default;
 //** Warning label background color
-$label-warning-bg:            $brand-warning !default;
+$label-warning-bg:						$brand-warning !default;
 //** Danger label background color
-$label-danger-bg:             $brand-danger !default;
+$label-danger-bg:						$brand-danger !default;
 
 //** Default label text color
-$label-color:                 #fff !default;
+$label-color:							#fff !default;
 //** Default text color of a linked label
-$label-link-hover-color:      #fff !default;
+$label-link-hover-color:				#fff !default;
 
 
 //== Modals
@@ -583,22 +583,22 @@ $label-link-hover-color:      #fff !default;
 //##
 
 //** Padding applied to the modal body
-$modal-inner-padding:         150px !default;
+$modal-inner-padding:					150px !default;
 
 //** Padding applied to the modal title
-$modal-title-padding:         15px !default;
+$modal-title-padding:					15px !default;
 //** Modal title line-height
-$modal-title-line-height:     $line-height-base !default;
+$modal-title-line-height:				$line-height-base !default;
 
 //** Background color of modal content area
-$modal-content-bg:                             #fff !default;
+$modal-content-bg:						#fff !default;
 //** Modal content border color
-$modal-content-border-color:                   rgba(0, 0, 0, .2) !default;
+$modal-content-border-color:			rgba(0, 0, 0, .2) !default;
 //** Modal content border color **for IE8**
-$modal-content-fallback-border-color:          #999 !default;
+$modal-content-fallback-border-color:	#999 !default;
 
 //** Modal backdrop background color
-$modal-backdrop-bg:           #000 !default;
+$modal-backdrop-bg:						#000 !default;
 //** Modal backdrop opacity
 $modal-backdrop-opacity:      .5 !default;
 //** Modal header border color

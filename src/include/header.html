@@ -1,15 +1,22 @@
-<nav class="navbar navbar-fixed-top bg-blue">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
-			<div class="row margin-top-6 margin-bottom-6">
-				<img src="./img/logo.svg" alt="Ein klick und alles im Blick" class="pull-left" width="100" height="auto">
-				<div class="pull-left margin-top-15 margin-left-9">
-					<p class="margin-bottom-15"><strong class="h1 text-handwriting">baby-click.de</strong></p>
-					<p><strong class="h4 text-headline">Ein klick und alles im Blick</strong></p>
-				</div>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Navigation öffnen</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-brand">
+				<img src="./img/logo.svg" alt="baby-click.de Logo" class="pull-left" width="100" height="auto">
+				<p class="pull-left"><strong class="h3 text-handwriting text-primary">baby-click.de</strong></p>
+				<!--<p><strong class="h4 text-headline">Ein klick und alles im Blick</strong></p>-->
 			</div>
+			<!--<a class="navbar-brand" rel="home" href="./start.html" title="Ein klick und alles im Blick">
+				<img src="./img/logo.svg" alt="baby-click.de Logo" class="pull-left" width="100" height="auto">
+			</a>-->
 		</div>
-		<div>
+		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="./start.html">Startseite</a></li>
 				<li><a href="./about.html">Über uns</a></li>

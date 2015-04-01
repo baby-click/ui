@@ -12,7 +12,7 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
@@ -23,7 +23,7 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
@@ -66,6 +66,10 @@
 	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24);
 }
 
+.navbar-nav > li > a {
+	line-height: 27px;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -93,9 +97,9 @@ h6, .h6 {
 
 .bg-blue {
     background-color: rgba(220,247,243,.89);
-    -webkit-box-shadow: 0px 1px 1px 0px rgba(128,88,65,1);
-    -moz-box-shadow: 0px 1px 1px 0px rgba(128,88,65,1);
-    box-shadow: 0px 1px 1px 0px rgba(128,88,65,1);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(128,88,65,1);
+    -moz-box-shadow: 0 1px 1px 0 rgba(128,88,65,1);
+    box-shadow: 0 1px 1px 0 rgba(128,88,65,1);
 }
 
 .margin-top-127 {
