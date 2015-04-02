@@ -52,18 +52,24 @@
 // Custom Mixins
 @import "src/sass/mixin/offset-classes";
 
-@include optional-offset-classes("", 0 3 6 9 12 15 18 21 24);
+@include optional-offset-classes("", 0 3 6 9 12 15 18 21 24 36);
 
 @media (min-width: $screen-sm-min) {
-	@include optional-offset-classes("sm", 0 3 6 9 12 15 18 21 24);
+	@include optional-offset-classes("sm", 0 3 6 9 12 15 18 21 24 36);
 }
 
 @media (min-width: $screen-md-min) {
-	@include optional-offset-classes("md", 0 3 6 9 12 15 18 21 24);
+	@include optional-offset-classes("md", 0 3 6 9 12 15 18 21 24 36);
 }
 
 @media (min-width: $screen-lg-min) {
-	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24);
+	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24 36);
+}
+
+.navbar-brand > img {
+	height: 35px;
+	margin-top: -4px;
+	margin-right: 9px;
 }
 
 .navbar-nav > li > a {
@@ -95,15 +101,8 @@ h6, .h6 {
     background-color: #fff;
 }
 
-.bg-blue {
-    background-color: rgba(220,247,243,.89);
-    -webkit-box-shadow: 0 1px 1px 0 rgba(128,88,65,1);
-    -moz-box-shadow: 0 1px 1px 0 rgba(128,88,65,1);
-    box-shadow: 0 1px 1px 0 rgba(128,88,65,1);
-}
-
-.margin-top-127 {
-    margin-top: 127px;
+.margin-top-51 {
+    margin-top: 51px;
 }
 
 .padding-top-60 {
