@@ -19,7 +19,7 @@ $brand-primary:						#785d56 !default; // MODIFIED
 $brand-success:						#5cb85c !default;
 $brand-info:						#5bc0de !default;
 $brand-warning:						#f0ad4e !default;
-$brand-danger:						#d9534f !default;
+$brand-danger:						#cb6a5a !default;
 
 
 //== Scaffolding
@@ -53,15 +53,16 @@ $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
 
-$font-size-h1:            47px !default; // MODIFIED
+$font-size-h1:            48px !default; // MODIFIED
 $font-size-h2:            36px !default; // MODIFIED
-$font-size-h3:            24px !default; // MODIFIED
-$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * .85)) !default; // ~12px
+$font-size-h3:            27px !default; // MODIFIED
+$font-size-h4:            24px !default; // MODIFIED
+$font-size-h5:            18px !default; // MODIFIED
+$font-size-h6:            18px !default; // MODIFIED
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
+
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`,  `padding`,  etc.
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
@@ -361,12 +362,12 @@ $navbar-height:						50px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius-base !default;
 $navbar-padding-horizontal:        0 !default;
-$navbar-padding-vertical:          12px !default;
+$navbar-padding-vertical:          9px !default;
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             #fff !default;
-$navbar-default-bg:                #785d56 !default;
-$navbar-default-border:            #785D56 !default;
+$navbar-default-bg:                $brand-primary !default;
+$navbar-default-border:            $brand-primary !default;
 
 // Navbar links
 $navbar-default-link-color:                #fff !default;
@@ -507,7 +508,7 @@ $state-warning-text:             #8a6d3b !default;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken(adjust-hue($state-warning-bg,  -10),  5%) !default;
 
-$state-danger-text:              #a94442 !default;
+$state-danger-text:              $brand-danger !default;
 $state-danger-bg:                #f2dede !default;
 $state-danger-border:            darken(adjust-hue($state-danger-bg,  -10),  5%) !default;
 
@@ -731,9 +732,9 @@ $panel-warning-text:          $state-warning-text !default;
 $panel-warning-border:        $state-warning-border !default;
 $panel-warning-heading-bg:    $state-warning-bg !default;
 
-$panel-danger-text:           $state-danger-text !default;
-$panel-danger-border:         $state-danger-border !default;
-$panel-danger-heading-bg:     $state-danger-bg !default;
+$panel-danger-text:           #fff !default;
+$panel-danger-border:         $brand-danger !default;
+$panel-danger-heading-bg:     $brand-danger !default;
 
 
 //== Thumbnails

@@ -18,9 +18,9 @@
 
 // Components
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+// import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
@@ -34,13 +34,13 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
 
 // Components w/ JavaScript
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
@@ -48,6 +48,7 @@
 // Utility classes
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
 
 // Custom Mixins
 @import "src/sass/mixin/offset-classes";
@@ -66,14 +67,38 @@
 	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24 36);
 }
 
+
+.panel-danger > .panel-heading > a:active,
+.panel-danger > .panel-heading > a:focus,
+.panel-danger > .panel-heading > a:hover {
+	color: #fff;
+}
+
 .navbar-brand > img {
-	height: 35px;
-	margin-top: -4px;
 	margin-right: 9px;
+	margin-top: -2px;
+	height: 35px;
 }
 
 .navbar-nav > li > a {
 	line-height: 27px;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav > li > a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}
+
+::selection {
+	color: #fff;
+	background-color: $brand-danger;
+}
+
+::-moz-selection {
+	color: #fff;
+	background-color: $brand-danger;
 }
 
 h1, .h1,
