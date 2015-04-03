@@ -18,8 +18,8 @@ $gray-lighter:						lighten($gray-base,  93.5%) !default; // #eee
 $brand-primary:						#785d56 !default; // MODIFIED
 $brand-success:						#5cb85c !default;
 $brand-info:						#5bc0de !default;
-$brand-warning:						#f0ad4e !default;
-$brand-danger:						#cb6a5a !default;
+$brand-warning:						#cb6a5a !default;
+$brand-danger:						#cc141c !default;
 
 
 //== Scaffolding
@@ -504,7 +504,7 @@ $state-info-text:                #31708f !default;
 $state-info-bg:                  #d9edf7 !default;
 $state-info-border:              darken(adjust-hue($state-info-bg,  -10),  7%) !default;
 
-$state-warning-text:             #8a6d3b !default;
+$state-warning-text:             $brand-warning !default;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken(adjust-hue($state-warning-bg,  -10),  5%) !default;
 
@@ -728,9 +728,9 @@ $panel-info-text:             $state-info-text !default;
 $panel-info-border:           $state-info-border !default;
 $panel-info-heading-bg:       $state-info-bg !default;
 
-$panel-warning-text:          $state-warning-text !default;
-$panel-warning-border:        $state-warning-border !default;
-$panel-warning-heading-bg:    $state-warning-bg !default;
+$panel-warning-text:          #fff !default;
+$panel-warning-border:        $brand-warning !default;
+$panel-warning-heading-bg:    $brand-warning !default;
 
 $panel-danger-text:           #fff !default;
 $panel-danger-border:         $brand-danger !default;

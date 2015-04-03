@@ -1,76 +1,91 @@
 // Core variables and mixins
-@import "src/sass/variables"; // MODIFIED
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import 'src/sass/variables'; // MODIFIED
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
 // Reset and dependencies
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons';
 
 // Core CSS
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons';
 
 // Components
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
-// import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/badges";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns';
+// import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navs';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/navbar';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pagination';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/pager';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/badges';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/media';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/list-group';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/wells';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close';
 
 // Components w/ JavaScript
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers';
+// @import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel';
 
 // Utility classes
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
 
 
 // Custom Mixins
-@import "src/sass/mixin/offset-classes";
+@import 'src/sass/mixin/offset-classes';
 
-@include optional-offset-classes("", 0 3 6 9 12 15 18 21 24 36);
+@include optional-offset-classes('', 0 3 6 9 12 15 18 21 24 36);
+
+.padding-top-60 {
+	padding-top: 60px;
+}
 
 @media (min-width: $screen-sm-min) {
-	@include optional-offset-classes("sm", 0 3 6 9 12 15 18 21 24 36);
+	@include optional-offset-classes('sm', 0 3 6 9 12 15 18 21 24 36);
+
+	.padding-top-sm-60 {
+		padding-top: 60px;
+	}
 }
 
 @media (min-width: $screen-md-min) {
-	@include optional-offset-classes("md", 0 3 6 9 12 15 18 21 24 36);
+	@include optional-offset-classes('md', 0 3 6 9 12 15 18 21 24 36);
+	
+	.padding-top-md-60 {
+		padding-top: 60px;
+	}
 }
 
 @media (min-width: $screen-lg-min) {
-	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24 36);
+	@include optional-offset-classes('lg', 0 3 6 9 12 15 18 21 24 36);
+	
+	.padding-top-lg-60 {
+		padding-top: 60px;
+	}
 }
 
-
-.panel-danger > .panel-heading > a:active,
-.panel-danger > .panel-heading > a:focus,
-.panel-danger > .panel-heading > a:hover {
+.panel-warning > .panel-heading > a:active,
+.panel-warning > .panel-heading > a:focus,
+.panel-warning > .panel-heading > a:hover {
 	color: #fff;
 }
 
@@ -93,12 +108,12 @@
 
 ::selection {
 	color: #fff;
-	background-color: $brand-danger;
+	background-color: $brand-warning;
 }
 
 ::-moz-selection {
 	color: #fff;
-	background-color: $brand-danger;
+	background-color: $brand-warning;
 }
 
 h1, .h1,
@@ -130,26 +145,19 @@ h6, .h6 {
     margin-top: 51px;
 }
 
-.padding-top-60 {
-    padding-top: 60px;
-}
-
-.padding-top-40 {
-    padding-top: 40px;
-}
-
 .bg-texture-main {
     background-image: url(../img/canvas.png);
 
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/canvas.png', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/canvas.png', sizingMethod='scale')";
+    background-position: center center;
+    background-attachment: fixed;
+
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
+    -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale")';
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
 }
 
 
