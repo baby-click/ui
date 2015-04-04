@@ -471,7 +471,7 @@ $pagination-disabled-border:           #ddd !default;
 
 $pager-bg:                             $pagination-bg !default;
 $pager-border:                         $pagination-border !default;
-$pager-border-radius:                  15px !default;
+$pager-border-radius:                  3px !default;
 
 $pager-hover-bg:                       $pagination-hover-bg !default;
 
@@ -742,16 +742,20 @@ $panel-danger-heading-bg:     $brand-danger !default;
 //##
 
 //** Padding around the thumbnail image
-$thumbnail-padding:           4px !default;
+$thumbnail-padding:           3px !default;
+
 //** Thumbnail background color
 $thumbnail-bg:                $body-bg !default;
+
 //** Thumbnail border color
 $thumbnail-border:            #ddd !default;
+
 //** Thumbnail border radius
 $thumbnail-border-radius:     $border-radius-base !default;
 
 //** Custom text color for thumbnail captions
 $thumbnail-caption-color:     $text-color !default;
+
 //** Padding around the thumbnail caption
 $thumbnail-caption-padding:   9px !default;
 
