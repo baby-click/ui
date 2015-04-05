@@ -110,6 +110,14 @@
 	}
 }
 
+p {
+	margin: 0 0 6px;
+}
+
+.list-style-upper-roman {
+	list-style-type: upper-roman;
+}
+
 ::selection {
 	color: #fff;
 	background-color: $brand-warning;
@@ -183,6 +191,10 @@ h6, .h6 {
 	border-bottom: 2px solid $brand-info;
 	-webkit-box-shadow: inset 0 -2px $brand-info;
 	box-shadow: inset 0 -2px $brand-info;
+}
+
+.text-action {
+	color: #F881A1;
 }
 
 .hvr-grow {
