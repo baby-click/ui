@@ -17,7 +17,7 @@ $gray-lighter:						lighten($gray-base,  93.5%) !default; // #eee
 
 $brand-primary:						#785d56 !default; // MODIFIED
 $brand-success:						#5cb85c !default;
-$brand-info:						#5bc0de !default;
+$brand-info:						#6bb8e7 !default;
 $brand-warning:						#cb6a5a !default;
 $brand-danger:						#cc141c !default;
 
@@ -742,19 +742,19 @@ $panel-danger-heading-bg:     $brand-danger !default;
 //##
 
 //** Padding around the thumbnail image
-$thumbnail-padding:           3px !default;
+$thumbnail-padding:           0 !default;
 
 //** Thumbnail background color
-$thumbnail-bg:                $body-bg !default;
+$thumbnail-bg:                $brand-info !default;
 
 //** Thumbnail border color
-$thumbnail-border:            #ddd !default;
+$thumbnail-border:            #C4BDB6 !default;
 
 //** Thumbnail border radius
-$thumbnail-border-radius:     $border-radius-base !default;
+$thumbnail-border-radius:     0 !default;
 
 //** Custom text color for thumbnail captions
-$thumbnail-caption-color:     $text-color !default;
+$thumbnail-caption-color:     #fff !default;
 
 //** Padding around the thumbnail caption
 $thumbnail-caption-padding:   9px !default;
@@ -773,12 +773,14 @@ $well-border:                 darken($well-bg,  7%) !default;
 //##
 
 $badge-color:                 #fff !default;
+
 //** Linked badge text color on hover
 $badge-link-hover-color:      #fff !default;
 $badge-bg:                    $gray-light !default;
 
 //** Badge text color in active nav link
 $badge-active-color:          $link-color !default;
+
 //** Badge background color in active nav link
 $badge-active-bg:             #fff !default;
 
@@ -793,12 +795,16 @@ $badge-border-radius:         10px !default;
 
 $breadcrumb-padding-vertical:   8px !default;
 $breadcrumb-padding-horizontal: 15px !default;
+
 //** Breadcrumb background color
 $breadcrumb-bg:                 #f5f5f5 !default;
+
 //** Breadcrumb text color
 $breadcrumb-color:              #ccc !default;
+
 //** Text color of current page in the breadcrumb
 $breadcrumb-active-color:       $gray-light !default;
+
 //** Textual separator for between breadcrumb elements
 $breadcrumb-separator:          "/" !default;
 
@@ -851,21 +857,30 @@ $pre-scrollable-max-height:   340px !default;
 
 //** Horizontal offset for forms and lists.
 $component-offset-horizontal: 180px !default;
+
 //** Text muted color
 $text-muted:                  $gray-light !default;
+
 //** Abbreviations and acronyms border color
 $abbr-border-color:           $gray-light !default;
+
 //** Headings small color
 $headings-small-color:        $gray-light !default;
+
 //** Blockquote small color
 $blockquote-small-color:      $gray-light !default;
+
 //** Blockquote font size
 $blockquote-font-size:        ($font-size-base * 1.25) !default;
+
 //** Blockquote border color
 $blockquote-border-color:     $gray-lighter !default;
+
 //** Page header border color
 $page-header-border-color:    $gray-lighter !default;
+
 //** Width of horizontal description list titles
 $dl-horizontal-offset:        $component-offset-horizontal !default;
+
 //** Horizontal line color.
-$hr-border:                   $gray-lighter !default;
+$hr-border:                   #C4BDB6 !default;
