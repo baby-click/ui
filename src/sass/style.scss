@@ -89,6 +89,10 @@
 	color: #fff;
 }
 
+.thumbnail {
+	margin-bottom: 0;
+}
+
 .thumbnail .caption a {
 	color: #fff;
 }
@@ -108,6 +112,10 @@
 		padding-top: 12px;
 		padding-bottom: 12px;
 	}
+}
+
+a {
+	transition: background-color .4s ease 0s, border .3s ease 0s, color .4s ease 0s, opacity .4s ease-in-out 0s;
 }
 
 p {

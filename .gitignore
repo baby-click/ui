@@ -1,6 +1,7 @@
 *~
 app
 src/css
+stockphoto
 node_modules
 .sass-cache
 *.css.map
