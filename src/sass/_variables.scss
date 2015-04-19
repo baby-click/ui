@@ -11,7 +11,7 @@ $bootstrap-sass-asset-helper:        true !default; // MODIFIED
 $gray-base:							#333 !default; // MODIFIED
 $gray-darker:						#444 !default; // MODIFIED
 $gray-dark:							lighten($gray-base,  20%) !default;   // #333
-$gray:								lighten($gray-base,  33.5%) !default; // #555
+$gray:								#888 !default; // MODIFIED
 $gray-light:						#eee9e6 !default; // MODIFIED
 $gray-lighter:						#f7f7f7 !default; // MODIFIED
 
@@ -927,7 +927,7 @@ $pre-scrollable-max-height:   340px !default;
 $component-offset-horizontal: 180px !default;
 
 //** Text muted color
-$text-muted:                  $gray-light !default;
+$text-muted:                  $gray !default;
 
 //** Abbreviations and acronyms border color
 $abbr-border-color:           $gray-light !default;
