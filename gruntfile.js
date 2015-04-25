@@ -4,6 +4,15 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		bump: {
+			options: {
+				files: ['package.json'],
+				updateConfigs: ['pkg'],
+				commit: false,
+				push: false
+			}
+		},
+
 		project: {
 			dist: ['app'],
 			base: ['src'],
@@ -231,6 +240,7 @@ module.exports = function (grunt) {
 		grunt.config('sync.main.files', filepath);
 	});
 
+	grunt.loadNpmTasks('grunt-bump');
 	grunt.loadNpmTasks('grunt-sync');
 	grunt.loadNpmTasks('grunt-includes');
 	grunt.loadNpmTasks('grunt-contrib-clean');
