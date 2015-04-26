@@ -1,23 +1,26 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Navigation aufklappen</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="./start.html">
-				<img src="./img/logo.svg" alt="baby-click.de Logo" class="pull-left">
-				<span class="pull-left h3 text-handwriting">baby-click.de</span>
-			</a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
+<div class="clearfix">
+    <button type="button" class="navbar-toggle offcanvas-toggle pull-left" data-toggle="offcanvas" data-target="#offcanvasMenu">
+		<span class="sr-only">Navigation aufklappen</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-fade" role="navigation" id="offcanvasMenu">
+		<div class="container-fluid">
+			<div class="navbar-header padding-left-sm-36">
+				<a class="navbar-brand" href="./start.html">
+					<img src="./img/logo.svg" alt="baby-click.de Logo" class="pull-left">
+					<span class="pull-left h3 text-handwriting">baby-click.de</span>
+				</a>
+				<button type="button" class="sr-only navkbar-toggle offcanvas-toggle pull-right" data-toggle="offcanvas" data-target="#offcanvasMenu">
+					<span class="sr-only">Navigation schließen</span>
+				</button>
+			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="./start.html">Startseite</a></li>
-				<li><a href="./blog.html">Blog</a></li>
-				<li><a href="./about.html">Über uns</a></li>
+				<li class="padding-left-sm-36"><a href="./blog.html">Blog</a></li>
+				<li class="padding-left-sm-36 padding-right-sm-36"><a href="./about.html">Über uns</a></li>
 			</ul>
 		</div>
-	</div>
-</nav>
+	</nav>
+</div>
