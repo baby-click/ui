@@ -3,9 +3,11 @@
 
 // import offcanvas navigation styles
 @import 'src/sass/offcanvas';
+@import 'src/sass/position';
 
 // import custom mixins
 @import 'src/sass/mixin/offset-classes';
+
 
 @include optional-offset-classes('', 0 3 6 9 12 15 18 21 24 36);
 
@@ -51,6 +53,11 @@
 	.padding-top-lg-60 {
 		padding-top: 60px;
 	}
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 .panel-primary > .panel-heading > a:active,
@@ -185,4 +192,13 @@ h6, .h6 {
 .hvr-grow:focus,
 .hvr-grow:active {
     transform: scale(1.1);
+}
+
+
+.full-width {
+	width: 100%;
+}
+
+.bg-overlay-dark {
+	background-color: rgba(255, 255, 255, .3);
 }
