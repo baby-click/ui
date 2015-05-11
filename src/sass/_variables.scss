@@ -54,8 +54,8 @@ $font-family-monospace:   Menlo,  Monaco,  Consolas,  "Courier New",  monospace 
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          16px !default; // MODIFIED
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
+$font-size-large:         30px !default; // MODIFIED
+$font-size-small:         13px !default; // MODIFIED
 
 $font-size-h1:            48px !default; // MODIFIED
 $font-size-h2:            36px !default; // MODIFIED
@@ -403,7 +403,7 @@ $navbar-default-bg:								$brand-info !default;
 $navbar-default-border:							$gray-light !default;
 
 // Navbar links
-$navbar-default-link-color:                #faedf2 !default;
+$navbar-default-link-color:                #fff !default;
 $navbar-default-link-hover-color:          #fff !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #fff !default;
@@ -412,7 +412,7 @@ $navbar-default-link-disabled-color:       #fff !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
 // Navbar brand label
-$navbar-default-brand-color:               #faedf2 !default;
+$navbar-default-brand-color:               #fff !default;
 $navbar-default-brand-hover-color:         #fff !default;
 $navbar-default-brand-hover-bg:            transparent !default;
 
@@ -735,7 +735,7 @@ $list-group-bg:                 #fff !default;
 $list-group-border:             #ddd !default;
 
 //** List group border radius
-$list-group-border-radius:      $border-radius-base !default;
+$list-group-border-radius:      0 !default;
 
 //** Background color of single list items on hover
 $list-group-hover-bg:           #f5f5f5 !default;

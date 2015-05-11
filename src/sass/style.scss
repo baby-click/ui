@@ -29,6 +29,22 @@
 	.padding-top-sm-60 {
 		padding-top: 60px;
 	}
+
+	.hvr-grow {
+		vertical-align: middle;
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		backface-visibility: hidden;
+		-moz-osx-font-smoothing: grayscale;
+		transition-duration: .3s;
+		transition-property: transform;
+	}
+
+	.hvr-grow:hover,
+	.hvr-grow:focus,
+	.hvr-grow:active {
+		transform: scale(1.1);
+	}
 }
 
 @media (min-width: $screen-md-min) {
@@ -92,7 +108,7 @@ html {
 }
 
 a {
-	transition: background-color .4s ease 0s, border .3s ease 0s, color .4s ease 0s, opacity .4s ease-in-out 0s;
+	transition: background-color .3s ease 0s, border .3s ease 0s, color .3s ease 0s, opacity .3s ease-in-out 0s;
 }
 
 p {
@@ -178,23 +194,6 @@ h6, .h6 {
 	color: #f881a1;
 }
 
-.hvr-grow {
-    vertical-align: middle;
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    transition-duration: .3s;
-    transition-property: transform;
-}
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-    transform: scale(1.1);
-}
-
-
 .full-width {
 	width: 100%;
 }
@@ -202,3 +201,16 @@ h6, .h6 {
 .bg-overlay-dark {
 	background-color: rgba(255, 255, 255, .3);
 }
+
+.affix {
+	top: 80px;
+	width: 100%;
+}
+
+.btn-twitter {background-color:#4099FF;color:#fff;}
+.btn-facebook {background-color:#3B5998;color:#fff;}
+.btn-gplus {background-color:#d34836;color:#fff;}
+
+.btn-twitter:hover {background-color:#3088FF;color:#fff;}
+.btn-facebook:hover {background-color:#2A4998;color:#fff;}
+.btn-gplus:hover {background-color:#C23836;color:#fff;}
