@@ -112,9 +112,9 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+$border-radius-base:        0 !default;
+$border-radius-large:       2px !default;
+$border-radius-small:       1px !default;
 
 //** Global color for active items (e.g.,  navs or dropdowns).
 $component-active-color:    #fff !default;
@@ -399,8 +399,8 @@ $navbar-padding-vertical:						9px !default;
 $navbar-collapse-max-height:					340px !default;
 
 $navbar-default-color:							#fff !default;
-$navbar-default-bg:								$brand-info !default;
-$navbar-default-border:							$gray-light !default;
+$navbar-default-bg:								#4682b4 !default;
+$navbar-default-border:							#4682b4 !default;
 
 // Navbar links
 $navbar-default-link-color:                #fff !default;
@@ -777,31 +777,31 @@ $panel-footer-padding:        $panel-heading-padding !default;
 $panel-border-radius:         0 !default;
 
 //** Border color for elements within panels
-$panel-inner-border:          #ddd !default;
+$panel-inner-border:          $gray-light !default;
 $panel-footer-bg:             #fff !default;
 
 $panel-default-text:          $gray-dark !default;
-$panel-default-border:        #ddd !default;
+$panel-default-border:        $gray-light !default;
 $panel-default-heading-bg:    #f5f5f5 !default;
 
 $panel-primary-text:          #fff !default;
-$panel-primary-border:        $brand-primary !default;
+$panel-primary-border:        $gray-light !default;
 $panel-primary-heading-bg:    $brand-primary !default;
 
 $panel-success-text:          $state-success-text !default;
-$panel-success-border:        $state-success-border !default;
+$panel-success-border:        $gray-light !default;
 $panel-success-heading-bg:    $state-success-bg !default;
 
 $panel-info-text:             $state-info-text !default;
-$panel-info-border:           $state-info-border !default;
+$panel-info-border:           $gray-light !default;
 $panel-info-heading-bg:       $state-info-bg !default;
 
 $panel-warning-text:          #fff !default;
-$panel-warning-border:        $brand-warning !default;
+$panel-warning-border:        $gray-light !default;
 $panel-warning-heading-bg:    $brand-warning !default;
 
 $panel-danger-text:           #fff !default;
-$panel-danger-border:         $brand-danger !default;
+$panel-danger-border:         $gray-light !default;
 $panel-danger-heading-bg:     $brand-danger !default;
 
 
@@ -832,8 +832,8 @@ $thumbnail-caption-padding:   9px !default;
 //
 //##
 
-$well-bg:                     #f5f5f5 !default;
-$well-border:                 darken($well-bg,  7%) !default;
+$well-bg:                     #fff !default;
+$well-border:                 $gray-light !default;
 
 
 //== Badges

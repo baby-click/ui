@@ -194,17 +194,33 @@ h6, .h6 {
 	color: #f881a1;
 }
 
+.text-white {
+	color: #fff;
+}
+
 .full-width {
 	width: 100%;
 }
 
 .bg-overlay-dark {
-	background-color: rgba(255, 255, 255, .3);
+	background-color: rgba(248, 129, 161, .4)
 }
 
 .affix {
 	top: 80px;
 	width: 100%;
+}
+
+.br-blue {
+  background-color: #609cec !important;
+}
+
+.br-pink {
+  background-color: #ff61e7 !important;
+}
+
+.br-purple {
+  background-color: #cb79e6 !important;
 }
 
 .btn-twitter {background-color:#4099FF;color:#fff;}
