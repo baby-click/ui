@@ -17,7 +17,8 @@ module.exports = function (grunt) {
 			dist: ['app'],
 			base: ['src'],
 			jquery: ['node_modules/jquery'],
-			bootstrap: ['node_modules/bootstrap-sass/assets']
+			bootstrap: ['node_modules/bootstrap-sass/assets'],
+			fontawesome: ['node_modules/font-awesome/']
 		},
 
 		sass: {
@@ -129,6 +130,13 @@ module.exports = function (grunt) {
 
 					{
 						expand: true,
+						cwd: '<%= project.fontawesome %>/fonts/', 
+						src: ['*'],
+						dest: '<%= project.dist %>/css/fonts' 
+					},
+
+					{
+						expand: true,
 						cwd: '<%= project.bootstrap %>/javascripts', 
 						src: ['*'],
 						dest: '<%= project.dist %>/lib/bootstrap',
@@ -186,6 +194,13 @@ module.exports = function (grunt) {
 						cwd: './<%= project.bootstrap %>/fonts/bootstrap', 
 						src: ['*'],
 						dest: './<%= project.dist %>/css/fonts' 
+					},
+
+					{
+						expand: true,
+						cwd: '<%= project.fontawesome %>/fonts/', 
+						src: ['*'],
+						dest: '<%= project.dist %>/css/fonts' 
 					},
 
 					{

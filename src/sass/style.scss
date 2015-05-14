@@ -1,6 +1,9 @@
 // import bootstrap
 @import 'src/sass/bootstrap';
 
+// import fontawesome
+@import 'src/sass/fontawesome';
+
 // import offcanvas navigation styles
 @import 'src/sass/offcanvas';
 @import 'src/sass/position';
@@ -74,6 +77,15 @@
 html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+}
+
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus {
+	outline: none;
 }
 
 .panel-primary > .panel-heading > a:active,
@@ -221,6 +233,33 @@ h6, .h6 {
 
 .br-purple {
   background-color: #cb79e6 !important;
+}
+
+.show-btn-love:hover .btn-love {
+	opacity: 1;
+}
+
+.btn-love {
+	font-size: $font-size-h5;
+	-webkit-transition: opacity 0.25s ease-in-out;
+	-moz-transition: opacity 0.25s ease-in-out;
+	-ms-transition: opacity 0.25s ease-in-out;
+	-o-transition: opacity 0.25s ease-in-out;
+	transition: opacity 0.25s ease-in-out;
+	padding: 9px 9px 6px 9px;
+	position: absolute;
+	color: #f881a1;
+	z-index: 10;
+	opacity: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.btn-love:hover,
+.btn-love:focus,
+.btn-love:active {
+	outline: none;
+	color: #f801a1;
 }
 
 .btn-twitter {background-color:#4099FF;color:#fff;}
