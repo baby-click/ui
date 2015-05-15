@@ -7,6 +7,7 @@
 // import offcanvas navigation styles
 @import 'src/sass/offcanvas';
 @import 'src/sass/position';
+@import 'src/sass/border';
 
 // import custom mixins
 @import 'src/sass/mixin/offset-classes';
@@ -59,6 +60,17 @@
 
 	.padding-top-md-60 {
 		padding-top: 60px;
+	}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+	.line-clamp-sm-2 {
+		overflow: hidden;
+		display: -webkit-box;
+		text-overflow: -o-ellipsis-lastline;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 2;
 	}
 }
 
@@ -203,7 +215,25 @@ h6, .h6 {
 }
 
 .text-action {
+	color: $gray-lighter;
+}
+
+.text-action:hover,
+.text-action:focus,
+.text-action:active {
+	outline: none;
+	color: #f801a1;
+}
+
+.text-action {
 	color: #f881a1;
+}
+
+.text-action:hover,
+.text-action:focus,
+.text-action:active {
+	outline: none;
+	color: #f801a1;
 }
 
 .text-white {
@@ -235,32 +265,118 @@ h6, .h6 {
   background-color: #cb79e6 !important;
 }
 
-.show-btn-love:hover .btn-love {
-	opacity: 1;
+.btn-love, .btn-love:active, .btn-love:focus, .btn-love:hover,
+.btn-bell, .btn-bell:active, .btn-bell:focus, .btn-bell:hover,
+.btn-comment, .btn-comment:active, .btn-comment:focus, .btn-comment:hover {
+	border-color: transparent;
 }
 
-.btn-love {
-	font-size: $font-size-h5;
-	-webkit-transition: opacity 0.25s ease-in-out;
-	-moz-transition: opacity 0.25s ease-in-out;
-	-ms-transition: opacity 0.25s ease-in-out;
-	-o-transition: opacity 0.25s ease-in-out;
-	transition: opacity 0.25s ease-in-out;
-	padding: 9px 9px 6px 9px;
-	position: absolute;
-	color: #f881a1;
-	z-index: 10;
-	opacity: 0;
-	bottom: 0;
-	right: 0;
+.btn-love, .btn-love[disabled], fieldset[disabled] .btn-love,
+.btn-bell, .btn-bell[disabled], fieldset[disabled] .btn-bell,
+.btn-comment, .btn-comment[disabled], fieldset[disabled] .btn-comment {
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	
+	-webkit-transition: color 0.25s ease-in-out;
+	-moz-transition: color 0.25s ease-in-out;
+	-ms-transition: color 0.25s ease-in-out;
+	-o-transition: color 0.25s ease-in-out;
+	transition: color 0.25s ease-in-out;
+	color: $gray;
 }
 
-.btn-love:hover,
-.btn-love:focus,
-.btn-love:active {
-	outline: none;
+
+
+.btn-love i:before {
+	-webkit-transition: content 0.25s ease-in-out;
+	-moz-transition: content 0.25s ease-in-out;
+	-ms-transition: content 0.25s ease-in-out;
+	-o-transition: content 0.25s ease-in-out;
+	transition: content 0.25s ease-in-out;
+	content: $fa-var-heart-o;
+}
+
+.btn-love.active i:before, .btn-love:active i:before,
+.btn-love:focus i:before, .btn-love:hover i:before {
+	content: $fa-var-heart;
+}
+
+.btn-love.active, .btn-love:active {
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 	color: #f801a1;
 }
+
+.btn-love:focus, .btn-love:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #f881a1;
+}
+
+
+
+
+.btn-comment i:before {
+	-webkit-transition: content 0.25s ease-in-out;
+	-moz-transition: content 0.25s ease-in-out;
+	-ms-transition: content 0.25s ease-in-out;
+	-o-transition: content 0.25s ease-in-out;
+	transition: content 0.25s ease-in-out;
+	content: $fa-var-comment-o;
+}
+
+.btn-comment.active i:before, .btn-comment:active i:before,
+.btn-comment:focus i:before, .btn-comment:hover i:before {
+	content: $fa-var-comment;
+}
+
+.btn-comment.active, .btn-comment:active {
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #3fa3e0;
+}
+
+.btn-comment:focus, .btn-comment:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #6bb8e7;
+}
+
+
+
+
+.btn-bell i:before {
+	-webkit-transition: content 0.25s ease-in-out;
+	-moz-transition: content 0.25s ease-in-out;
+	-ms-transition: content 0.25s ease-in-out;
+	-o-transition: content 0.25s ease-in-out;
+	transition: content 0.25s ease-in-out;
+	content: $fa-var-bell-o;
+}
+
+.btn-bell.active i:before, .btn-bell:active i:before,
+.btn-bell:focus i:before, .btn-bell:hover i:before {
+	content: $fa-var-bell;
+}
+
+.btn-bell.active, .btn-bell:active {
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #3da3b6;
+}
+
+.btn-bell:focus, .btn-bell:hover {
+	background-color: transparent;
+	text-decoration: none;
+	color: #3792a3;
+}
+
+
+
 
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}
