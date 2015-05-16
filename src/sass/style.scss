@@ -49,6 +49,10 @@
 	.hvr-grow:active {
 		transform: scale(1.1);
 	}
+	
+	.navbar-right .dropdown-menu {
+		right: 21px;
+	}
 }
 
 @media (min-width: $screen-md-min) {
@@ -89,6 +93,11 @@
 html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+}
+
+input[type=checkbox], 
+input[type=radio] {
+	margin: 2px 0 0;
 }
 
 .btn.active.focus, 
@@ -385,3 +394,8 @@ h6, .h6 {
 .btn-twitter:hover {background-color:#3088FF;color:#fff;}
 .btn-facebook:hover {background-color:#2A4998;color:#fff;}
 .btn-gplus:hover {background-color:#C23836;color:#fff;}
+
+
+.login.dropdown-menu {
+	min-width: 290px;
+}
