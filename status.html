@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>baby-click.de - ein klick und alles im Blick</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	  	include "opengraphtags.html"
+	  	include "styles.html"
+    </head>
+	<body>
+	  	include "header.html"
+		<main class="margin-top-sm-51" role="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 padding-top-15 padding-top-sm-24 padding-bottom-15 padding-bottom-sm-24">
+						<h2>Status</h2>
+					</div>
+				</div>
+				<div class="row margin-bottom-15 margin-bottom-sm-24">
+					<div class="col-md-12">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 class="panel-title">Some systems are not operational<small class="hidden-xs margin-top-3 pull-right">Aktualisiert vor 39 Sekunden</small></h3>
+							</div>                
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="list-group margin-bottom-0">
+									<div class="list-group-item">
+										<h4 class="list-group-item-heading">Website <a href="#"  data-toggle="tooltip" data-placement="bottom" title="Access website and use site API"><i class="fa fa-question-circle"></i></a></h4>
+										<p class="list-group-item-text margin-bottom-6">
+											<span class="label label-success">Operational</span>
+										</p>
+									</div>
+									<div class="list-group-item">
+										<h4 class="list-group-item-heading">API <a href="#"  data-toggle="tooltip" data-placement="bottom" title="Access website and use site API"><i class="fa fa-question-circle"></i></a></h4>
+										<p class="list-group-item-text margin-bottom-6">
+											<span class="label label-warning">Not Operational</span>
+										</p>
+									</div>
+									<div class="list-group-item">
+										<h4 class="list-group-item-heading">SSH <a href="#"  data-toggle="tooltip" data-placement="bottom" title="Access site using SSH terminal"><i class="fa fa-question-circle"></i></a></h4>
+										<p class="list-group-item-text margin-bottom-6">
+											<span class="label label-success">Operational</span>
+										</p>
+									</div>
+									<div class="list-group-item">
+										<h4 class="list-group-item-heading">Datenbank Server <a href="#"  data-toggle="tooltip" data-placement="bottom" title="Access database server and execute queries"><i class="fa fa-question-circle"></i></a></h4>
+										<p class="list-group-item-text margin-bottom-6">
+											<span class="label label-success">Operational</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				include "socialmediabar.html"
+			</div>
+		</main>
+	  	include "footer.html"
+	</body>
+</html>
