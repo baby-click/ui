@@ -133,6 +133,10 @@ input[type=radio] {
 	line-height: 27px;
 }
 
+.nav>li>a {
+  padding: 12px;
+}
+
 @media (min-width: 768px) {
 	.navbar-nav > li > a {
 		padding-top: 12px;
@@ -254,7 +258,8 @@ h6, .h6 {
 }
 
 .bg-overlay-dark {
-	background-color: rgba(248, 129, 161, .4)
+	background-color: rgba(248, 129, 161, .8);
+	color: #fff;
 }
 
 .affix {
@@ -398,4 +403,9 @@ h6, .h6 {
 
 .login.dropdown-menu {
 	min-width: 290px;
+}
+
+.list-group-item {
+	border-left: 0;
+	border-right: 0;
 }
