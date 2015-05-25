@@ -1,8 +1,28 @@
 'use strict';
 
 module.exports = function (grunt) {
+	require('load-grunt-tasks')(grunt, {
+		config: './package.json',
+		scope: 'devDependencies'
+	});
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		project: {
+			dist: ['app'],
+			base: ['src'],
+			jquery: ['node_modules/jquery'],
+			bootstrap: ['node_modules/bootstrap-sass/assets'],
+			fontawesome: ['node_modules/font-awesome/']
+		},
+
+		sitemap: {
+			dev: {
+				pattern: ['*.html'],
+				siteRoot: './app/'
+			}
+		},
 
 		bump: {
 			options: {
@@ -11,14 +31,6 @@ module.exports = function (grunt) {
 				commit: false,
 				push: false
 			}
-		},
-
-		project: {
-			dist: ['app'],
-			base: ['src'],
-			jquery: ['node_modules/jquery'],
-			bootstrap: ['node_modules/bootstrap-sass/assets'],
-			fontawesome: ['node_modules/font-awesome/']
 		},
 
 		sass: {
@@ -78,6 +90,20 @@ module.exports = function (grunt) {
 					dest: '<%= project.base %>/js',
 					ext: '.min.js'
 				}]
+			}
+		},
+
+		compress: {
+			main: {
+				options: {
+					mode: 'gzip'
+				},
+
+				expand: true,
+				cwd: '<%= project.dist %>/',
+				src: ['**/*.min.js'],
+				dest: '<%= project.dist %>/',
+				ext: '.min.gz.js'
 			}
 		},
 
@@ -255,24 +281,12 @@ module.exports = function (grunt) {
 		grunt.config('sync.main.files', filepath);
 	});
 
-	grunt.loadNpmTasks('grunt-bump');
-	grunt.loadNpmTasks('grunt-sync');
-	grunt.loadNpmTasks('grunt-includes');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-scss-lint');
-	grunt.loadNpmTasks('grunt-jscs');
-
 	grunt.registerTask('default', [
 		'watch'
 	]);
 
 	grunt.registerTask('build', [
-		'clean:build', 'uglify:all', 'sass:dev', 'cssmin:all', 'copy:all', 'includes'
+		'clean:build', 'uglify:all', 'sass:dev', 'cssmin:all', 'copy:all', 'includes', 'sitemap'
 	]);
 
 	grunt.registerTask('test', [

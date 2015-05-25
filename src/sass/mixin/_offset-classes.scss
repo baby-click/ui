@@ -11,18 +11,18 @@
 		@each $offset-direction in '', -top, -right, -bottom, -left {
 			@each $offset-value in $offsetvalue {
 				$visibility-dash: null;
-				$unit: null;
+				$unit: '';
 
 				@if $visibilty-class != '' {
 					$visibility-dash: '-';
 				}
 
 				@if $offset-value > 0 {
-					$unit:px;
+					$unit: 'px';
 				}
 
 				.#{$offset-type}#{$offset-direction}-#{$visibilty-class}#{$visibility-dash}#{$offset-value} {
-					#{$offset-type}#{$offset-direction}: #{$offset-value}$unit;
+					#{$offset-type}#{$offset-direction}: #{$offset-value}#{$unit};
 				}
 			}
 		}
