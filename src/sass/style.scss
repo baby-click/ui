@@ -1,39 +1,26 @@
 // import bootstrap
-@import 'src/sass/bootstrap';
+@import 'src/sass/overrides/bootstrap';
+@import 'src/sass/overrides/bootstrap-custom';
 
 // import fontawesome
-@import 'src/sass/fontawesome';
-
-// import offcanvas navigation styles
-@import 'src/sass/offcanvas';
-@import 'src/sass/position';
-@import 'src/sass/border';
+@import 'src/sass//overrides/fontawesome';
 
 // import custom mixins
-@import 'src/sass/mixin/offset-classes';
+@import 'src/sass/mixin/offset';
+@import 'src/sass/mixin/flexbox';
 
+// import custom classes
+@import 'src/sass/custom/offset-classes';
+@import 'src/sass/custom/flex-classes';
 
-@include optional-offset-classes('', 0 3 6 9 12 15 18 21 24 36);
+// import custom styles
+@import 'src/sass/custom/reset';
+@import 'src/sass/custom/offcanvas';
+@import 'src/sass/custom/position';
+@import 'src/sass/custom/border';
 
-.margin-top-51 {
-    margin-top: 51px;
-}
-
-.padding-top-60 {
-	padding-top: 60px;
-}
 
 @media (min-width: $screen-sm-min) {
-	@include optional-offset-classes('sm', 0 3 6 9 12 15 18 21 24 36);
-
-	.margin-top-sm-51 {
-		margin-top: 51px;
-	}
-
-	.padding-top-sm-60 {
-		padding-top: 60px;
-	}
-
 	.hvr-grow {
 		vertical-align: middle;
 		transform: translateZ(0);
@@ -49,22 +36,6 @@
 	.hvr-grow:active {
 		transform: scale(1.1);
 	}
-	
-	.navbar-right .dropdown-menu {
-		right: 21px;
-	}
-}
-
-@media (min-width: $screen-md-min) {
-	@include optional-offset-classes('md', 0 3 6 9 12 15 18 21 24 36);
-
-	.margin-top-md-51 {
-		margin-top: 51px;
-	}
-
-	.padding-top-md-60 {
-		padding-top: 60px;
-	}
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
@@ -78,101 +49,19 @@
 	}
 }
 
-@media (min-width: $screen-lg-min) {
-	@include optional-offset-classes('lg', 0 3 6 9 12 15 18 21 24 36);
-
-	.margin-top-lg-51 {
-		margin-top: 51px;
-	}
-
-	.padding-top-lg-60 {
-		padding-top: 60px;
-	}
-}
-
-html {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-}
-
-input[type=checkbox], 
-input[type=radio] {
-	margin: 2px 0 0;
-}
-
-.btn.active.focus, 
-.btn.active:focus, 
-.btn.focus, 
-.btn:active.focus, 
-.btn:active:focus, 
-.btn:focus {
-	outline: none;
-}
-
-.panel-primary > .panel-heading > a:active,
-.panel-primary > .panel-heading > a:focus,
-.panel-primary > .panel-heading > a:hover {
-	color: #fff;
-}
-
-.thumbnail {
-	margin-bottom: 0;
-}
-
-.thumbnail .caption a {
-	color: #fff;
-}
-
-.navbar-brand > img {
-	margin-right: 9px;
-	margin-top: -2px;
-	height: 35px;
-}
-
-.navbar-nav > li > a {
-	line-height: 27px;
-}
-
-.nav>li>a {
-  padding: 12px;
-}
-
-@media (min-width: 768px) {
-	.navbar-nav > li > a {
-		padding-top: 12px;
-		padding-bottom: 12px;
-	}
-}
-
-a {
-	transition: background-color .3s ease 0s, border .3s ease 0s, color .3s ease 0s, opacity .3s ease-in-out 0s;
-}
-
-p {
-	margin: 0 0 6px;
-}
 
 .list-style-upper-roman {
 	list-style-type: upper-roman;
 }
 
 ::selection {
-	color: #fff;
 	background-color: #f881a1;
+	color: #fff;
 }
 
 ::-moz-selection {
-	color: #fff;
 	background-color: #f881a1;
-}
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-	margin: 0;
+	color: #fff;
 }
 
 .text-handwriting {
@@ -181,14 +70,6 @@ h6, .h6 {
 
 .text-headline {
 	font-family: 'Cabin', sans-serif;
-}
-
-.center-block {
-    float: none;
-}
-
-.bg-white {
-    background-color: #fff;
 }
 
 .bg-texture-main {
@@ -200,6 +81,15 @@ h6, .h6 {
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
     -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale")';
 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-landing-img {
+    background-image: url(../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg);
+    background-position: center right;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -218,41 +108,6 @@ h6, .h6 {
 	box-shadow: inset 0 -2px $brand-info;
 }
 
-.btn.btn-primary:hover,
-.btn.btn-primary:focus,
-.btn.btn-primary:active {
-	outline: none;
-	border-bottom: 2px solid $brand-info;
-	-webkit-box-shadow: inset 0 -2px $brand-info;
-	box-shadow: inset 0 -2px $brand-info;
-}
-
-.text-action {
-	color: $gray-lighter;
-}
-
-.text-action:hover,
-.text-action:focus,
-.text-action:active {
-	outline: none;
-	color: #f801a1;
-}
-
-.text-action {
-	color: #f881a1;
-}
-
-.text-action:hover,
-.text-action:focus,
-.text-action:active {
-	outline: none;
-	color: #f801a1;
-}
-
-.text-white {
-	color: #fff;
-}
-
 .full-width {
 	width: 100%;
 }
@@ -262,21 +117,8 @@ h6, .h6 {
 	color: #fff;
 }
 
-.affix {
-	top: 80px;
-	width: 100%;
-}
-
-.br-blue {
-  background-color: #609cec !important;
-}
-
-.br-pink {
-  background-color: #ff61e7 !important;
-}
-
-.br-purple {
-  background-color: #cb79e6 !important;
+.bg-overlay-light {
+	background-color: rgba(0, 0, 0, .4);
 }
 
 .btn-love, .btn-love:active, .btn-love:focus, .btn-love:hover,
@@ -299,8 +141,6 @@ h6, .h6 {
 	transition: color 0.25s ease-in-out;
 	color: $gray;
 }
-
-
 
 .btn-love i:before {
 	-webkit-transition: content 0.25s ease-in-out;
@@ -329,9 +169,6 @@ h6, .h6 {
 	color: #f881a1;
 }
 
-
-
-
 .btn-comment i:before {
 	-webkit-transition: content 0.25s ease-in-out;
 	-moz-transition: content 0.25s ease-in-out;
@@ -358,9 +195,6 @@ h6, .h6 {
 	text-decoration: none;
 	color: #6bb8e7;
 }
-
-
-
 
 .btn-bell i:before {
 	-webkit-transition: content 0.25s ease-in-out;
@@ -389,23 +223,17 @@ h6, .h6 {
 	color: #3792a3;
 }
 
-
-
-
-.btn-twitter {background-color:#4099FF;color:#fff;}
-.btn-facebook {background-color:#3B5998;color:#fff;}
-.btn-gplus {background-color:#d34836;color:#fff;}
-
-.btn-twitter:hover {background-color:#3088FF;color:#fff;}
-.btn-facebook:hover {background-color:#2A4998;color:#fff;}
-.btn-gplus:hover {background-color:#C23836;color:#fff;}
-
-
-.login.dropdown-menu {
-	min-width: 290px;
+.fullscreen,
+.not-fullscreen {
+	width: 100%;
 }
 
-.list-group-item {
-	border-left: 0;
-	border-right: 0;
+.fullscreen {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.not-fullscreen {
+	min-height: 50%;
+	overflow: hidden;
 }

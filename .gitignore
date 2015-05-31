@@ -1,6 +1,7 @@
 *~
 app
 vendor
+laravel
 src/css
 stockphoto
 node_modules

@@ -1,0 +1,120 @@
+// optional color classes
+@include bg-variant('.bg-white', #fff);
+@include bg-variant('.bg-contrast', #4682b4);
+@include bg-variant('.bg-special-blue', #609cec);
+@include bg-variant('.bg-special-pink', #ff61e7);
+@include bg-variant('.bg-special-purple', #cb79e6);
+
+@include text-emphasis-variant('.text-white', #fff);
+
+// optional btn classes
+.btn-action {
+	@include button-variant(#fff, #f881a1, #f881a1);
+}
+
+.btn-twitter {
+	@include button-variant(#fff, #4099ff, #4099ff);
+}
+
+.btn-facebook {
+	@include button-variant(#fff, #3b5998, #3b5998);
+}
+
+.btn-gplus {
+	@include button-variant(#fff, #d34836, #d34836);
+}
+
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus {
+	outline: none;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+	outline: none;
+	border-bottom: 2px solid $brand-info;
+	-webkit-box-shadow: inset 0 -2px $brand-info;
+	box-shadow: inset 0 -2px $brand-info;
+}
+
+.text-action {
+	color: $gray-lighter;
+}
+
+.text-action {
+	color: #f881a1;
+}
+
+.text-action:hover,
+.text-action:focus,
+.text-action:active {
+	outline: none;
+	color: #f801a1;
+}
+
+a.text-white:visited,
+a.text-white:hover {
+	color: #fff;
+}
+
+input[type=checkbox], 
+input[type=radio] {
+	margin: 2px 0 0;
+}
+
+.panel-primary > .panel-heading > a:active,
+.panel-primary > .panel-heading > a:focus,
+.panel-primary > .panel-heading > a:hover {
+	color: #fff;
+}
+
+.thumbnail {
+	margin-bottom: 0;
+}
+
+.thumbnail .caption a {
+	color: #fff;
+}
+
+.navbar-brand > img {
+	margin-right: 9px;
+	margin-top: -2px;
+	height: 35px;
+}
+
+.navbar-nav > li > a {
+	line-height: 27px;
+}
+
+.nav > li > a {
+	padding: 12px;
+}
+
+.login.dropdown-menu {
+	min-width: 290px;
+}
+
+.list-group-item {
+	border-left: 0;
+	border-right: 0;
+}
+
+.center-block {
+    float: none;
+}
+
+@media (min-width: $screen-sm-min) {
+	.navbar-nav > li > a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	
+	.navbar-right .dropdown-menu {
+		right: 21px;
+	}
+}
