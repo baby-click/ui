@@ -105,7 +105,7 @@ input[type=radio] {
 }
 
 .center-block {
-    float: none;
+	float: none;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -113,7 +113,7 @@ input[type=radio] {
 		padding-top: 12px;
 		padding-bottom: 12px;
 	}
-	
+
 	.navbar-right .dropdown-menu {
 		right: 21px;
 	}
