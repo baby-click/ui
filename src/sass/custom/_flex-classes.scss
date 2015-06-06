@@ -120,3 +120,129 @@
 .align-content-stretch {
 	@include align-content(stretch);
 }
+
+
+@media only screen and (min-width: $screen-sm-min) {
+	/* flexbox */
+	.display-flex-sm {
+		@include flexbox;
+	}
+
+	/* flexbox inline */
+	.display-flex-inline-sm {
+		@include inline-flex(); 
+	}
+
+
+	/* flex-start */
+	.justify-content-start-sm {
+		@include justify-content(flex-start);
+	}
+
+	/* flex-end */
+	.justify-content-end-sm {
+		@include justify-content(flex-end);
+	}
+
+	/* flex-center */
+	.justify-content-center-sm {
+		@include justify-content(center);
+	}
+
+	/* space-between */
+	.justify-content-space-between-sm {
+		@include justify-content(space-between);
+	}
+
+	/* space-around */
+	.justify-content-space-around-sm {
+		@include justify-content(space-around);
+	}
+
+
+	/* flex-start */
+	.align-items-start-sm {
+		@include align-items(flex-start);
+	}
+
+	/* flex-end */
+	.align-items-end-sm {
+		@include align-items(flex-end);
+	}
+
+	/* center */
+	.align-items-center-sm {
+		@include align-items(center);
+	}
+
+	/* baseline */
+	.align-items-baseline-sm {
+		@include align-items(baseline);
+	}
+
+	/* stretch */
+	.align-items-stretch-sm {
+		@include align-items(stretch);
+	}
+
+
+	/* auto */
+	.align-self-auto-sm {
+		@include align-self(auto);}
+
+	/* flex-start */
+	.align-self-start-sm {
+		@include align-self(flex-start);
+	}
+
+	/* flex-end */
+	.align-self-end-sm {
+		@include align-self(flex-end);
+	}
+
+	/* center */
+	.align-self-center-sm {
+		@include align-self(center);
+	}
+
+	/* baseline */
+	.align-self-baseline-sm {
+		@include align-self(baseline);
+	}
+
+	/* stretch */
+	.align-self-stretch-sm {
+		@include align-self(stretch);
+	}
+
+
+	/* flex-start */
+	.align-content-start-sm {
+		@include align-content(flex-start);
+	}
+
+	/* flex-end */
+	.align-content-end-sm {
+		@include align-content(flex-end);
+	}
+
+	/* center */
+	.align-content-center-sm {
+		@include align-content(center);
+	}
+
+	/* space-between */
+	.align-content-space-between-sm {
+		@include align-content(space-between);
+	}
+
+	/* space-around */
+	.align-content-space-around-sm {
+		@include align-content(space-around);
+	}
+
+	/* stretch */
+	.align-content-stretch-sm {
+		@include align-content(stretch);
+	}
+}
