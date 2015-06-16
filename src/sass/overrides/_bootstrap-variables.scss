@@ -185,6 +185,11 @@ $btn-danger-border:              darken($btn-danger-bg,  5%) !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-large:        $border-radius-large !default;
+$btn-border-radius-small:        $border-radius-small !default;
+
 
 //== Forms
 //
@@ -403,30 +408,30 @@ $navbar-default-bg:								#4682b4 !default;
 $navbar-default-border:							#4682b4 !default;
 
 // Navbar links
-$navbar-default-link-color:                #fff !default;
-$navbar-default-link-hover-color:          #fff !default;
-$navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         #fff !default;
-$navbar-default-link-active-bg:            transparent !default;
-$navbar-default-link-disabled-color:       #fff !default;
-$navbar-default-link-disabled-bg:          transparent !default;
+$navbar-default-link-color:						#fff !default;
+$navbar-default-link-hover-color:				#fff !default;
+$navbar-default-link-hover-bg:					transparent !default;
+$navbar-default-link-active-color:				#fff !default;
+$navbar-default-link-active-bg:					transparent !default;
+$navbar-default-link-disabled-color:			#fff !default;
+$navbar-default-link-disabled-bg:				transparent !default;
 
 // Navbar brand label
-$navbar-default-brand-color:               #fff !default;
-$navbar-default-brand-hover-color:         #fff !default;
-$navbar-default-brand-hover-bg:            transparent !default;
+$navbar-default-brand-color:					#fff !default;
+$navbar-default-brand-hover-color:				#fff !default;
+$navbar-default-brand-hover-bg:					transparent !default;
 
 // Navbar toggle
-$navbar-default-toggle-hover-bg:           transparent !default;
-$navbar-default-toggle-icon-bar-bg:        #fff !default;
-$navbar-default-toggle-border-color:       #fff !default;
+$navbar-default-toggle-hover-bg:				transparent !default;
+$navbar-default-toggle-icon-bar-bg:				#fff !default;
+$navbar-default-toggle-border-color:			#fff !default;
 
 
 // Inverted navbar
 // Reset inverted navbar basics
-$navbar-inverse-color:                      #fff !default;
-$navbar-inverse-bg:                         #1a2732 !default;
-$navbar-inverse-border:                     #1a2732 !default;
+$navbar-inverse-color:							#fff !default;
+$navbar-inverse-bg:								#1a2732 !default;
+$navbar-inverse-border:							#1a2732 !default;
 
 // Inverted navbar links
 $navbar-inverse-link-color:                 #fff !default;
@@ -518,18 +523,19 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 //
 //##
 
-$jumbotron-padding:              30px !default;
-$jumbotron-color:                inherit !default;
-$jumbotron-bg:                   $gray-lighter !default;
-$jumbotron-heading-color:        inherit !default;
-$jumbotron-font-size:            ceil(($font-size-base * 1.5)) !default;
+$jumbotron-padding:						30px !default;
+$jumbotron-color:						inherit !default;
+$jumbotron-bg:							$gray-lighter !default;
+$jumbotron-heading-color:				inherit !default;
+$jumbotron-font-size:					24px !default;
+$jumbotron-heading-font-size:			48px !default;
 
 
 //== Form states and alerts
 //
 //## Define colors for form feedback states and,  by default,  alerts.
 
-$state-success-text:             #fff !default;
+$state-success-text:					#fff !default;
 $state-success-bg:               $brand-success !default;
 $state-success-border:           $brand-success !default;
 
