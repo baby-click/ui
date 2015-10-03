@@ -4,9 +4,6 @@
   "description": "babyclickDE ein Marktplatz für einzigartige Produkte rund ums Baby.",
   "homepage": "http://beta.baby-click.de/",
   "main": "gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/baby-click/ui.git"
