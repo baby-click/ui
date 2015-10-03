@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/baby-click/ui.svg?branch=master)](https://travis-ci.org/baby-click/ui)
+
 ## Synopsis
 
 tbd.
