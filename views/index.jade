@@ -1,0 +1,15 @@
+doctype
+html(prefix='og: http://ogp.me/ns#', lang='de')
+  head
+    include metatags
+    include styles
+  block body
+    include header
+    main.margin-top-sm-51.bg-texture-main(role='main')
+      .container
+        h1= authenticated
+        if authenticated
+          p you are authenticated
+        else
+          p Go and log urself in
+    include footer
