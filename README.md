@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/baby-click/ui.png?label=ready&title=Ready)](https://waffle.io/baby-click/ui)
 [![Build Status](https://travis-ci.org/baby-click/ui.svg?branch=master)](https://travis-ci.org/baby-click/ui)
 [![Dependency Status](https://david-dm.org/baby-click/ui.svg)](https://david-dm.org/baby-click/ui)
 [![devDependency Status](https://david-dm.org/baby-click/ui/dev-status.svg)](https://david-dm.org/baby-click/ui#info=devDependencies)
