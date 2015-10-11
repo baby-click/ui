@@ -60,7 +60,7 @@
               | Mein Konto 
               strong.caret
             .login.dropdown-menu
-              if !authenticated
+              if !user
                 form(accept-charset="utf-8", role="form" action="./login", method="post")
                   fieldset.col-xs-12.padding-top-9.padding-bottom-9
                     .form-group
@@ -70,7 +70,7 @@
                       .input-group
                         span.input-group-addon.input-sm
                           i.fa.fa-user.fa-fw
-                        input#username-flyout.form-control.input-sm(type="email", name="username", placeholder="mail@domain.com")
+                        input#username-flyout.form-control.input-sm(type="text", name="username", placeholder="mail@domain.com")
                     .form-group
                       label.sr-only(for="password-flyout") Passwort
                       .input-group.margin-bottom-3
@@ -85,5 +85,7 @@
                     input.btn.btn-success.btn-sm(type="submit" value="Los gehts!")
                     a.btn.btn-info.btn-sm.margin-left-6(href="./register") Registrieren
               else
-                p.col-xs-12.padding-top-6
+                p.col-xs-12.padding-top-6 Hi 
+                  strong= user.username
+                p.col-xs-12
                   a.btn.btn-info(href='./logout') Jetzt abmelden

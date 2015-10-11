@@ -7,8 +7,8 @@ html(prefix='og: http://ogp.me/ns#', lang='de')
     include header
     main.margin-top-sm-51.bg-texture-main(role='main')
       .container
-        h1= authenticated
-        if authenticated
+        if user
+          h1= user.username
           p you are authenticated
         else
           p Go and log urself in
