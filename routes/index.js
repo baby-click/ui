@@ -1,17 +1,69 @@
 var express = require('express');
 var router = express.Router();
 
-/*router.get('/', function (req, res) {
+router.get('/', function (req, res) {
 	res.render('index', {
-		authenticated: req.isAuthenticated(),
 		user: req.user
 	});
-});*/
+});
 
-router.get('/about', function (req, res, next) {
+router.get('/about', function (req, res) {
 	res.render('about', {
-		authenticated: req.isAuthenticated(),
-		title: 'Über uns'
+		user: req.user
+	});
+});
+
+router.get('/blog', function (req, res) {
+	res.render('blog', {
+		user: req.user
+	});
+});
+
+router.get('/contact', function (req, res) {
+	res.render('contact', {
+		user: req.user
+	});
+});
+
+router.get('/detail', function (req, res) {
+	res.render('detail', {
+		user: req.user
+	});
+});
+
+router.get('/legal', function (req, res) {
+	res.render('legal', {
+		user: req.user
+	});
+});
+
+router.get('/privacy', function (req, res) {
+	res.render('privacy', {
+		user: req.user
+	});
+});
+
+router.get('/result', function (req, res) {
+	res.render('result', {
+		user: req.user
+	});
+});
+
+router.get('/status', function (req, res) {
+	res.render('status', {
+		user: req.user
+	});
+});
+
+router.get('/team', function (req, res) {
+	res.render('team', {
+		user: req.user
+	});
+});
+
+router.get('/terms', function (req, res) {
+	res.render('terms', {
+		user: req.user
 	});
 });
 

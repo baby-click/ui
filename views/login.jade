@@ -3,10 +3,10 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
   head
     meta(charset="utf-8")
     title baby-click.de - ein klick und alles im Blick
-    include metatags
-    include styles
+    include include/metatags
+    include include/styles
   body
-    include header
+    include include/header
     main.margin-top-sm-51(role="main")
       .container
         .row.margin-top-15.margin-top-sm-24.margin-bottom-15.margin-bottom-sm-24
@@ -35,4 +35,4 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
                       | Angemeldet bleiben
                   input.btn.btn-success.btn-sm(type="submit" value="Los gehts!")
                   a.btn.btn-info.btn-sm.margin-left-6(href="./register") Registrieren
-    include footer
+    include include/footer

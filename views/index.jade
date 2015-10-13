@@ -1,15 +1,255 @@
 doctype
-html(prefix='og: http://ogp.me/ns#', lang='de')
+html(prefix="og: http://ogp.me/ns#", lang="de")
   head
-    include metatags
-    include styles
-  block body
-    include header
-    main.margin-top-sm-51.bg-texture-main(role='main')
+    include include/metatags
+    include include/styles
+  body#top.body-offcanvas
+    include include/header
+    main.margin-top-sm-51(role="main")
+      .container-fluid
+        section.row.panel
+          #c-slide.carousel.slide.auto.panel-body
+            .carousel-inner
+              .item.text-center.active
+                figure.col-xs-12.padding-0
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="http://placehold.it/1900x500", alt="")
+                h3 Es ist nie zu spät Dir etwas gutes zu tun!
+                small Finde was Du brauchst, tausche. verkaufe. verschenke was Du über hast
+              .item.text-center
+                h3 Teile mit Deinen Lieben was Dir gefällt!
+                small Lege jetzt los und durchstöbere unsere ausgewählten Angebote
+              .item.text-center
+                h3 Teile Deine Ereignisse in unserem Blog!
+                small Unterhalte Dich mit gleichgesinnten über viele Themen rund ums Baby
+            a.left.carousel-control.padding-left-24.display-flex.justify-content-start.align-items-center(data-slide="prev", href="#c-slide")
+              i.fa.fa-angle-left.text-action
+            a.right.carousel-control.padding-right-24.display-flex.justify-content-end.align-items-center(data-slide="next", href="#c-slide")
+              i.fa.fa-angle-right.text-action
       .container
-        if user
-          h1= user.username
-          p you are authenticated
-        else
-          p Go and log urself in
-    include footer
+        .row.margin-bottom-24
+          .col-xs-12.col-sm-4.padding-right-sm-0.padding-right-md-12
+            .padding-top-24.padding-bottom-24.padding-left-36.bg-special-blue
+              h2.text-white.margin-bottom-3 Beliebt.
+              span.text-white.text-capitalize Bald auch in English.
+          .col-xs-12.col-sm-4.padding-left-sm-0.padding-right-sm-0.padding-left-md-12.padding-right-md-12
+            .padding-top-24.padding-bottom-24.padding-left-36.bg-special-pink
+              h2.text-white.margin-bottom-3 WebApp.
+              span.text-white.text-capitalize Von überall erreichbar.
+          .col-xs-12.col-sm-4.padding-left-sm-0.padding-left-md-12
+            .padding-top-24.padding-bottom-24.padding-left-36.bg-special-purple
+              h2.text-white.margin-bottom-3 Aktuell.
+              span.text-white.text-capitalize Wir lieben Produkte.
+        .row.margin-bottom-24
+          .col-xs-12.padding-top-15.padding-top-sm-36.padding-bottom-15.padding-bottom-sm-24
+            h3 Kategorien
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./umstandsmode.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_74161737.jpg", alt="")
+              figcaption.caption
+                a.show(href="./umstandsmode.html") Umstandsmode
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./babyshower.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_18460772.jpg", alt="")
+              figcaption.caption
+                a.show(href="./babyshower.html") Babyshower
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./erstausstattung.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_60638805.jpg", alt="")
+              figcaption.caption
+                a.show(href="./erstausstattung.html") Erstausstattung
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./babymoebel.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_45030985.jpg", alt="")
+              figcaption.caption
+                a.show(href="./babymoebel.html") Babymöbel
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./babykleidung.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_38989327.jpg", alt="")
+              figcaption.caption
+                a.show(href="./babykleidung.html") Babykleidung
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./babyspielzeug.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_62870614.jpg", alt="")
+              figcaption.caption
+                a.show(href="./babyspielzeug.html") Babyspielzeug
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_62454523.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Babypflege
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_56954989.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Babynahrung
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./schlafparadies.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_17650535.jpg", alt="")
+              figcaption.caption
+                a.show(href="./schlafparadies.html") Schlafparadies
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_56327544.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Autositze
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_51587127.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Kinderwagen
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_76176908.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Unterwegs
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_73176512.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Sicherheit
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_51382633.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Babybücher
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./result.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_42451934.jpg", alt="")
+              figcaption.caption
+                a.show(href="./result.html") Entspannung
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./gift.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_64937825.jpg", alt="")
+              figcaption.caption
+                a.show(href="./gift.html") Geschenke
+          .col-xs-12.col-sm-6.col-md-4.padding-bottom-24
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./voucher.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_71593704.jpg", alt="")
+              figcaption.caption
+                a.show(href="./voucher.html") Gutscheine
+          .col-xs-12.col-sm-6.col-md-4
+            .hvr-grow.thumbnail
+              figure
+                a.show(href="./sale.html", rel="bookmark")
+                  img.img-responsive.lazyload(src="./img/loader.gif", data-src="./img/stockphoto/800x532_Dollarphotoclub_68752506.jpg", alt="")
+              figcaption.caption
+                a.show(href="./sale.html") Sale
+        .row
+          h3.col-xs-12.padding-bottom-15.padding-bottom-sm-24 Beliebte Artikel
+        .row.margin-bottom-15.margin-bottom-sm-36
+          .col-md-3.col-sm-6.padding-bottom-15.padding-bottom-sm-0
+            .row.bg-white.thumbnail.margin-0
+              figure.col-xs-12
+                .row
+                  a.show(href="./result.html", rel="bookmark")
+                    img.img-responsive(src="./img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+                .row.border-bottom-thin
+                  .col-xs-4.text-center
+                    button.btn.btn-comment.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center.border-right-thin.border-left-thin
+                    button.btn.btn-love.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center
+                    button.btn.btn-bell.btn-block(type="button")
+                      i.fa
+              .col-xs-12.padding-top-12.padding-bottom-12
+                h5.margin-bottom-9
+                  a.show(href="./detail.html") Großes Jumbo Windelpaket
+                p.lead.text-action.margin-bottom-0 EUR 19.50
+          .col-md-3.col-sm-6.padding-bottom-15.padding-bottom-sm-24.padding-bottom-md-0
+            .row.bg-white.thumbnail.margin-0
+              figure.col-xs-12
+                .row
+                  a.show(href="./result.html", rel="bookmark")
+                    img.img-responsive(src="./img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+                .row.border-bottom-thin
+                  .col-xs-4.text-center
+                    button.btn.btn-comment.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center.border-right-thin.border-left-thin
+                    button.btn.btn-love.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center
+                    button.btn.btn-bell.btn-block(type="button")
+                      i.fa
+              .col-xs-12.padding-top-12.padding-bottom-12
+                h5.margin-bottom-9
+                  a.show(href="./detail.html") Großes Jumbo Windelpaket
+                p.lead.text-action.margin-bottom-0 EUR 19.50
+          .col-md-3.col-sm-6.padding-bottom-15.padding-bottom-sm-0
+            .row.bg-white.thumbnail.margin-0
+              figure.col-xs-12
+                .row
+                  a.show(href="./result.html", rel="bookmark")
+                    img.img-responsive(src="./img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+                .row.border-bottom-thin
+                  .col-xs-4.text-center
+                    button.btn.btn-comment.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center.border-right-thin.border-left-thin
+                    button.btn.btn-love.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center
+                    button.btn.btn-bell.btn-block(type="button")
+                      i.fa
+              .col-xs-12.padding-top-12.padding-bottom-12
+                h5.margin-bottom-9
+                  a.show(href="./detail.html") Großes Jumbo Windelpaket
+                p.lead.text-action.margin-bottom-0 EUR 19.50
+          .col-md-3.col-sm-6
+            .row.bg-white.thumbnail.margin-0
+              figure.col-xs-12
+                .row
+                  a.show(href="./result.html", rel="bookmark")
+                    img.img-responsive(src="./img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+                .row.border-bottom-thin
+                  .col-xs-4.text-center
+                    button.btn.btn-comment.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center.border-right-thin.border-left-thin
+                    button.btn.btn-love.btn-block(type="button")
+                      i.fa
+                  .col-xs-4.text-center
+                    button.btn.btn-bell.btn-block(type="button")
+                      i.fa
+              .col-xs-12.padding-top-12.padding-bottom-12
+                h5.margin-bottom-9
+                  a.show(href="./detail.html") Großes Jumbo Windelpaket
+                p.lead.text-action.margin-bottom-0 EUR 19.50
+        | include "productdirectory.html"
+    include include/footer
