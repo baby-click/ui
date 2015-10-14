@@ -2709,8 +2709,8 @@ tbody.collapse.in {
       margin-right: 0; } }
 
 .navbar-default {
-  background-color: #4682b4;
-  border-color: #4682b4; }
+  background-color: #36d49f;
+  border-color: #2ba97f; }
   .navbar-default .navbar-brand {
     color: #fff; }
     .navbar-default .navbar-brand:hover,
@@ -2744,7 +2744,7 @@ tbody.collapse.in {
       background-color: #fff; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: #4682b4; }
+    border-color: #2ba97f; }
   .navbar-default .navbar-nav > .open > a,
   .navbar-default .navbar-nav > .open > a:hover,
   .navbar-default .navbar-nav > .open > a:focus {
