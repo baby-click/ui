@@ -1,0 +1,53 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      .navbar-header.padding-left-sm-36
+        a.navbar-brand(href="./start")
+          img.pull-left(src="./img/logo.svg", alt="baby-click.de Logo")
+          span.pull-left.h3.text-handwriting baby-click.de
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle(href="#", data-toggle="dropdown")
+            i.fa.fa-comment
+            span.count 3
+          ul.dropdown-menu(role="menu")
+            li
+              a(href="#") Was geht ab?
+            li
+              a(href="#") Ich bin mal weg...
+            li
+              a(href="#")
+                strong Alle Nachrichten
+        li.padding-left-sm-36.padding-right-sm-36.dropdown
+          a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
+            | Jane Witt
+            strong.caret
+          .login.dropdown-menu
+            form(accept-charset="utf-8", role="form")
+              fieldset.col-xs-12.padding-top-9.padding-bottom-9
+                .form-group
+                  h3 Mach mit!
+                .form-group
+                  label.sr-only(for="username") E-Mail
+                  .input-group
+                    span.input-group-addon.input-sm
+                      i.fa.fa-user.fa-fw
+                    input#username.form-control.input-sm(type="text", name="username", placeholder="mail@domain.com")
+                .form-group
+                  label.sr-only(for="password") Passwort
+                  .input-group.margin-bottom-3
+                    span.input-group-addon.input-sm
+                      i.fa.fa-lock.fa-fw
+                    input#password.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
+                  a.pull-right.small(href="./login") Passwort vergessen?
+                .checkbox.margin-bottom-3
+                  label.input-sm
+                    input(type="checkbox", name="remember", value="true")
+                    | Angemeldet bleiben
+                button.btn.btn-success.btn-sm(type="button") Los gehts!
+                a.btn.btn-info.btn-sm(href="./register") Registrieren
