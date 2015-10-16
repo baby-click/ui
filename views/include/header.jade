@@ -6,62 +6,62 @@
         span.icon-bar
       nav#offcanvasMenu.navbar.navbar-default.navbar-fixed-top.navbar-offcanvas.navbar-offcanvas-fade(role="navigation")
         .navbar-header.padding-left-sm-36
-          a.navbar-brand(href="./")
-            img.pull-left(src="./img/logo.svg", alt="baby-click.de Logo")
+          a.navbar-brand(href="/")
+            img.pull-left(src="/img/logo.svg", alt="baby-click.de Logo")
             span.pull-left.h3.text-handwriting baby-click.de
         ul.nav.navbar-nav.navbar-right
           li
-            a(href="./") Startseite
+            a(href="/") Startseite
           li.padding-left-sm-36
-            a(href="./blog") Blog
+            a(href="/blog") Blog
           li.padding-left-sm-36.dropdown
             a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
               | Kategorien 
               span.caret
             ul.dropdown-menu(role="menu")
               li
-                a(href="./umstandsmode") Umstandsmode
+                a(href="/umstandsmode") Umstandsmode
               li
-                a(href="./babyshower") Babyshower
+                a(href="/babyshower") Babyshower
               li
-                a(href="./erstausstattung") Erstausstattung
+                a(href="/erstausstattung") Erstausstattung
               li
-                a(href="./babymoebel") Babym&ouml;bel
+                a(href="/babymoebel") Babymöbel
               li
-                a(href="./babykleidung") Babykleidung
+                a(href="/babykleidung") Babykleidung
               li
-                a(href="./babyspielzeug") Babyspielzeug
+                a(href="/babyspielzeug") Babyspielzeug
               li
-                a(href="./schlafparadies") Schlafparadies
+                a(href="/schlafparadies") Schlafparadies
               li
-                a(href="./result") Babynahrung
+                a(href="/result") Babynahrung
               li
-                a(href="./result") Babypflege
+                a(href="/result") Babypflege
               li
-                a(href="./result") Kinderwagen
+                a(href="/result") Kinderwagen
               li
-                a(href="./result") Unterwegs
+                a(href="/result") Unterwegs
               li
-                a(href="./result") Autositze
+                a(href="/result") Autositze
               li
-                a(href="./result") Sicherheit
+                a(href="/result") Sicherheit
               li
-                a(href="./result") Babyb&uuml;cher
+                a(href="/result") Babybücher
               li
-                a(href="./result") Entspannung
+                a(href="/result") Entspannung
               li
-                a(href="./gift") Geschenke
+                a(href="/gift") Geschenke
               li
-                a(href="./voucher") Gutscheine
+                a(href="/voucher") Gutscheine
               li
-                a(href="./sale") Sale
+                a(href="/sale") Sale
           li.padding-left-sm-36.padding-right-sm-36.dropdown
             a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
               | Mein Konto 
               strong.caret
             .login.dropdown-menu
               if !user
-                form(accept-charset="utf-8", role="form" action="./login", method="post")
+                form(accept-charset="utf-8", role="form" action="/login", method="post")
                   fieldset.col-xs-12.padding-top-9.padding-bottom-9
                     .form-group
                       h3 Mach mit!
@@ -77,15 +77,24 @@
                         span.input-group-addon.input-sm
                           i.fa.fa-lock.fa-fw
                         input#password-flyout.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
-                      a.pull-right.small(href="./login") Passwort vergessen?
+                      a.pull-right.small(href="/login") Passwort vergessen?
                     .checkbox.margin-bottom-3
                       label.input-sm
                         input(name="remember", type="checkbox", value="true")
                         |  Angemeldet bleiben
                     input.btn.btn-success.btn-sm(type="submit" value="Los gehts!")
-                    a.btn.btn-info.btn-sm.margin-left-6(href="./register") Registrieren
+                    a.btn.btn-info.btn-sm.margin-left-6(href="/register") Registrieren
               else
                 p.col-xs-12.padding-top-6 Hi 
                   strong= user.username
-                p.col-xs-12
-                  a.btn.btn-info(href='./logout') Jetzt abmelden
+                ul.list-unstyled.padding-left-12.padding-right-12
+                  li
+                    a(href="/user/profile") Profil
+                  li
+                    a(href="/user/dashboard") Dashboard
+                  li
+                    a(href="/user/inbox") Nachrichten
+                  li
+                    a(href="/user/settings") Einstellungen
+                  li
+                    a(href='/logout') Abmelden

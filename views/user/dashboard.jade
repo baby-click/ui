@@ -1,15 +1,15 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
   head
-    include include/metatags
-    include include/styles
+    include /include/metatags
+    include /include/styles
   body
-    | include include/userheader
+    include /include/userheader
     main.margin-top-51(role="main")
       .container
         .row.display-flex-sm
           .col-xs-12.col-sm-4.col-md-3.display-flex-sm
-            include usersidebar
+            include /include/usersidebar
           .col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
             header.col-xs-12.padding-bottom-15.padding-right-sm-0
               h2.page-header Übersicht
@@ -23,21 +23,21 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
                   .panel-body
                     form.form.form-vertical(role="form")
                       .form-group
-                        label(for="") Titel
-                        input.form-control(type="text", name="", placeholder="")
+                        label(for="title") Titel
+                        input.form-control(type="text", name="title", placeholder="Gut erhaltene Jeans in Größe 58")
                       .form-group
-                        label(for="") Beschreibung
-                        textarea.form-control(name="", rows="5", placeholder="")
+                        label(for="description") Beschreibung
+                        textarea.form-control(name="description", rows="5", placeholder="")
                       .form-group
                         .row
                           .col-xs-12.col-sm-6.padding-bottom-15.padding-bottom-sm-0
-                            label(for="") Kategorie
+                            label(for="category") Kategorie
                             select.form-control(name="")
-                              | include "categorylist"
+                              include /include/categorylist
                           .col-xs-12.col-sm-6
-                            label(for="") Marke
+                            label(for="brand") Marke
                             select.form-control
-                              | include "brandlist"
+                              include /include/brandlist
                       .text-right
                         button.btn.btn-success(type="submit")
                           | Speichern
@@ -95,4 +95,4 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
                         td Meine neue Aufgabe
                         td
                           span.badge.bg-success To-Do
-    | include include/userfooter
+    include /include/userfooter

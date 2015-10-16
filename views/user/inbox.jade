@@ -1,15 +1,15 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
   head
-    include include/metatags
-    include include/styles
+    include /include/metatags
+    include /include/styles
   body
-    include include/userheader
+    include /include/userheader
     main.margin-top-51(role="main")
       .container
         .row.display-flex-sm
           .col-xs-12.col-sm-4.col-md-3.display-flex-sm
-            include usersidebar
+            include /include/usersidebar
           .col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
             .col-xs-12.padding-right-0.padding-left-0.padding-right-sm-12.padding-left-sm-12
               ul.nav.nav-tabs.margin-top-24
@@ -171,4 +171,4 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
                   .list-group
                     .list-group-item
                       span.text-center tbd.
-    include include/userfooter
+    include /include/userfooter

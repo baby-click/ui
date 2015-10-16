@@ -1,15 +1,15 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
   head
-    include include/metatags
-    include include/styles
+    include /include/metatags
+    include /include/styles
   body
-    include include/userheader
+    include /include/userheader
     main.margin-top-51(role="main")
       .container
         .row.display-flex-sm
           .col-xs-12.col-sm-4.col-md-3.display-flex-sm
-            include usersidebar
+            include /include/usersidebar
           .col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
             header.col-xs-12.padding-bottom-15.padding-right-sm-0
               h2.page-header Einstellungen
@@ -22,46 +22,35 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Vorname:
                     .col-xs-12.col-sm-8
-                      input.form-control(type="text", value="Jane")
+                      input.form-control(type="text", name="firstname", placeholder="Jane")
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Nachname:
                     .col-xs-12.col-sm-8
-                      input.form-control(type="text", value="Bishop")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label Firma:
-                    .col-xs-12.col-sm-8
-                      input.form-control(type="text", value="")
+                      input.form-control(type="text", name="surname", placeholder="Bishop")
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Email:
                     .col-xs-12.col-sm-8
-                      input.form-control(type="text", value="janesemail@gmail.com")
+                      input.form-control(type="email", name="email", placeholder="janesemail@gmail.com")
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Zeitzone:
                     .col-xs-12.col-sm-8
                       .ui-select
                         select#user_time_zone.form-control
-                          option(value="Hawaii") (GMT-10:00) Hawaii
-                          option(value="Alaska") (GMT-09:00) Alaska
-                          option(value="Pacific Time (US & Canada)") (GMT-08:00) Pacific Time (US &#38; Canada)
-                          option(value="Arizona") (GMT-07:00) Arizona
-                          option(value="Mountain Time (US & Canada)") (GMT-07:00) Mountain Time (US &#38; Canada)
-                          option(value="Central Time (US & Canada)", selected="selected") (GMT-06:00) Central Time (US &#38; Canada)
-                          option(value="Eastern Time (US & Canada)") (GMT-05:00) Eastern Time (US &#38; Canada)
-                          option(value="Indiana (East)") (GMT-05:00) Indiana (East)
+                          include /include/timezonelist
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Username:
                     .col-xs-12.col-sm-8
-                      input.form-control(type="text", value="janeuser")
+                      input.form-control(type="text", name="username", placeholder="username")
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Passwort:
                     .col-xs-12.col-sm-8
-                      input.form-control(type="password", value="11111122333")
+                      input.form-control(type="password", name="password", placeholder="●●●●●")
                   .form-group
                     label.col-xs-12.col-sm-4.control-label Passwort wiederholen:
                     .col-xs-12.col-sm-8
-                      input.form-control(type="password", value="11111122333")
+                      input.form-control(type="password", name="passwordconfirm", placeholder="●●●●●")
                   .form-group
                     .col-xs-12.text-right
-                      input.btn.btn-success(type="button", value="Speichern")
+                      input.btn.btn-success(type="submit", value="Speichern")
                       input.btn.btn-danger(type="reset", value="Zurücksetzen")
-    include include/userfooter
+    include /include/userfooter

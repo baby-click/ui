@@ -49,6 +49,8 @@ app.use(methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.locals.basedir = path.join(__dirname, 'views');
+
 // passport config
 var Account = require('./models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
@@ -61,7 +63,7 @@ mongoose.connect('mongodb://localhost/babyclick');
 app.use('/', auth);
 app.use('/', routes);
 app.use('/', landing);
-app.use('/users', users);
+app.use('/user', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
