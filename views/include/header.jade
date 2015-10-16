@@ -59,42 +59,4 @@
             a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
               | Mein Konto 
               strong.caret
-            .login.dropdown-menu
-              if !user
-                form(accept-charset="utf-8", role="form" action="/login", method="post")
-                  fieldset.col-xs-12.padding-top-9.padding-bottom-9
-                    .form-group
-                      h3 Mach mit!
-                    .form-group
-                      label.sr-only(for="username-flyout") E-Mail
-                      .input-group
-                        span.input-group-addon.input-sm
-                          i.fa.fa-user.fa-fw
-                        input#username-flyout.form-control.input-sm(type="text", name="username", placeholder="mail@domain.com")
-                    .form-group
-                      label.sr-only(for="password-flyout") Passwort
-                      .input-group.margin-bottom-3
-                        span.input-group-addon.input-sm
-                          i.fa.fa-lock.fa-fw
-                        input#password-flyout.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
-                      a.pull-right.small(href="/login") Passwort vergessen?
-                    .checkbox.margin-bottom-3
-                      label.input-sm
-                        input(name="remember", type="checkbox", value="true")
-                        |  Angemeldet bleiben
-                    input.btn.btn-success.btn-sm(type="submit" value="Los gehts!")
-                    a.btn.btn-info.btn-sm.margin-left-6(href="/register") Registrieren
-              else
-                p.col-xs-12.padding-top-6 Hi 
-                  strong= user.username
-                ul.list-unstyled.padding-left-12.padding-right-12
-                  li
-                    a(href="/user/profile") Profil
-                  li
-                    a(href="/user/dashboard") Dashboard
-                  li
-                    a(href="/user/inbox") Nachrichten
-                  li
-                    a(href="/user/settings") Einstellungen
-                  li
-                    a(href='/logout') Abmelden
+            include /include/loginlayer

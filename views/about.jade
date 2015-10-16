@@ -1,10 +1,10 @@
 doctype
 html(prefix='og: http://ogp.me/ns#', lang='de')
   head
-    include include/metatags
-    include include/styles
+    include /include/metatags
+    include /include/styles
   block body
-    include include/header
+    include /include/header
     main.margin-top-sm-51.bg-texture-main(role='main')
       .container
         .col-xs-12.padding-top-15.padding-top-sm-36.padding-bottom-12.padding-bottom-sm-36.text-center
@@ -21,22 +21,22 @@ html(prefix='og: http://ogp.me/ns#', lang='de')
           .col-xs-12.col-sm-6.col-md-4
             .row.margin-top-12.margin-bottom-12
               figure.col-xs-12
-                img.img-responsive(src='./img/loader.gif', data-src='./img/stockphoto/800x532_Dollarphotoclub_48299538.jpg', alt='')
+                img.img-responsive(src='/img/loader.gif', data-src='/img/stockphoto/800x532_Dollarphotoclub_48299538.jpg', alt='')
             h3.margin-bottom-6.text-action Mehr Zeit füreinander
             p
               | Wir zeigen Ihnen Produkte passend zu Ihren Bedürfnissen. Durch unseren intelligenten Filter kommen Sie in wenigen klicks zu Ihrem Ergebnis. Wir suchen für Sie und zeigen Ihnen nur die Produkte, die Sie benötigen.
           .col-xs-12.col-sm-6.col-md-4
             .row.margin-top-12.margin-bottom-12
               figure.col-xs-12
-                img.img-responsive(src='./img/loader.gif', data-src='./img/stockphoto/800x532_Dollarphotoclub_43504142.jpg', alt='')
+                img.img-responsive(src='/img/loader.gif', data-src='/img/stockphoto/800x532_Dollarphotoclub_43504142.jpg', alt='')
             h3.margin-bottom-6.text-action Kein schleppen mehr
             p
               | Wer schleppt schon gerne schwere Kartons voll mit Windeln oder Babywasser nach Hause? Unsere Partner senden Ihnen Ihr Paket bequem zu Ihnen nach Hause. Schluss mit schleppen.
           .col-xs-12.col-sm-6.col-md-4
             .row.margin-top-12.margin-bottom-12
               figure.col-xs-12
-                img.img-responsive(src='./img/loader.gif', data-src='./img/stockphoto/800x532_Dollarphotoclub_79684560.jpg', alt='')
+                img.img-responsive(src='/img/loader.gif', data-src='/img/stockphoto/800x532_Dollarphotoclub_79684560.jpg', alt='')
             h3.margin-bottom-6.text-action Kauf Dich glücklich
             p
               | Wir wollen Ihre Glückshormone zum tanzen bringen, denn glückliche Eltern übertragen dieses tolle Gefühl unmittelbar auf ihr Kind. Ein guter Einkauf erfreut nicht nur die Eltern sondern auch das Kind.
-    include include/footer
+    include /include/footer
