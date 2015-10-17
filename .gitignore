@@ -1,8 +1,7 @@
 *~
 app
-vendor
-laravel
 src/css
+public/uploads
 stockphoto
 node_modules
 .sass-cache

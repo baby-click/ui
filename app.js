@@ -19,6 +19,7 @@ var passportHttp = require('passport-http');
 var auth = require('./routes/auth');
 var routes = require('./routes/index');
 var landing = require('./routes/landing');
+var personal = require('./routes/personal');
 var users = require('./routes/users');
 
 var app = express();
@@ -52,10 +53,10 @@ app.use(passport.session());
 app.locals.basedir = path.join(__dirname, 'views');
 
 // passport config
-var Account = require('./models/account');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+var account = require('./models/account');
+passport.use(new LocalStrategy(account.authenticate()));
+passport.serializeUser(account.serializeUser());
+passport.deserializeUser(account.deserializeUser());
 
 // mongoose
 mongoose.connect('mongodb://localhost/babyclick');
@@ -63,6 +64,7 @@ mongoose.connect('mongodb://localhost/babyclick');
 app.use('/', auth);
 app.use('/', routes);
 app.use('/', landing);
+app.use('/personal', personal);
 app.use('/user', users);
 
 // catch 404 and forward to error handler

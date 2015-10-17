@@ -5,7 +5,8 @@
   "homepage": "http://beta.baby-click.de/",
   "main": "gruntfile.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "stop": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
     "jquery": "^2.1.4",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.10",
+    "multer": "^1.0.6",
     "passport": "^0.3.0",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
