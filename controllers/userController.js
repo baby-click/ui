@@ -16,7 +16,9 @@ module.exports = {
 					message: 'Error getting user.'
 				});
 			}
-			return res.json(users);
+			return res.render('help', {
+				users: users
+			});
 		});
 	},
 
