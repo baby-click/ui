@@ -15,8 +15,9 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
               h2.page-header Einstellungen
             .row.margin-bottom-15.margin-bottom-sm-24
               .col-xs-12.col-sm-6.col-md-4
-                form(enctype="multipart/form-data", action="/images/", method="post")
+                form(enctype="multipart/form-data", action="/image/", method="post")
                   label(for="avatar") Anderes Photo hochladen
+                  input(type="hidden", name="owner", value="#{user.username}")
                   input.text-center.center-block.well.well-sm(type="file", name="avatar")
                   input.btn.btn-success(type="submit", value="Hochladen")
               .col-xs-12.col-sm-6.col-md-8

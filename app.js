@@ -16,11 +16,12 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var passportHttp = require('passport-http');
 
-var auth = require('./routes/auth');
-var routes = require('./routes/index');
-var landing = require('./routes/landing');
-var personal = require('./routes/personal');
-var users = require('./routes/users');
+var authRoute = require('./routes/auth');
+var pageRoute = require('./routes/pages');
+var userRoute = require('./routes/users');
+var imageRoute = require('./routes/images');
+var landingRoute = require('./routes/landing');
+var personalRoute = require('./routes/personal');
 
 var app = express();
 
@@ -61,11 +62,12 @@ passport.deserializeUser(account.deserializeUser());
 // mongoose
 mongoose.connect('mongodb://localhost/babyclick');
 
-app.use('/', auth);
-app.use('/', routes);
-app.use('/', landing);
-app.use('/personal', personal);
-app.use('/user', users);
+app.use('/', authRoute);
+app.use('/', pageRoute);
+app.use('/', landingRoute);
+app.use('/user', userRoute);
+app.use('/image', imageRoute);
+app.use('/personal', personalRoute);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -16,7 +16,9 @@ module.exports = {
 					message: 'Error getting image.'
 				});
 			}
-			return res.json(images);
+			return res.render('help', {
+				images: images
+			});
 		});
 	},
 
@@ -50,8 +52,8 @@ module.exports = {
 			title: req.body.title,
 			description: req.body.description,
 			likes: req.body.likes,
-			path: req.body.path,
-			owner: req.body.owner,
+			path: req.file.filename,
+			owner: req.user._id,
 			created: req.body.created,
 			modified: req.body.modified
 		});
@@ -63,10 +65,7 @@ module.exports = {
 					error: err
 				});
 			}
-			return res.json({
-				message: 'saved',
-				_id: image._id
-			});
+			return res.status(204).end();
 		});
 	},
 
