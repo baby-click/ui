@@ -138,74 +138,7 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
                 h5.margin-bottom-9
                   a.show(href="/detail") Großes Jumbo Windelpaket
                 p.lead.text-action.margin-bottom-0 EUR 19.50
-        .margin-bottom-15
-          .well
-            .row
-              .col-xs-12.text-right
-                a.btn.btn-success(data-toggle="modal", data-target="#modalCompose")
-                  i.fa.fa-comments
-                  | Erfahrung teilen
-            hr
-            .row
-              .col-xs-12.padding-bottom-6
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star-o
-                span.text-action.fa.fa-star-o
-                |  
-                strong Helmut
-                span.pull-right.small vor 2 Tagen
-              .col-xs-12
-                p
-                  | Wir haben den Kinderwagen seit 5 Monaten in Gebrauch und ich kann ihn nur weiterempfehlen. Selbst im Winter mit viel Schnee kommt man gut vorwärts da er große Reifen hat. Das umstecken vom babysafe und der babyliege ist kinderleicht. Mit der guten federung kann man problemslos auf Feldwege oder wiesenwege laufen. Kurzum ich bin total begeistert und würde den Wagen immer wieder kaufen!
-            hr
-            .row
-              .col-xs-12.padding-bottom-6
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                |  
-                strong Sarah
-                span.pull-right.small 12. September 2014
-              .col-xs-12
-                p I"ve alredy ordered another one!
-            hr
-            .row
-              .col-xs-12.padding-bottom-6
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star
-                span.text-action.fa.fa-star-o
-                span.text-action.fa.fa-star-o
-                |  
-                strong Claudia
-                span.pull-right.small 30. Juni 2014
-              .col-xs-12
-                p
-                  | I"ve seen some better than this, but not at this price. I definitely recommend this item.
-        include include/socialmediabar
-    #modalCompose.modal
-      .modal-dialog
-        .modal-content
-          .modal-header
-            button.close(type="button", data-dismiss="modal", aria-hidden="true") &#215;
-            h4.modal-title Erfahrung teilen
-          .modal-body
-            form.form-horizontal(role="form")
-              .form-group
-                label.col-sm-2.padding-top-6(for="commenttitle") Titel:
-                .col-sm-10
-                  input#commenttitle.form-control(type="text", name="commenttitle", placeholder="Kurze Beschreibung")
-              .form-group
-                label.col-sm-12(for="commentdescription") Nachricht
-                .col-sm-12
-                  textarea#commentdescription.form-control(rows="8", name="commentdescription")
-          .modal-footer
-            button.btn.btn-warning.pull-left(type="button", data-dismiss="modal") Zurücksetzen
-            button.btn.btn-success(type="button")
-              | Speichern
-              i.fa.fa-arrow-circle-right.fa-lg.padding-left-3
+        include /include/comments
+        include /include/socialmediabar
+        include /include/commentsmodal
     include /include/footer
