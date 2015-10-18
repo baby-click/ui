@@ -12,4 +12,4 @@ html(prefix='og: http://ogp.me/ns#', lang='de')
          if images
            each val in images
              p.padding-12
-               img(src="uploads/#{val.path}", alt="")
+               img.img-responsive(src="/uploads/#{val.path}", alt="")
