@@ -1,57 +1,57 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
-  head
-    include /include/metatags
-    include /include/styles
-  body
-    include /include/userheader
-    main.margin-top-51(role="main")
-      .container
-        .row.display-flex-sm
-          .col-xs-12.col-sm-4.col-md-3.display-flex-sm
-            include /include/usersidebar
-          .col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
-            header.col-xs-12.padding-bottom-15.padding-right-sm-0
-              h2.page-header Einstellungen
-            .row.margin-bottom-15.margin-bottom-sm-24
-              .col-xs-12.col-sm-6.col-md-4
-                form(enctype="multipart/form-data", action="/image/", method="post")
-                  label(for="avatar") Anderes Photo hochladen
-                  input(type="hidden", name="owner", value="#{user.username}")
-                  input.text-center.center-block.well.well-sm(type="file", name="avatar")
-                  input.btn.btn-success(type="submit", value="Hochladen")
-              .col-xs-12.col-sm-6.col-md-8
-                form.form-horizontal(role ="form", action="/user/", method="post")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="displayname") Name:
-                    .col-xs-12.col-sm-8
-                      input#displayname.form-control(type="text", name="displayname", value="#{user.displayname}", placeholder="Dein Name")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="username") Username:
-                    .col-xs-12.col-sm-8
-                      input#username.form-control(type="text", name="username", value="#{user.username}", placeholder="username")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="email") Email:
-                    .col-xs-12.col-sm-8
-                      input#email.form-control(type="email", name="email", value="#{user.email}", placeholder="Deine E-Mail Adresse")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="timezone") Zeitzone:
-                    .col-xs-12.col-sm-8
-                      select#timezone.form-control(name="timezone")
-                        include /include/timezonelist
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="hometown") Hometown:
-                    .col-xs-12.col-sm-8
-                      input#hometown.form-control(type="text", name="hometown", value="#{user.hometown}", placeholder="In welcher Stadt bist Du geboren?")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="website") Website:
-                    .col-xs-12.col-sm-8
-                      input#website.form-control(type="url", name="website", value="#{user.website}", placeholder="Deine Webiste oder Facebookseite")
-                  .form-group
-                    label.col-xs-12.col-sm-4.control-label(for="location") Location:
-                    .col-xs-12.col-sm-8
-                      input#location.form-control(type="text", name="location", value="#{user.location}", placeholder="Wo gehst Du gerne hin?")
-                  .form-group
-                    .col-xs-12.text-right
-                      input.btn.btn-success(type="submit", value="Speichern")
-    include /include/userfooter
+	head
+		include /include/metatags
+		include /include/styles
+	body
+		include /include/userheader
+		main.margin-top-51(role="main")
+			.container
+				.row.display-flex-sm
+					.col-xs-12.col-sm-4.col-md-3.display-flex-sm
+						include /include/usersidebar
+					.col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
+						header.col-xs-12.padding-bottom-15.padding-right-sm-0
+							h2.page-header Einstellungen
+						.row.margin-bottom-15.margin-bottom-sm-24
+							.col-xs-12.col-sm-6.col-md-4
+								form(enctype="multipart/form-data", action="/image/", method="post")
+									label(for="avatar") Anderes Photo hochladen
+									input(type="hidden", name="owner", value="#{user.username}")
+									input.text-center.center-block.well.well-sm(type="file", name="avatar")
+									input.btn.btn-success(type="submit", value="Hochladen")
+							.col-xs-12.col-sm-6.col-md-8
+								form.form-horizontal(role="form", action="/user/", method="post")
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="displayname") Name:
+										.col-xs-12.col-sm-8
+											input#displayname.form-control(type="text", name="displayname", value="#{user.displayname}", placeholder="Dein Name")
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="username") Username:
+										.col-xs-12.col-sm-8
+											input#username.form-control(type="text", name="username", value="#{user.username}", placeholder="username")
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="email") Email:
+										.col-xs-12.col-sm-8
+											input#email.form-control(type="email", name="email", value="#{user.email}", placeholder="Deine E-Mail Adresse")
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="timezone") Zeitzone:
+										.col-xs-12.col-sm-8
+											select#timezone.form-control(name="timezone")
+												include /include/timezonelist
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="hometown") Hometown:
+										.col-xs-12.col-sm-8
+											input#hometown.form-control(type="text", name="hometown", value="#{user.hometown}", placeholder="In welcher Stadt bist Du geboren?")
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="website") Website:
+										.col-xs-12.col-sm-8
+											input#website.form-control(type="url", name="website", value="#{user.website}", placeholder="Deine Webiste oder Facebookseite")
+									.form-group
+										label.col-xs-12.col-sm-4.control-label(for="location") Location:
+										.col-xs-12.col-sm-8
+											input#location.form-control(type="text", name="location", value="#{user.location}", placeholder="Wo gehst Du gerne hin?")
+									.form-group
+										.col-xs-12.text-right
+											input.btn.btn-success(type="submit", value="Speichern")
+		include /include/userfooter

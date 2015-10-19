@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/productController.js');
+var controller = require('../controllers/brandController.js');
 
 /*
  * GET

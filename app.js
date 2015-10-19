@@ -20,6 +20,7 @@ var authRoute = require('./routes/auth');
 var pageRoute = require('./routes/pages');
 var userRoute = require('./routes/users');
 var imageRoute = require('./routes/images');
+var brandRoute = require('./routes/brands');
 var landingRoute = require('./routes/landing');
 var personalRoute = require('./routes/personal');
 
@@ -67,6 +68,7 @@ app.use('/', pageRoute);
 app.use('/', landingRoute);
 app.use('/user', userRoute);
 app.use('/image', imageRoute);
+app.use('/brand', brandRoute);
 app.use('/personal', personalRoute);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,30 @@
+doctype
+html(prefix='og: http://ogp.me/ns#', lang='de')
+	head
+		include /include/metatags
+		include /include/styles
+	body.padding-top-24
+		.container
+			.well
+				h1.margin-bottom-24 Neue Firma hinzufügen
+				form(role="form", action="/brand/", method="post", charset="utf-8")
+					.form-group
+						label.control-label.requiredField(for="name") Firmenname 
+							span.asterisk-field.text-action *
+						input#brandname.form-control(type="text", name="name", placeholder="Firmenname", required)
+					.form-group
+						label.control-label.requiredField(for="url") Website 
+							span.asterisk-field.text-action *
+						input#url.form-control(type="url", name="url", placeholder="http://domain.com", required)
+					.form-group
+						label.control-label(for="tags") Tags
+						input#tags.form-control(type="text", name="tags", placeholder="baby, mother, pregnant")
+						span.help-block Vier bis sechs Tags kommasepariert eintragen
+					.form-group
+						.checkbox
+							label.checkbox
+								input(type="checkbox", name="partner", value="Partner")
+								| Partner
+						span.help-block Diesen Hacken nur setzen wenn dieses Unternehmen mit uns eine Partnerschaft hat
+					.form-group
+						input.btn.btn-success(type="submit", value="Speichern")
