@@ -6,10 +6,7 @@ var model = require('../models/brandModel.js');
  * @description :: Server-side logic for managing brands.
  */
 module.exports = {
-  /**
-   * brandController.list()
-   */
-  list: function(req, res) {
+  listJson: function(req, res) {
     model.find(function(err, brands) {
       if (err) {
         return res.json(500, {
@@ -17,6 +14,19 @@ module.exports = {
         });
       }
       return res.json(brands);
+    });
+  },
+
+  listRender: function(req, res) {
+    model.find(function(err, brands) {
+      if (err) {
+        return res.json(500, {
+          message: 'Error getting brand.'
+        });
+      }
+      return res.render('admin/list', {
+        brands: brands
+      });
     });
   },
 
@@ -124,7 +134,7 @@ module.exports = {
           message: 'Error getting brand.'
         });
       }
-      return res.json(brand);
+      return res.redirect('back');
     });
   }
 };

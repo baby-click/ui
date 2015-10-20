@@ -6,7 +6,7 @@ var controller = require('../controllers/brandController.js');
  * GET
  */
 router.get('/', function(req, res) {
-  controller.list(req, res);
+  controller.listRender(req, res);
 });
 
 /*

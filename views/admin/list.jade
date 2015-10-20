@@ -1,0 +1,34 @@
+doctype
+html(prefix='og: http://ogp.me/ns#', lang='de')
+	head
+		include /include/metatags
+		include /include/styles
+body.padding-top-24
+	.container
+		.well
+			if brands
+				.table-responsive
+					table.table.table-bordred.table-striped
+						thead
+							th
+								input#checkall(type="checkbox")
+							th Markenname
+							th Website
+							th Tags
+							th Edit
+							th Delete
+						tbody
+							each val in brands
+								tr
+									td
+										input.checkthis(type="checkbox")
+									td= val.name
+									td
+										a(href="#{val.url}", target="_blank")= val.url
+									td= val.tags
+									td
+										form(role="form", action="/brand/", method="post")
+											input.btn.btn-info.btn-xs(type="submit", value="E")
+									td
+										form(role="form", action="/brand/#{val.id}?_method=DELETE", method="post")
+											input.btn.btn-danger.btn-xs(type="submit" value="D")

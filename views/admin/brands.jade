@@ -6,12 +6,12 @@ html(prefix='og: http://ogp.me/ns#', lang='de')
 	body.padding-top-24
 		.container
 			.well
-				h1.margin-bottom-24 Neue Firma hinzufügen
+				h1.margin-bottom-24 Neue Marke hinzufügen
 				form(role="form", action="/brand/", method="post", charset="utf-8")
 					.form-group
-						label.control-label.requiredField(for="name") Firmenname 
+						label.control-label.requiredField(for="name") Markenname 
 							span.asterisk-field.text-action *
-						input#brandname.form-control(type="text", name="name", placeholder="Firmenname", required)
+						input#brandname.form-control(type="text", name="name", placeholder="Markenname", required)
 					.form-group
 						label.control-label.requiredField(for="url") Website 
 							span.asterisk-field.text-action *
