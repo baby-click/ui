@@ -1,40 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/userController.js');
+var userController = require('../controllers/userController.js');
 
-/*
- * GET
- */
 router.get('/', function(req, res) {
-  controller.list(req, res);
+  userController.list(req, res);
 });
 
-/*
- * GET
- */
-router.get('/:id', function(req, res) {
-  controller.show(req, res);
-});
-
-/*
- * POST
- */
 router.post('/', function(req, res) {
-  controller.create(req, res);
+  userController.create(req, res);
 });
 
-/*
- * PUT
- */
+router.get('/:id', function(req, res) {
+  userController.show(req, res);
+});
+
 router.put('/:id', function(req, res) {
-  controller.update(req, res);
+  userController.update(req, res);
 });
 
-/*
- * DELETE
- */
 router.delete('/:id', function(req, res) {
-  controller.remove(req, res);
+  userController.remove(req, res);
 });
 
 module.exports = router;

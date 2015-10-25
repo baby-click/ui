@@ -1,43 +1,113 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function(passport, app) {
+  app.get('/register', function(req, res) {
+    res.render('register', {});
+  });
 
-var passport = require('passport');
-var account = require('../models/account');
+  app.post('/register', passport.authenticate('local-signup', {
+    successRedirect: '/account',
+    failureRedirect: '/register'
+  }));
 
-router.get('/register', function(req, res) {
-  res.render('register', {});
-});
-
-router.post('/register', function(req, res) {
-  account.register(new account({
-    email: req.body.email,
-    username: req.body.username
-  }), req.body.password, function(err, account) {
-    if (err) {
-      return res.render('register', {
-        account: account
-      });
-    }
-
-    passport.authenticate('local')(req, res, function() {
-      res.redirect('/');
+  app.get('/login', function(req, res) {
+    req.logout();
+    res.render('login', {
+      user: req.user
     });
   });
-});
 
-router.get('/login', function(req, res) {
-  res.render('login', {
-    user: req.user
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect: '/account',
+    failureRedirect: '/login'
+  }));
+
+  app.get('/connect/local', ensureAuthenticated, function(req, res) {
+    res.render('local', {
+      user: req.user
+    });
   });
-});
 
-router.post('/login', passport.authenticate('local'), function(req, res) {
-  res.redirect('/');
-});
+  app.post('/connect/local', passport.authenticate('local-signup', {
+    successRedirect: '/account',
+    failureRedirect: '/connect/local'
+  }));
 
-router.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
+  app.get('/unlink/local', function(req, res) {
+    var user = req.user;
+    user.local.email = undefined;
+    user.local.password = undefined;
+    user.save(function(err) {
+      res.redirect('/account');
+    });
+  });
 
-module.exports = router;
+  app.get('/auth/twitter', passport.authenticate('twitter'));
+
+  app.get('/auth/twitter/callback', passport.authenticate('twitter', {
+    successRedirect: '/account',
+    failureRedirect: '/'
+  }));
+
+  app.get('/connect/twitter', passport.authorize('twitter', {
+    scope: 'email'
+  }));
+
+  app.get('/connect/twitter/callback', passport.authenticate('twitter', {
+    successRedirect: '/account',
+    failureRedirect: '/'
+  }));
+
+  app.get('/unlink/twitter', function(req, res) {
+    var user = req.user;
+    user.twitter.token = undefined;
+    user.save(function(err) {
+      res.redirect('/account');
+    });
+  });
+
+  app.get('/auth/google', passport.authenticate('google', {
+    scope: ['profile', 'email']
+  }));
+
+  app.get('/auth/google/callback', passport.authenticate('google', {
+    successRedirect: '/account',
+    failureRedirect: '/'
+  }));
+
+  app.get('/connect/google', passport.authorize('google', {
+    scope: ['profile', 'email']
+  }));
+
+  app.get('/connect/google/callback', passport.authenticate('google', {
+    successRedirect: '/account',
+    failureRedirect: '/'
+  }));
+
+  app.get('/unlink/google', function(req, res) {
+    var user = req.user;
+    user.google.token = undefined;
+    user.save(function(err) {
+      res.redirect('/account');
+    });
+  });
+
+  app.get('/auth/facebook', passport.authenticate('facebook', {
+    scope: 'email'
+  }));
+
+  app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+    successRedirect: '/account',
+    failureRedirect: '/'
+  }));
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+  });
+};
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}

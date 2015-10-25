@@ -8369,7 +8369,7 @@ a {
     box-shadow: 0 0 1px transparent;
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-property: transform; }
   .hvr-grow:hover,
   .hvr-grow:focus,
@@ -8403,7 +8403,7 @@ a {
   font-family: 'Cabin', sans-serif; }
 
 .bg-texture-main {
-  background-image: url(../img/canvas.png);
+  background-image: url("../img/canvas.png");
   background-position: center center;
   background-attachment: fixed;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
@@ -8414,7 +8414,7 @@ a {
   background-size: cover; }
 
 .bg-landing-img {
-  background-image: url(../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg);
+  background-image: url("../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg");
   background-position: center right;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8441,14 +8441,29 @@ a {
 .bg-overlay-light {
   background-color: rgba(0, 0, 0, 0.4); }
 
-.btn-love, .btn-love:active, .btn-love:focus, .btn-love:hover,
-.btn-bell, .btn-bell:active, .btn-bell:focus, .btn-bell:hover,
-.btn-comment, .btn-comment:active, .btn-comment:focus, .btn-comment:hover {
+.btn-love,
+.btn-love:active,
+.btn-love:focus,
+.btn-love:hover,
+.btn-bell,
+.btn-bell:active,
+.btn-bell:focus,
+.btn-bell:hover,
+.btn-comment,
+.btn-comment:active,
+.btn-comment:focus,
+.btn-comment:hover {
   border-color: transparent; }
 
-.btn-love, .btn-love[disabled], fieldset[disabled] .btn-love,
-.btn-bell, .btn-bell[disabled], fieldset[disabled] .btn-bell,
-.btn-comment, .btn-comment[disabled], fieldset[disabled] .btn-comment {
+.btn-love,
+.btn-love[disabled],
+fieldset[disabled] .btn-love,
+.btn-bell,
+.btn-bell[disabled],
+fieldset[disabled] .btn-bell,
+.btn-comment,
+.btn-comment[disabled],
+fieldset[disabled] .btn-comment {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -8467,17 +8482,21 @@ a {
   transition: content 0.25s ease-in-out;
   content: ""; }
 
-.btn-love.active i:before, .btn-love:active i:before,
-.btn-love:focus i:before, .btn-love:hover i:before {
+.btn-love.active i:before,
+.btn-love:active i:before,
+.btn-love:focus i:before,
+.btn-love:hover i:before {
   content: ""; }
 
-.btn-love.active, .btn-love:active {
+.btn-love.active,
+.btn-love:active {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #f801a1; }
 
-.btn-love:focus, .btn-love:hover {
+.btn-love:focus,
+.btn-love:hover {
   background-color: transparent;
   text-decoration: none;
   color: #f881a1; }
@@ -8490,17 +8509,21 @@ a {
   transition: content 0.25s ease-in-out;
   content: ""; }
 
-.btn-comment.active i:before, .btn-comment:active i:before,
-.btn-comment:focus i:before, .btn-comment:hover i:before {
+.btn-comment.active i:before,
+.btn-comment:active i:before,
+.btn-comment:focus i:before,
+.btn-comment:hover i:before {
   content: ""; }
 
-.btn-comment.active, .btn-comment:active {
+.btn-comment.active,
+.btn-comment:active {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #3fa3e0; }
 
-.btn-comment:focus, .btn-comment:hover {
+.btn-comment:focus,
+.btn-comment:hover {
   background-color: transparent;
   text-decoration: none;
   color: #6bb8e7; }
@@ -8513,17 +8536,21 @@ a {
   transition: content 0.25s ease-in-out;
   content: ""; }
 
-.btn-bell.active i:before, .btn-bell:active i:before,
-.btn-bell:focus i:before, .btn-bell:hover i:before {
+.btn-bell.active i:before,
+.btn-bell:active i:before,
+.btn-bell:focus i:before,
+.btn-bell:hover i:before {
   content: ""; }
 
-.btn-bell.active, .btn-bell:active {
+.btn-bell.active,
+.btn-bell:active {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #3da3b6; }
 
-.btn-bell:focus, .btn-bell:hover {
+.btn-bell:focus,
+.btn-bell:hover {
   background-color: transparent;
   text-decoration: none;
   color: #3792a3; }
@@ -8539,3 +8566,11 @@ a {
 .not-fullscreen {
   min-height: 50%;
   overflow: hidden; }
+
+.hyphen {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }

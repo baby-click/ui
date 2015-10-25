@@ -18,39 +18,22 @@ var upload = multer({
   storage: storage
 })
 
-/*
- * GET
- */
 router.get('/', function(req, res) {
   controller.list(req, res);
 });
 
-/*
- * GET
- */
 router.get('/:id', function(req, res) {
   controller.show(req, res);
 });
 
-/*
- * POST
- */
 router.post('/', upload.single('avatar'), function(req, res) {
   controller.create(req, res);
-  //console.log(req.body);
-  //console.log(req.file);
 });
 
-/*
- * PUT
- */
 router.put('/:id', function(req, res) {
   controller.update(req, res);
 });
 
-/*
- * DELETE
- */
 router.delete('/:id', function(req, res) {
   controller.remove(req, res);
 });

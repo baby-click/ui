@@ -18,222 +18,219 @@
 @import 'src/sass/custom/offcanvas';
 @import 'src/sass/custom/position';
 @import 'src/sass/custom/border';
-
-
 @media (min-width: $screen-sm-min) {
-	.hvr-grow {
-		vertical-align: middle;
-		transform: translateZ(0);
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-		backface-visibility: hidden;
-		-moz-osx-font-smoothing: grayscale;
-		transition-duration: .3s;
-		transition-property: transform;
-	}
-
-	.hvr-grow:hover,
-	.hvr-grow:focus,
-	.hvr-grow:active {
-		transform: scale(1.1);
-	}
+  .hvr-grow {
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  .hvr-grow:hover,
+  .hvr-grow:focus,
+  .hvr-grow:active {
+    transform: scale(1.1);
+  }
 }
-
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-	.line-clamp-sm-2 {
-		overflow: hidden;
-		display: -webkit-box;
-		text-overflow: -o-ellipsis-lastline;
-		-webkit-box-orient: vertical;
-		text-overflow: ellipsis;
-		-webkit-line-clamp: 2;
-	}
+  .line-clamp-sm-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: -o-ellipsis-lastline;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+  }
 }
-
-
 .list-style-upper-roman {
-	list-style-type: upper-roman;
+  list-style-type: upper-roman;
 }
-
-::selection {
-	background-color: #f881a1;
-	color: #fff;
+ ::selection {
+  background-color: #f881a1;
+  color: #fff;
 }
-
-::-moz-selection {
-	background-color: #f881a1;
-	color: #fff;
+ ::-moz-selection {
+  background-color: #f881a1;
+  color: #fff;
 }
-
 .text-handwriting {
-	font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive;
 }
-
 .text-headline {
-	font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
-
 .bg-texture-main {
-    background-image: url(../img/canvas.png);
-
-    background-position: center center;
-    background-attachment: fixed;
-
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
-    -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale")';
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-image: url("../img/canvas.png");
+  background-position: center center;
+  background-attachment: fixed;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
+  -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale")';
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-
 .bg-landing-img {
-    background-image: url(../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg);
-    background-position: center right;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-image: url("../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg");
+  background-position: center right;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-
 .btn {
-	border: 0;
-	border-radius: 0;
-	padding: 6px 12px 8px;
+  border: 0;
+  border-radius: 0;
+  padding: 6px 12px 8px;
 }
-
 .btn.btn-primary {
-	border-bottom: 2px solid $brand-info;
-	-webkit-box-shadow: inset 0 -2px $brand-info;
-	box-shadow: inset 0 -2px $brand-info;
+  border-bottom: 2px solid $brand-info;
+  -webkit-box-shadow: inset 0 -2px $brand-info;
+  box-shadow: inset 0 -2px $brand-info;
 }
-
 .full-width {
-	width: 100%;
+  width: 100%;
 }
-
 .bg-overlay-dark {
-	background-color: rgba(248, 129, 161, .8);
-	color: #fff;
+  background-color: rgba(248, 129, 161, .8);
+  color: #fff;
 }
-
 .bg-overlay-light {
-	background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, .4);
 }
-
-.btn-love, .btn-love:active, .btn-love:focus, .btn-love:hover,
-.btn-bell, .btn-bell:active, .btn-bell:focus, .btn-bell:hover,
-.btn-comment, .btn-comment:active, .btn-comment:focus, .btn-comment:hover {
-	border-color: transparent;
+.btn-love,
+.btn-love:active,
+.btn-love:focus,
+.btn-love:hover,
+.btn-bell,
+.btn-bell:active,
+.btn-bell:focus,
+.btn-bell:hover,
+.btn-comment,
+.btn-comment:active,
+.btn-comment:focus,
+.btn-comment:hover {
+  border-color: transparent;
 }
-
-.btn-love, .btn-love[disabled], fieldset[disabled] .btn-love,
-.btn-bell, .btn-bell[disabled], fieldset[disabled] .btn-bell,
-.btn-comment, .btn-comment[disabled], fieldset[disabled] .btn-comment {
-	background-color: transparent;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	
-	-webkit-transition: color 0.25s ease-in-out;
-	-moz-transition: color 0.25s ease-in-out;
-	-ms-transition: color 0.25s ease-in-out;
-	-o-transition: color 0.25s ease-in-out;
-	transition: color 0.25s ease-in-out;
-	color: $gray;
+.btn-love,
+.btn-love[disabled],
+fieldset[disabled] .btn-love,
+.btn-bell,
+.btn-bell[disabled],
+fieldset[disabled] .btn-bell,
+.btn-comment,
+.btn-comment[disabled],
+fieldset[disabled] .btn-comment {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  color: $gray;
 }
-
 .btn-love i:before {
-	-webkit-transition: content 0.25s ease-in-out;
-	-moz-transition: content 0.25s ease-in-out;
-	-ms-transition: content 0.25s ease-in-out;
-	-o-transition: content 0.25s ease-in-out;
-	transition: content 0.25s ease-in-out;
-	content: $fa-var-heart-o;
+  -webkit-transition: content 0.25s ease-in-out;
+  -moz-transition: content 0.25s ease-in-out;
+  -ms-transition: content 0.25s ease-in-out;
+  -o-transition: content 0.25s ease-in-out;
+  transition: content 0.25s ease-in-out;
+  content: $fa-var-heart-o;
 }
-
-.btn-love.active i:before, .btn-love:active i:before,
-.btn-love:focus i:before, .btn-love:hover i:before {
-	content: $fa-var-heart;
+.btn-love.active i:before,
+.btn-love:active i:before,
+.btn-love:focus i:before,
+.btn-love:hover i:before {
+  content: $fa-var-heart;
 }
-
-.btn-love.active, .btn-love:active {
-	background-color: transparent;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color: #f801a1;
+.btn-love.active,
+.btn-love:active {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #f801a1;
 }
-
-.btn-love:focus, .btn-love:hover {
-	background-color: transparent;
-	text-decoration: none;
-	color: #f881a1;
+.btn-love:focus,
+.btn-love:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: #f881a1;
 }
-
 .btn-comment i:before {
-	-webkit-transition: content 0.25s ease-in-out;
-	-moz-transition: content 0.25s ease-in-out;
-	-ms-transition: content 0.25s ease-in-out;
-	-o-transition: content 0.25s ease-in-out;
-	transition: content 0.25s ease-in-out;
-	content: $fa-var-comment-o;
+  -webkit-transition: content 0.25s ease-in-out;
+  -moz-transition: content 0.25s ease-in-out;
+  -ms-transition: content 0.25s ease-in-out;
+  -o-transition: content 0.25s ease-in-out;
+  transition: content 0.25s ease-in-out;
+  content: $fa-var-comment-o;
 }
-
-.btn-comment.active i:before, .btn-comment:active i:before,
-.btn-comment:focus i:before, .btn-comment:hover i:before {
-	content: $fa-var-comment;
+.btn-comment.active i:before,
+.btn-comment:active i:before,
+.btn-comment:focus i:before,
+.btn-comment:hover i:before {
+  content: $fa-var-comment;
 }
-
-.btn-comment.active, .btn-comment:active {
-	background-color: transparent;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color: #3fa3e0;
+.btn-comment.active,
+.btn-comment:active {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #3fa3e0;
 }
-
-.btn-comment:focus, .btn-comment:hover {
-	background-color: transparent;
-	text-decoration: none;
-	color: #6bb8e7;
+.btn-comment:focus,
+.btn-comment:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: #6bb8e7;
 }
-
 .btn-bell i:before {
-	-webkit-transition: content 0.25s ease-in-out;
-	-moz-transition: content 0.25s ease-in-out;
-	-ms-transition: content 0.25s ease-in-out;
-	-o-transition: content 0.25s ease-in-out;
-	transition: content 0.25s ease-in-out;
-	content: $fa-var-bell-o;
+  -webkit-transition: content 0.25s ease-in-out;
+  -moz-transition: content 0.25s ease-in-out;
+  -ms-transition: content 0.25s ease-in-out;
+  -o-transition: content 0.25s ease-in-out;
+  transition: content 0.25s ease-in-out;
+  content: $fa-var-bell-o;
 }
-
-.btn-bell.active i:before, .btn-bell:active i:before,
-.btn-bell:focus i:before, .btn-bell:hover i:before {
-	content: $fa-var-bell;
+.btn-bell.active i:before,
+.btn-bell:active i:before,
+.btn-bell:focus i:before,
+.btn-bell:hover i:before {
+  content: $fa-var-bell;
 }
-
-.btn-bell.active, .btn-bell:active {
-	background-color: transparent;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color: #3da3b6;
+.btn-bell.active,
+.btn-bell:active {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #3da3b6;
 }
-
-.btn-bell:focus, .btn-bell:hover {
-	background-color: transparent;
-	text-decoration: none;
-	color: #3792a3;
+.btn-bell:focus,
+.btn-bell:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: #3792a3;
 }
-
 .fullscreen,
 .not-fullscreen {
-	width: 100%;
+  width: 100%;
 }
-
 .fullscreen {
-	min-height: 100%;
-	overflow: hidden;
+  min-height: 100%;
+  overflow: hidden;
 }
-
 .not-fullscreen {
-	min-height: 50%;
-	overflow: hidden;
+  min-height: 50%;
+  overflow: hidden;
+}
+.hyphen {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }

@@ -2,33 +2,32 @@ var fs = require('fs');
 var path = require('path');
 var http = require('http');
 var logger = require('morgan');
-var favicon = require('serve-favicon');
-
 var express = require('express');
+var passport = require('passport');
+var mongoose = require('mongoose');
+var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
+var compression = require('compression');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var methodOverride = require('method-override');
 
-var mongoose = require('mongoose');
+// controllers
+var userController = require('./controllers/userController.js');
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var passportHttp = require('passport-http');
+// models
+var UserModel = require('./models/userModel');
 
-var authRoute = require('./routes/auth');
-var pageRoute = require('./routes/pages');
-var userRoute = require('./routes/users');
-var imageRoute = require('./routes/images');
-var brandRoute = require('./routes/brands');
-var landingRoute = require('./routes/landing');
-var personalRoute = require('./routes/personal');
+// config
+var passportConfig = require('./config/passport')(UserModel, passport);
 
+// initialize
 var app = express();
 
-// main config
+// port config
 app.set('port', process.env.PORT || 1337);
 
+// view config
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('view options', {
@@ -36,7 +35,10 @@ app.set('view options', {
   pretty: true
 });
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(compression());
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: 86400000
+}));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(expressSession({
@@ -54,22 +56,17 @@ app.use(passport.session());
 
 app.locals.basedir = path.join(__dirname, 'views');
 
-// passport config
-var account = require('./models/account');
-passport.use(new LocalStrategy(account.authenticate()));
-passport.serializeUser(account.serializeUser());
-passport.deserializeUser(account.deserializeUser());
-
 // mongoose
 mongoose.connect('mongodb://localhost/babyclick');
 
-app.use('/', authRoute);
-app.use('/', pageRoute);
-app.use('/', landingRoute);
-app.use('/user', userRoute);
-app.use('/image', imageRoute);
-app.use('/brand', brandRoute);
-app.use('/personal', personalRoute);
+// routes
+require('./routes/auth')(passport, app);
+app.use('/', require('./routes/pages'));
+app.use('/', require('./routes/landing'));
+app.use('/user', require('./routes/users'));
+app.use('/brand', require('./routes/brands'));
+app.use('/image', require('./routes/images'));
+app.use('/account', require('./routes/account'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,85 @@
+doctype
+html(prefix="og: http://ogp.me/ns#", lang="de")
+	head
+		include /include/metatags
+		include /include/styles
+	body
+		include /include/userheader
+		main.margin-top-51(role="main")
+			.container
+				.row.display-flex-sm
+					.col-xs-12.col-sm-4.col-md-3.display-flex-sm
+						include /include/usersidebar
+					.col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
+						header.col-xs-12.padding-bottom-15.padding-right-sm-0
+							h2.page-header Netzwerke
+						.col-xs-12.padding-right-sm-0
+							.row.margin-sm-0
+								section.padding-12.bg-white.margin-bottom-24
+									if user.local.email
+										h4.margin-bottom-12 Lokale Daten
+										p.margin-bottom-0
+											strong id 
+										p #{user._id}
+										p.margin-bottom-0
+											strong email
+										p #{user.local.email}
+									else
+										a.text-action(href="/connect/local")
+											i.fa.fa-signup.padding-right-3
+											| Lokal anmelden
+								section.padding-12.bg-white.margin-bottom-24
+									if user.twitter.token
+										h4.margin-bottom-12 Twitter Daten
+										p.margin-bottom-0
+											strong id
+										p #{user.twitter.id}
+										.margin-bottom-0
+											strong displayname
+										p #{user.twitter.displayName}
+										p.margin-bottom-0
+											strong username
+										p #{user.twitter.username}
+										if user.local.email || user.google.token
+											a.text-action(href="/unlink/twitter")
+												i.fa.fa-twitter.padding-right-3
+												| Twitter Verbindung trennen
+									else
+										a.text-action(href="/connect/twitter")
+											i.fa.fa-twitter.padding-right-3
+											| Twitter verbinden
+								section.padding-12.bg-white.margin-bottom-24
+									if user.google.token
+										h4.margin-bottom-12 Google Daten
+										p.margin-bottom-0
+											strong id
+										p #{user.google.id}
+										p.margin-bottom-0
+											strong email
+										p #{user.google.email}
+										p.margin-bottom-0
+											strong name
+										p #{user.google.name}
+										if user.local.email || user.twitter.token
+											a.text-action(href="/unlink/google")
+												i.fa.fa-google.padding-right-3
+												| Google Verbindung trennen
+									else
+										a.text-action(href="/connect/google")
+											i.fa.fa-google.padding-right-3
+											| Google verbinden
+								section.padding-12.bg-white.margin-bottom-24
+									h4.margin-bottom-12 Facebook Daten
+									p.margin-bottom-0
+										strong id
+									p #{user.facebook.id}
+									p.margin-bottom-0
+										strong token
+									p.hyphen #{user.facebook.token}
+									p.margin-bottom-0
+										strong email
+									p #{user.facebook.email}
+									p.margin-bottom-0
+										strong name
+									p #{user.facebook.name}
+		include /include/userfooter
