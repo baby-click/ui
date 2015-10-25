@@ -7,9 +7,8 @@ var userSchema = new Schema({
   verified: Boolean,
   username: {
     type: String,
-    index: {
-      unique: true
-    }
+    require: true,
+    unique: true
   },
   displayname: String,
   profession: String,
@@ -69,6 +68,5 @@ userSchema.methods.validLocalPassword = function(password) {
 userSchema.methods.validPassword = function(password) {
   return this.encryptPassword(password) === this.hashedPassword;
 };
-
 
 module.exports = mongoose.model('user', userSchema);

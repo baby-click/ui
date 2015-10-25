@@ -1,25 +1,16 @@
 var fs = require('fs');
 var path = require('path');
 var http = require('http');
-var logger = require('morgan');
 var express = require('express');
+var morgan = require('morgan');
 var passport = require('passport');
 var mongoose = require('mongoose');
-var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var methodOverride = require('method-override');
-
-// controllers
-var userController = require('./controllers/userController.js');
-
-// models
-var UserModel = require('./models/userModel');
-
-// config
-var passportConfig = require('./config/passport')(UserModel, passport);
+var favicon = require('serve-favicon');
 
 // initialize
 var app = express();
@@ -28,18 +19,19 @@ var app = express();
 app.set('port', process.env.PORT || 1337);
 
 // view config
+app.use(morgan('dev'));
+app.use(compression());
+app.locals.basedir = path.join(__dirname, 'views');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: 86400000
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('view options', {
   layout: false,
   pretty: true
 });
-app.use(logger('dev'));
-app.use(compression());
-app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: 86400000
-}));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(expressSession({
   saveUninitialized: false,
@@ -48,16 +40,21 @@ app.use(expressSession({
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 }));
-app.use(methodOverride('_method'));
+app.use(methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.locals.basedir = path.join(__dirname, 'views');
 
 // mongoose
 mongoose.connect('mongodb://localhost/babyclick');
+
+// models
+var UserModel = require('./models/userModel');
+
+// config
+require('./config/passport')(UserModel, passport);
 
 // routes
 require('./routes/auth')(passport, app);

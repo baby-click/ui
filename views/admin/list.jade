@@ -27,8 +27,9 @@ body.padding-top-24
 										a(href="#{val.url}", target="_blank")= val.url
 									td= val.tags
 									td
-										form(role="form", action="/brand/", method="post")
-											input.btn.btn-info.btn-xs(type="submit", value="E")
+										form(role="form", action="/brand/#{val.id}?_method=PUT", method="post")
+										input.btn.btn-info.btn-xs(type="hidden", name="name", value="test name")
+										input.btn.btn-info.btn-xs(type="submit", value="E")
 									td
 										form(role="form", action="/brand/#{val.id}?_method=DELETE", method="post")
 											input.btn.btn-danger.btn-xs(type="submit" value="D")

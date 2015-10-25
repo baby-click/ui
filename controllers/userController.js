@@ -56,7 +56,7 @@ module.exports = {
 
     user.save(function(err, user) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving user',
           error: err
         });
@@ -70,8 +70,10 @@ module.exports = {
 
   update: function(req, res) {
     var id = req.params.id;
-    model.findOne({
+    model.findOneAndUpdate({
       _id: id
+    }, {
+      upsert: true
     }, function(err, user) {
       if (err) {
         return res.json(500, {
@@ -106,10 +108,13 @@ module.exports = {
         }
         if (!user) {
           return res.json(404, {
-            message: 'No such user'
+            message: 'No such fucking user'
           });
         }
-        return res.json(user);
+        return res.json({
+          message: 'User updated',
+          user: user
+        });
       });
     });
   },

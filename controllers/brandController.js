@@ -52,9 +52,6 @@ module.exports = {
     });
   },
 
-  /**
-   * brandController.create()
-   */
   create: function(req, res) {
     var brand = new model({
       name: req.body.name,
@@ -80,14 +77,14 @@ module.exports = {
     });
   },
 
-  /**
-   * brandController.update()
-   */
   update: function(req, res) {
     var id = req.params.id;
     model.findOne({
       _id: id
     }, function(err, brand) {
+      console.log('err: ' + err);
+      console.log('brand: ' + brand);
+
       if (err) {
         return res.json(500, {
           message: 'Error saving brand',
@@ -107,6 +104,7 @@ module.exports = {
       brand.created = req.body.created ? req.body.created : brand.created;
       brand.modified = req.body.modified ? req.body.modified : brand.modified;
       brand.partner = req.body.partner ? req.body.partner : brand.partner;
+
       brand.save(function(err, brand) {
         if (err) {
           return res.json(500, {
@@ -118,14 +116,11 @@ module.exports = {
             message: 'No such brand'
           });
         }
-        return res.json(brand);
+        return res.redirect('/');
       });
     });
   },
 
-  /**
-   * brandController.remove()
-   */
   remove: function(req, res) {
     var id = req.params.id;
     model.findByIdAndRemove(id, function(err, brand) {
@@ -134,7 +129,7 @@ module.exports = {
           message: 'Error getting brand.'
         });
       }
-      return res.redirect('back');
+      return res.redirect('/');
     });
   }
 };

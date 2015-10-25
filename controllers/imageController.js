@@ -74,8 +74,10 @@ module.exports = {
    */
   update: function(req, res) {
     var id = req.params.id;
-    model.findOne({
+    model.findOneAndUpdate({
       _id: id
+    }, {
+      upsert: true
     }, function(err, image) {
       if (err) {
         return res.json(500, {

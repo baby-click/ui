@@ -15,13 +15,13 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 							h2.page-header Einstellungen
 						.row.margin-bottom-15.margin-bottom-sm-24
 							.col-xs-12.col-sm-6.col-md-4
-								form(enctype="multipart/form-data", action="/image/", method="post")
+								form(enctype="multipart/form-data", action="/image/", method="POST")
 									label(for="avatar") Anderes Photo hochladen
 									input(type="hidden", name="owner", value="#{user.username}")
 									input.text-center.center-block.well.well-sm(type="file", name="avatar")
 									input.btn.btn-success(type="submit", value="Hochladen")
 							.col-xs-12.col-sm-6.col-md-8
-								form.form-horizontal(role="form", action="/user/#{user._id}?_method=UPDATE", method="post")
+								form.form-horizontal(role="form", action="/user/#{user._id}", onsubmit="babyclick.brand.update(this, this.action, event)")
 									.form-group
 										label.col-xs-12.col-sm-4.control-label(for="displayname") Name:
 										.col-xs-12.col-sm-8
@@ -53,5 +53,5 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 											input#location.form-control(type="text", name="location", value="#{typeof(user.location) !== 'undefined' ? user.location : ''}", placeholder="Wo gehst Du gerne hin?")
 									.form-group
 										.col-xs-12.text-right
-											input.btn.btn-success(type="submit", value="Speichern")
+											button.btn.btn-success(type="submit") Speichern
 		include /include/userfooter
