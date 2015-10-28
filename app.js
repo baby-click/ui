@@ -92,4 +92,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// pass user routes
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
 module.exports = app;

@@ -15,10 +15,37 @@ module.exports = function(passport, app) {
     });
   });
 
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/account',
-    failureRedirect: '/login'
-  }));
+  app.post('/login', function(req, next, done) {
+    passport.authenticate('local-login', {
+      successRedirect: '/account',
+      failureRedirect: '/login'
+    })(req, next, done);
+  });
+
+  app.post('/login-json', function(req, res, next) {
+    passport.authenticate('local-login', function(err, user) {
+      if (err) {
+        return next(err);
+      }
+
+      if (!user) {
+        return res.status(401).send({
+          success: false,
+          message: 'authentication failed'
+        });
+      }
+
+      req.login(user, function(err) {
+        if (err) {
+          return next(err);
+        }
+        return res.send({
+          success: true,
+          message: 'authentication succeeded'
+        });
+      });
+    })(req, res, next);
+  });
 
   app.get('/connect/local', ensureAuthenticated, function(req, res) {
     res.render('local', {

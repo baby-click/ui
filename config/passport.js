@@ -7,84 +7,85 @@ var authConfig = require('../config/auth');
 
 module.exports = function(UserModel, passport) {
   passport.serializeUser(function(user, done) {
-    done(null, user._id);
+    return done(null, user._id);
   });
 
   passport.deserializeUser(function(obj, done) {
     UserModel.findById(obj, function(err, user) {
       if (err) {
-        done(err)
+        return done(err)
       };
-      done(null, user);
+      return done(null, user);
     });
   });
 
   passport.use('local-login', new LocalStrategy({
-      usernameField: 'email',
-      passwordField: 'password',
-      passReqToCallback: true
-    },
-    function(req, email, password, done) {
-      process.nextTick(function() {
-        UserModel.findOne({
-          'local.email': email
-        }, function(err, user) {
-          if (err || !user) {
-            return done(err);
-          }
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+  }, function(req, email, password, done) {
+    process.nextTick(function() {
+      UserModel.findOne({
+        'local.email': email
+      }, function(err, user) {
+        if (err || !user) {
+          return done(err);
+        }
 
-          if (!user.validLocalPassword(password)) {
-            return done(err);
-          }
+        if (!user.validLocalPassword(password)) {
+          return done(err);
+        }
 
-          return done(null, user);
-        });
+        return done(null, user);
       });
-    }));
+    });
+  }));
 
   passport.use('local-signup', new LocalStrategy({
-      usernameField: 'email',
-      passwordField: 'password',
-      passReqToCallback: true
-    },
-    function(req, email, password, done) {
-      process.nextTick(function() {
-        UserModel.findOne({
-          'local.email': email
-        }, function(err, theUser) {
-          if (err) {
-            return done(err);
-          }
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+  }, function(req, email, password, done) {
+    process.nextTick(function() {
+      UserModel.findOne({
+        'local.email': email
+      }, function(err, user) {
+        if (err) {
+          return done(err);
+        }
 
-          if (theUser != null) {
-            return done(err);
-          }
+        if (user != null) {
+          return done(err);
+        }
 
-          if (req.user) {
-            var user = req.user;
-            user.local.email = req.body.email;
-            user.local.password = user.generateHash(password);
+        if (req.user) {
+          var user = req.user;
+          user.username = req.body.username;
+          user.local.email = req.body.email;
+          user.local.password = user.generateHash(req.body.password);
 
-            user.save(function(err) {
-              if (err) {
-                throw err;
-              }
-              return done(null, user);
-            });
-          } else {
-            var addUser = new UserModel();
-            addUser.local.email = email;
-            addUser.local.password = addUser.generateHash(password);
+          user.save(req, function(err) {
+            if (err) {
+              return done(err);
+            }
+            return done(null, user);
+          });
+        } else {
+          var addUser = new UserModel();
+          addUser.username = req.body.username;
+          addUser.local.email = req.body.email;
+          addUser.local.password = addUser.generateHash(req.body.password);
 
-            addUser.save(function(err) {
-              if (err)
-                throw err;
-              return done(null, addUser);
-            });
-          }
-        });
+          addUser.save(req, function(err) {
+            if (err) {
+              return done(err);
+            }
+            return done(null, addUser);
+          });
+        }
       });
-    }));
+    });
+  }));
 
   passport.use(new TwitterStrategy({
       consumerKey: authConfig.twitterAuth.consumerKey,
@@ -107,9 +108,10 @@ module.exports = function(UserModel, passport) {
                 user.twitter.username = profile.username;
                 user.twitter.displayName = profile.displayName;
 
-                user.save(function(err) {
-                  if (err)
-                    throw err;
+                user.save(req, function(err) {
+                  if (err) {
+                    return done(err);
+                  }
                   return done(null, user);
                 });
               }
@@ -117,15 +119,14 @@ module.exports = function(UserModel, passport) {
               return done(null, user);
             } else {
               var addUser = new UserModel();
-
               addUser.twitter.id = profile.id;
               addUser.twitter.token = accessToken;
               addUser.twitter.username = profile.username;
               addUser.twitter.displayName = profile.displayName;
 
-              addUser.save(function(err) {
+              addUser.save(req, function(err) {
                 if (err) {
-                  throw err;
+                  return done(err);
                 }
                 return done(null, addUser);
               });
@@ -133,15 +134,14 @@ module.exports = function(UserModel, passport) {
           });
         } else {
           var user = req.user;
-
           user.twitter.id = profile.id;
           user.twitter.token = accessToken;
           user.twitter.username = profile.username;
           user.twitter.displayName = profile.displayName;
 
-          user.save(function(err) {
+          user.save(req, function(err) {
             if (err) {
-              throw err;
+              return done(err);
             }
             return done(null, user);
           });
@@ -166,15 +166,15 @@ module.exports = function(UserModel, passport) {
           }
 
           if (user) {
-            // if there is a user id already but no token (user was linked at one point and then removed)
             if (!user.google.token) {
               user.google.token = accessToken;
               user.google.name = profile.displayName;
-              user.google.email = profile.emails[0].value; // pull the first email
+              user.google.email = profile.emails[0].value;
 
-              user.save(function(err) {
-                if (err)
-                  throw err;
+              user.save(req, function(err) {
+                if (err) {
+                  return done(err);
+                }
                 return done(null, user);
               });
             }
@@ -182,29 +182,30 @@ module.exports = function(UserModel, passport) {
             return done(null, user);
           } else {
             var addUser = new UserModel();
-
             addUser.google.id = profile.id;
             addUser.google.token = accessToken;
             addUser.google.name = profile.displayName;
-            addUser.google.email = profile.emails[0].value; // pull the first email
+            addUser.google.email = profile.emails[0].value;
 
-            addUser.save(function(err) {
-              if (err)
-                throw err;
+            addUser.save(req, function(err) {
+              if (err) {
+                return done(err);
+              }
               return done(null, addUser);
             });
           }
         });
       } else {
-        var user = req.user; // pull the user out of the session
+        var user = req.user;
         user.google.id = profile.id;
         user.google.token = accessToken;
         user.google.name = profile.displayName;
-        user.google.email = profile.emails[0].value; // pull the first email
+        user.google.email = profile.emails[0].value;
 
-        user.save(function(err) {
-          if (err)
-            throw err;
+        user.save(req, function(err) {
+          if (err) {
+            return done(err);
+          }
           return done(null, user);
         });
       }
@@ -214,36 +215,30 @@ module.exports = function(UserModel, passport) {
   passport.use(new FacebookStrategy({
     clientID: authConfig.facebookAuth.clientID,
     clientSecret: authConfig.facebookAuth.clientSecret,
-    callbackURL: authConfig.facebookAuth.callbackURL
-  }, function(token, refreshToken, profile, done) {
+    callbackURL: authConfig.facebookAuth.callbackURL,
+    passReqToCallback: true
+  }, function(req, token, refreshToken, profile, done) {
     process.nextTick(function() {
-      // find the user in the database based on their facebook id
       UserModel.findOne({
         'facebook.id': profile.id
       }, function(err, user) {
-        // if there is an error, stop everything and return that
-        // ie an error connecting to the database
         if (err) {
           return done(err);
         }
 
-        // if the user is found, then log them in
         if (user) {
-          return done(null, user); // user found, return that user
+          return done(null, user);
         } else {
-          // if there is no user found with that facebook id, create them
           var newUser = new UserModel();
-
           newUser.facebook.id = profile.id;
-          newUser.facebook.token = token; // we will save the token that facebook provides to the user
-          newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
-          newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+          newUser.facebook.token = token;
+          newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
+          newUser.facebook.email = profile.emails[0].value;
 
-          newUser.save(function(err) {
+          newUser.save(req, function(err) {
             if (err) {
-              throw err;
+              return done(err);
             }
-
             return done(null, newUser);
           });
         }
