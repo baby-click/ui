@@ -7,14 +7,14 @@ router.get('/', ensureAuthenticated, function(req, res) {
   });
 });
 
-router.get('/profile', ensureAuthenticated, function(req, res) {
-  res.render('account/profile', {
+router.get('/inbox', ensureAuthenticated, function(req, res) {
+  res.render('account/inbox', {
     user: req.user
   });
 });
 
-router.get('/inbox', ensureAuthenticated, function(req, res) {
-  res.render('account/inbox', {
+router.get('/profile', ensureAuthenticated, function(req, res) {
+  res.render('account/profile', {
     user: req.user
   });
 });
