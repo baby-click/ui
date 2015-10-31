@@ -60,8 +60,8 @@ module.exports = function(UserModel, passport) {
 
         if (req.user) {
           var user = req.user;
-          user.username = req.body.username;
-          user.local.email = req.body.email;
+          user.username = req.body.username || undefined;
+          user.local.email = req.body.email || undefined;
           user.local.password = user.generateHash(req.body.password);
 
           user.save(req, function(err) {
@@ -72,8 +72,8 @@ module.exports = function(UserModel, passport) {
           });
         } else {
           var addUser = new UserModel();
-          addUser.username = req.body.username;
-          addUser.local.email = req.body.email;
+          addUser.username = req.body.username || undefined;
+          addUser.local.email = req.body.email || undefined;
           addUser.local.password = addUser.generateHash(req.body.password);
 
           addUser.save(req, function(err) {
