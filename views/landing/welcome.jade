@@ -2,13 +2,13 @@ doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
   head
     include ../include/metatags
-    include ../include/styles"
+    include ../include/styles
   body.bg-contrast.text-landing
     main.display-flex.justify-content-center.fullscreen.bg-landing-img.pos-relative
       header.pos-absolute.full-width
         ul.list-unstyled.list-inline.margin-top-9.margin-right-15.margin-bottom-15.margin-left-15
           li.margin-top-9
-            img(src="./img/logo.svg", width="50", height="auto", alt="baby-click.de Logo")
+            img(src="./img/logo.svg", width="50", height="50", alt="baby-click.de Logo")
           li.pull-right
             a.btn.btn-lg.btn-link.text-white(target="_blank", href="https://www.facebook.com/babyclickDE")
               i.fa.fa-facebook
@@ -23,7 +23,7 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
             | informiert!
           p.padding-left-9.padding-right-9.padding-bottom-9.text-white
             | babyclickDE ist ein gemeinschaftlicher Marktplatz für einzigartige Produkte rund ums Baby
-          form(role="form", method="POST", action="http://baby-click.us11.list-manage.com/subscribe/post?u=3abbb74e64db75f4fa014be0a&id=1fc79d3afd", name="mc-embedded-subscribe-form", target="_blank")
+          form(method="POST", action="http://baby-click.us11.list-manage.com/subscribe/post?u=3abbb74e64db75f4fa014be0a&id=1fc79d3afd", name="mc-embedded-subscribe-form", target="_blank")
             input(type="hidden", name="b_3abbb74e64db75f4fa014be0a_1fc79d3afd")
             .text-right.text-white.margin-bottom-3
               small Kein Spam, versprochen!
