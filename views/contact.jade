@@ -13,19 +13,19 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
               strong.h1.text-action.text-handwriting baby-click.de
             p.margin-bottom-0
               strong.h3.text-muted.text-headline Ein klick und alles im Blick
-        form.form-horizontal(role="form")
+        form.form-horizontal
           .form-group
             label.col-md-2(for="name") Name
             .col-md-10
-              input#name.form-control(type="text", placeholder="Name")
+              input#name.form-control(type="text", name="name", placeholder="Name")
           .form-group
-            label.col-md-2(for="email") Email
+            label.col-md-2(for="email-contact") Email
             .col-md-10
-              input#email.form-control(type="email", placeholder="Email")
+              input#email-contact.form-control(type="email", name="email", placeholder="Email")
           .form-group
-            label.col-md-2(for="message") Nachricht
+            label.col-md-2(for="message-contact") Nachricht
             .col-md-10
-              textarea#message.form-control(placeholder="Deine Nachricht")
+              textarea#message-contact.form-control(placeholder="Deine Nachricht")
           .form-group
             .col-md-12.text-right
               button.btn.btn-primary(type="submit") Senden

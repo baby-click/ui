@@ -1,4 +1,4 @@
-doctype html
+doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
 	head
 		include /include/metatags
@@ -15,17 +15,17 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 									.form-group
 										h3 Verbinden
 									.form-group
-										label.sr-only(for="email") Email
+										label.sr-only(for="email-local") Email
 										.input-group
 											span.input-group-addon.input-sm
 												i.fa.fa-user.fa-fw
-											input#email.form-control.input-sm(type="email", name="email", placeholder="name[at]domain.com")
+											input#email-local.form-control.input-sm(type="email", name="email", placeholder="name[at]domain.com")
 									.form-group
 										label.sr-only(for="password") Passwort
 										.input-group.margin-bottom-3
 											span.input-group-addon.input-sm
 												i.fa.fa-lock.fa-fw
-											input#password.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
+											input#password-local.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
 									input.btn.btn-success.btn-sm(type="submit", value="Speichern")
 							a(href='/account') Zurück zum profile
 		include /include/footer

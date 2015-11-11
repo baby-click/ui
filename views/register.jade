@@ -1,4 +1,4 @@
-doctype html
+doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
 	head
 		include /include/metatags
@@ -10,7 +10,7 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 				.row.margin-bottom-15.margin-bottom-sm-24
 					.col-xs-12.col-md-8.col-md-offset-2.padding-top-15.padding-top-sm-36
 						.row.bg-white.thumbnail.margin-0
-							form(action="/register", name="register", method="post", accept-charset="utf-8", role="form")
+							form(action="/register", name="register", method="post", accept-charset="utf-8")
 								fieldset.col-xs-12.padding-top-9.padding-bottom-12
 									.form-group
 										h2 Mach mit!
@@ -43,15 +43,15 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 											.input-group
 												span.input-group-addon
 													i.fa.fa-lock.fa-fw
-												input#password-signup.form-control(type="password", name="password", maxlength="64", placeholder="●●●●●", required)
+												input#password-signup.form-control(type="password", name="password", placeholder="●●●●●", required)
 										.col-xs-12.col-sm-6
 											.input-group
 												span.input-group-addon
 													i.fa.fa-lock.fa-fw
 												input#password-confirm-signup.form-control(type="password", name="password-confirm", placeholder="●●●●●", required)
 									.checkbox.margin-bottom-3
-										label.input-sm(for="registerAccept")
-											input(type="checkbox", name="registerAccept", value="true")
+										label.input-sm(for="register-accept")
+											input(id="register-accept", type="checkbox", name="register-accept", value="true")
 											| Ich akzeptiere 
 											a(href="/terms") Nutzungserklärung
 											|  und 

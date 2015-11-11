@@ -1,8 +1,6 @@
-doctype html
+doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
 	head
-		meta(charset="utf-8")
-		title baby-click.de - ein klick und alles im Blick
 		include /include/metatags
 		include /include/styles
 	body
@@ -17,17 +15,17 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 									.form-group
 										h3 Mach mit!
 									.form-group
-										label.sr-only(for="email") Email
+										label.sr-only(for="email-login") Email
 										.input-group
 											span.input-group-addon.input-sm
 												i.fa.fa-user.fa-fw
-											input#email.form-control.input-sm(type="email", name="email", placeholder="name[at]domain.com")
+											input#email-login.form-control.input-sm(type="email", name="email", placeholder="name[at]domain.com")
 									.form-group
-										label.sr-only(for="password") Passwort
+										label.sr-only(for="password-login") Passwort
 										.input-group.margin-bottom-3
 											span.input-group-addon.input-sm
 												i.fa.fa-lock.fa-fw
-											input#password.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
+											input#password-login.form-control.input-sm(type="password", name="password", placeholder="●●●●●")
 										a.pull-right.small(href="/login") Passwort vergessen?
 									.checkbox.margin-bottom-3
 										label.input-sm
