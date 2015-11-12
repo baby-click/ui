@@ -11,6 +11,7 @@ module.exports = function(passport, app) {
   app.get('/login', function(req, res) {
     req.logout();
     res.render('login', {
+      title: 'mytitle',
       user: req.user
     });
   });
@@ -49,6 +50,7 @@ module.exports = function(passport, app) {
 
   app.get('/connect/local', ensureAuthenticated, function(req, res) {
     res.render('local', {
+      title: 'mytitle',
       user: req.user
     });
   });
