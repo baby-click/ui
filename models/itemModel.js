@@ -3,62 +3,68 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
 var itemSchema = new Schema({
-  "title": [{
-    "lang": String,
-    "value": String
+  title: [{
+    lang: String,
+    value: String,
+    _id: false
   }],
-  "description": [{
-    "lang": String,
-    "value": String
+  description: [{
+    lang: String,
+    value: String,
+    _id: false
   }],
-  "category": String,
-  "brand": String,
-  "assets": {
-    "images": [{
-      "image": {
-        "title": [{
-          "lang": String,
-          "value": String
+  category: String,
+  brand: String,
+  assets: {
+    images: [{
+      image: {
+        title: [{
+          lang: String,
+          value: String,
+          _id: false
         }],
-        "height": String,
-        "width": String,
-        "path": String
+        height: String,
+        width: String,
+        path: String
       }
     }]
   },
-  "shipping": {
-    "dimensions": {
-      "height": String,
-      "length": String,
-      "width": String
+  shipping: {
+    dimensions: {
+      height: String,
+      length: String,
+      width: String
     },
-    "weight": String
+    weight: String
   },
-  "specification": [{
-    "title": [{
-      "lang": String,
-      "value": String
+  specification: [{
+    title: [{
+      lang: String,
+      value: String,
+      _id: false
     }],
-    "value": String
+    value: String
   }],
-  "attributes": [{
-    "title": [{
-      "lang": String,
-      "value": String
+  attributes: [{
+    title: [{
+      lang: String,
+      value: String,
+      _id: false
     }],
-    "value": String
+    value: String
   }],
-  "variants": {
-    "count": Number,
-    "attributes": [{
-      "dispType": String,
-      "name": [{
-        "lang": String,
-        "value": String
-      }]
+  variants: {
+    count: Number,
+    attributes: [{
+      dispType: String,
+      name: [{
+        lang: String,
+        value: String,
+        _id: false
+      }],
     }]
   },
-  "lastUpdated": Date
+  lastUpdated: Date
 });
 
 module.exports = mongoose.model('item', itemSchema);

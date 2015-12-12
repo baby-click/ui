@@ -2,44 +2,49 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var summarySchema = new Schema({
-  "title": [{
-    "lang": String,
-    "value": String
+  title: [{
+    lang: String,
+    value: String,
+    _id: false
   }],
-  "description": [{
-    "lang": String,
-    "value": String
+  description: [{
+    lang: String,
+    value: String,
+    _id: false
   }],
-  "department": String,
-  "category": String,
-  "image": [{
-    "title": [{
-      "lang": String,
-      "value": String
+  department: String,
+  category: String,
+  image: [{
+    title: [{
+      lang: String,
+      value: String,
+      _id: false
     }],
-    "height": String,
-    "width": String,
-    "path": String
+    height: String,
+    width: String,
+    path: String
   }],
-  "attributes": [{
-    "title": [{
-      "lang": String,
-      "value": String
+  attributes: [{
+    title: [{
+      lang: String,
+      value: String,
+      _id: false
     }],
-    "value": String
+    value: String
   }],
-  "variants": [{
-    "_id": String,
-    "image": [{
-      "title": [{
-        "lang": String,
-        "value": String
+  variants: [{
+    _id: String,
+    image: [{
+      title: [{
+        lang: String,
+        value: String,
+        _id: false
       }],
-      "height": String,
-      "width": String,
-      "path": String
+      height: String,
+      width: String,
+      path: String
     }],
-    "attributes": Array
+    attributes: Array
   }]
 });
 

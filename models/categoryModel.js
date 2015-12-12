@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ObjectId = Schema.Types.ObjectId;
 
-var imageSchema = new Schema({
+var categorySchema = new Schema({
   title: [{
     lang: String,
     value: String,
@@ -13,11 +12,8 @@ var imageSchema = new Schema({
     value: String,
     _id: false
   }],
-  owner: ObjectId,
-  likes: Number,
-  path: String,
   created: Date,
   modified: Date
 });
 
-module.exports = mongoose.model('image', imageSchema);
+module.exports = mongoose.model('category', categorySchema);

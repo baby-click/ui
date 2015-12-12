@@ -2,35 +2,37 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var variantSchema = new Schema({
-  "alternativeId": Array,
-  "itemId": String,
-  "title": [{
-    "lang": String,
-    "value": String
+  title: [{
+    lang: String,
+    value: String,
+    _id: false
   }],
-  "description": [{
-    "lang": String,
-    "value": String
+  description: [{
+    lang: String,
+    value: String,
+    _id: false
   }],
-  "assets": {
-    "images": [{
-      "image": {
-        "title": [{
-          "lang": String,
-          "value": String
+  assets: {
+    images: [{
+      image: {
+        title: [{
+          lang: String,
+          value: String,
+          _id: false
         }],
-        "height": String,
-        "width": String,
-        "path": String
+        height: String,
+        width: String,
+        path: String
       }
     }]
   },
-  "attributes": [{
-    "title": [{
-      "lang": String,
-      "value": String
+  attributes: [{
+    title: [{
+      lang: String,
+      value: String,
+      _id: false
     }],
-    "value": String
+    value: String
   }]
 });
 

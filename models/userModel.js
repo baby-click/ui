@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
 
 var UserSchema = new Schema({
   role: String,
@@ -21,6 +22,9 @@ var UserSchema = new Schema({
   hometown: String,
   website: String,
   birthday: Date,
+  avatar: {
+    path: String
+  },
   hashedPassword: String,
   salt: String,
   local: {
