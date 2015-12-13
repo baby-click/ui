@@ -9,7 +9,7 @@ module.exports = {
   list: function(req, res) {
     model.find(function(err, categorys) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting category.'
         });
       }
@@ -23,12 +23,12 @@ module.exports = {
       _id: id
     }, function(err, category) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting category.'
         });
       }
       if (!category) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such category'
         });
       }
@@ -54,7 +54,7 @@ module.exports = {
 
     category.save(function(err, category) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving category',
           error: err
         });
@@ -92,13 +92,13 @@ module.exports = {
       }
     }, function(err, category) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving category',
           error: err
         });
       }
       if (!category) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such category'
         });
       }
@@ -108,12 +108,12 @@ module.exports = {
 
       category.save(function(err, category) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting category.'
           });
         }
         if (!category) {
-          return res.json(404, {
+          return res.status(404).json({
             message: 'No such category'
           });
         }
@@ -129,13 +129,13 @@ module.exports = {
       _id: id
     }, function(err, category) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving category',
           error: err
         });
       }
       if (!category) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such category'
         });
       }
@@ -150,12 +150,12 @@ module.exports = {
 
       category.save(function(err, category) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting category.'
           });
         }
         if (!category) {
-          return res.json(404, {
+          return res.status(404).json({
             message: 'No such category'
           });
         }
@@ -168,7 +168,7 @@ module.exports = {
     var id = req.params.id;
     model.findByIdAndRemove(id, function(err, category) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting category.'
         });
       }

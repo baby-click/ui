@@ -12,7 +12,7 @@ module.exports = {
   list: function(req, res) {
     model.find(function(err, images) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting image.'
         });
       }
@@ -31,12 +31,12 @@ module.exports = {
       _id: id
     }, function(err, image) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting image.'
         });
       }
       if (!image) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such image'
         });
       }
@@ -60,7 +60,7 @@ module.exports = {
 
     image.save(function(err, image) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving image',
           error: err
         });
@@ -80,13 +80,13 @@ module.exports = {
       upsert: true
     }, function(err, image) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving image',
           error: err
         });
       }
       if (!image) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such image'
         });
       }
@@ -101,12 +101,12 @@ module.exports = {
 
       image.save(function(err, image) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting image.'
           });
         }
         if (!image) {
-          return res.json(404, {
+          return res.status(404).json({
             message: 'No such image'
           });
         }
@@ -122,7 +122,7 @@ module.exports = {
     var id = req.params.id;
     model.findByIdAndRemove(id, function(err, image) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting image.'
         });
       }

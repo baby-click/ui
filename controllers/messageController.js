@@ -12,7 +12,7 @@ module.exports = {
   list: function(req, res) {
     model.find(function(err, messages) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting message.'
         });
       }
@@ -29,7 +29,7 @@ module.exports = {
       _id: id
     }, function(err, message) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting message.'
         });
       }
@@ -56,7 +56,7 @@ module.exports = {
 
     message.save(function(err, message) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving message',
           error: err
         });
@@ -77,7 +77,7 @@ module.exports = {
       _id: id
     }, function(err, message) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving message',
           error: err
         });
@@ -96,7 +96,7 @@ module.exports = {
 
       message.save(function(err, message) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting message.'
           });
         }
@@ -117,7 +117,7 @@ module.exports = {
     var id = req.params.id;
     model.findByIdAndRemove(id, function(err, message) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting message.'
         });
       }

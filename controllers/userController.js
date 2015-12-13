@@ -99,6 +99,7 @@ module.exports = {
       user.website = req.body.website ? req.body.website : user.website;
       user.birthday = req.body.birthday ? req.body.birthday : user.birthday;
       user.profession = req.body.profession ? req.body.profession : user.profession;
+      user.avatar.path = req.body.avatar ? req.body.avatar : user.avatar.path;
 
       user.save(function(err, user) {
         if (err) {
@@ -108,11 +109,52 @@ module.exports = {
         }
         if (!user) {
           return res.json(404, {
-            message: 'No such fucking user'
+            message: 'No such user'
           });
         }
         return res.json({
           message: 'User updated',
+          user: user
+        });
+      });
+    });
+  },
+
+  updateAvatar: function(req, res) {
+    var id = req.params.id;
+
+    model.update({
+      _id: id
+    }, {
+      upsert: true
+    }, function(err, user) {
+      if (err) {
+        return res.json(500, {
+          message: 'Error saving user',
+          error: err
+        });
+      }
+      if (!user) {
+        return res.json(404, {
+          message: 'No such user'
+        });
+      }
+
+      user.avatar.path = req.body.avatar ? req.body.avatar : user.avatar.path;
+      console.log(user);
+      user.save(function(err, user) {
+        if (err) {
+          return res.json(500, {
+            message: 'Error getting user.'
+          });
+        }
+        if (!user) {
+          return res.json(404, {
+            message: 'No such user'
+          });
+        }
+        return res.json({
+          message: 'User avatar updated',
           user: user
         });
       });

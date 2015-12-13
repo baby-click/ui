@@ -9,7 +9,7 @@ module.exports = {
   listJson: function(req, res) {
     model.find(function(err, brands) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting brand.'
         });
       }
@@ -20,7 +20,7 @@ module.exports = {
   listRender: function(req, res) {
     model.find(function(err, brands) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting brand.'
         });
       }
@@ -39,12 +39,12 @@ module.exports = {
       _id: id
     }, function(err, brand) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting brand.'
         });
       }
       if (!brand) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such brand'
         });
       }
@@ -65,7 +65,7 @@ module.exports = {
 
     brand.save(function(err, brand) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving brand',
           error: err
         });
@@ -86,13 +86,13 @@ module.exports = {
       console.log('brand: ' + brand);
 
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving brand',
           error: err
         });
       }
       if (!brand) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such brand'
         });
       }
@@ -107,12 +107,12 @@ module.exports = {
 
       brand.save(function(err, brand) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting brand.'
           });
         }
         if (!brand) {
-          return res.json(404, {
+          return res.status(404).json({
             message: 'No such brand'
           });
         }
@@ -125,7 +125,7 @@ module.exports = {
     var id = req.params.id;
     model.findByIdAndRemove(id, function(err, brand) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting brand.'
         });
       }
