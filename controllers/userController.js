@@ -9,7 +9,7 @@ module.exports = {
   list: function(req, res) {
     model.find(function(err, users) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting user.'
         });
       }
@@ -25,12 +25,12 @@ module.exports = {
       _id: id
     }, function(err, user) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting user.'
         });
       }
       if (!user) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such user'
         });
       }
@@ -76,13 +76,13 @@ module.exports = {
       upsert: true
     }, function(err, user) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving user',
           error: err
         });
       }
       if (!user) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such user'
         });
       }
@@ -103,12 +103,12 @@ module.exports = {
 
       user.save(function(err, user) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting user.'
           });
         }
         if (!user) {
-          return res.json(404, {
+          return res.status(404).json({
             message: 'No such user'
           });
         }
@@ -129,13 +129,13 @@ module.exports = {
       upsert: true
     }, function(err, user) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error saving user',
           error: err
         });
       }
       if (!user) {
-        return res.json(404, {
+        return res.status(404).json({
           message: 'No such user'
         });
       }
@@ -144,12 +144,12 @@ module.exports = {
       console.log(user);
       user.save(function(err, user) {
         if (err) {
-          return res.json(500, {
+          return res.status(500).json({
             message: 'Error getting user.'
           });
         }
         if (!user) {
-          return res.json(404, {
+          return res.status(404).json({
             message: 'No such user'
           });
         }
@@ -165,7 +165,7 @@ module.exports = {
     var id = req.params.id;
     model.findByIdAndRemove(id, function(err, user) {
       if (err) {
-        return res.json(500, {
+        return res.status(500).json({
           message: 'Error getting user.'
         });
       }
