@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var http = require('http');
-var categoryController = require('../controllers/categoryController.js');
 
 router.get('/', ensureAuthenticated, function(req, res) {
   res.render('account/account', {

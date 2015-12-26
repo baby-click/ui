@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var http = require('http');
 
 router.get('/', function(req, res) {
   res.render('index', {
@@ -51,9 +52,32 @@ router.get('/privacy', function(req, res) {
 });
 
 router.get('/result', function(req, res) {
-  res.render('result', {
-    title: 'mytitle',
-    user: req.user
+  var options = {
+    host: 'localhost',
+    port: 3000,
+    path: '/category',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  http.get(options, function(http_res) {
+    var data = '';
+
+    // this event fires many times, each time collecting another piece of the response
+    http_res.on('data', function(chunk) {
+      data += chunk;
+    });
+
+    // this event fires *one* time, after all the `data` events/chunks have been gathered
+    http_res.on('end', function() {
+      res.render('result', {
+        title: 'mytitle',
+        user: req.user,
+        category: JSON.parse(data)
+      });
+    });
   });
 });
 
