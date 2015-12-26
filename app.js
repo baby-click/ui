@@ -64,6 +64,7 @@ app.use('/user', require('./routes/users'));
 app.use('/brand', require('./routes/brands'));
 app.use('/image', require('./routes/images'));
 app.use('/account', require('./routes/account'));
+app.use('/category', require('./routes/categories'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

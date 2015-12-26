@@ -84,4 +84,11 @@ router.get('/admin/brands', function(req, res) {
   });
 });
 
+router.get('/admin/categories', function(req, res) {
+  res.render('admin/categories', {
+    title: 'mytitle',
+    user: req.user
+  });
+});
+
 module.exports = router;

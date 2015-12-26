@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var http = require('http');
+var categoryController = require('../controllers/categoryController.js');
 
 router.get('/', ensureAuthenticated, function(req, res) {
   res.render('account/account', {
@@ -23,9 +25,32 @@ router.get('/profile', ensureAuthenticated, function(req, res) {
 });
 
 router.get('/dashboard', ensureAuthenticated, function(req, res) {
-  res.render('account/dashboard', {
-    title: 'mytitle',
-    user: req.user
+  var options = {
+    host: 'localhost',
+    port: 3000,
+    path: '/category',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  http.get(options, function(http_res) {
+    var data = '';
+
+    // this event fires many times, each time collecting another piece of the response
+    http_res.on('data', function(chunk) {
+      data += chunk;
+    });
+
+    // this event fires *one* time, after all the `data` events/chunks have been gathered
+    http_res.on('end', function() {
+      res.render('account/dashboard', {
+        title: 'mytitle',
+        user: req.user,
+        category: JSON.parse(data)
+      });
+    });
   });
 });
 
@@ -40,6 +65,7 @@ function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
+
   res.redirect('/login');
 }
 

@@ -1,98 +1,98 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
-  head
-    include /include/metatags
-    include /include/styles
-  body
-    include /include/userheader
-    main.margin-top-51
-      .container
-        .row.display-flex-sm
-          .col-xs-12.col-sm-4.col-md-3.display-flex-sm
-            include /include/usersidebar
-          .col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
-            header.col-xs-12.padding-bottom-15.padding-right-sm-0
-              h2.page-header Übersicht
-            .col-xs-12.padding-right-sm-0
-              .row.margin-sm-0
-                section.panel.panel-default
-                  .panel-heading
-                    .panel-title
-                      i.fa.fa-wrench.pull-right
-                      h4 Anzeige aufgeben
-                  .panel-body
-                    form.form.form-vertical(role="form")
-                      .form-group
-                        label(for="title") Titel
-                        input.form-control(type="text", name="title", placeholder="Gut erhaltene Jeans in Größe 58")
-                      .form-group
-                        label(for="description") Beschreibung
-                        textarea.form-control(name="description", rows="5", placeholder="")
-                      .form-group
-                        .row
-                          .col-xs-12.col-sm-6.padding-bottom-15.padding-bottom-sm-0
-                            label(for="category") Kategorie
-                            select.form-control(name="")
-                              include /include/categorylist
-                          .col-xs-12.col-sm-6
-                            label(for="brand") Marke
-                            select.form-control
-                              include /include/brandlist
-                      .text-right
-                        button.btn.btn-success(type="submit")
-                          | Speichern
-                          i.fa.fa-arrow-circle-right.fa-lg.padding-left-3
-                section.panel
-                  .panel-body.panel-default
-                    | Meine Aufgaben
-                  table.table.table-hover
-                    tbody
-                      tr
-                        td
-                          small vor 5 Stunden
-                        td Kinderart Termin vereinbaren
-                        td
-                          span.badge.bg-warning Kontakt
-                      tr
-                        td
-                          small Gestern
-                        td Geburtstagskarte an Oma schreiben
-                        td
-                          span.badge.bg-success Fertig
-                      tr
-                        td
-                          small vor 3 Tagen
-                        td Kinderschuhe für Lars kaufen
-                        td
-                          span.badge.bg-success Fertig
-                      tr
-                        td
-                          small vor 3 Tagen
-                        td Haushaltseinkommen mit Bank absprechen
-                        td
-                          span.badge.bg-primary To-Do
-                      tr
-                        td
-                          small vor 3 Tagen
-                        td Meine neue Aufgabe
-                        td
-                          span.badge.bg-info Erinnerung
-                      tr
-                        td
-                          small vor 3 Tagen
-                        td Meine neue Aufgabe
-                        td
-                          span.badge.bg-primary To-Do
-                      tr
-                        td
-                          small Letzte Woche
-                        td Meine neue Aufgabe
-                        td
-                          span.badge.bg-primary To-Do
-                      tr
-                        td
-                          small Letzten Monat
-                        td Meine neue Aufgabe
-                        td
-                          span.badge.bg-success To-Do
-    include /include/userfooter
+	head
+		include /include/metatags
+		include /include/styles
+	body
+		include /include/userheader
+		main.margin-top-51
+			.container
+				.row.display-flex-sm
+					.col-xs-12.col-sm-4.col-md-3.display-flex-sm
+						include /include/usersidebar
+					.col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
+						header.col-xs-12.padding-bottom-15.padding-right-sm-0
+							h2.page-header Übersicht
+						.col-xs-12.padding-right-sm-0
+							.row.margin-sm-0
+								section.panel.panel-default
+									.panel-heading
+										.panel-title
+											i.fa.fa-wrench.pull-right
+											h4 Anzeige aufgeben
+									.panel-body
+										form.form.form-vertical(role="form")
+											.form-group
+												label(for="title") Titel
+												input.form-control(type="text", name="title", placeholder="Gut erhaltene Jeans in Größe 58")
+											.form-group
+												label(for="description") Beschreibung
+												textarea.form-control(name="description", rows="5", placeholder="")
+											.form-group
+												.row
+													.col-xs-12.col-sm-6.padding-bottom-15.padding-bottom-sm-0
+														label(for="category") Kategorie
+														select.form-control(name="")
+															include /include/categorylist
+													.col-xs-12.col-sm-6
+														label(for="brand") Marke
+														select.form-control
+															include /include/brandlist
+											.text-right
+												button.btn.btn-success(type="submit")
+													| Speichern
+													i.fa.fa-arrow-circle-right.fa-lg.padding-left-3
+								section.panel
+									.panel-body.panel-default
+										| Meine Aufgaben
+									table.table.table-hover
+										tbody
+											tr
+												td
+													small vor 5 Stunden
+												td Kinderart Termin vereinbaren
+												td
+													span.badge.bg-warning Kontakt
+											tr
+												td
+													small Gestern
+												td Geburtstagskarte an Oma schreiben
+												td
+													span.badge.bg-success Fertig
+											tr
+												td
+													small vor 3 Tagen
+												td Kinderschuhe für Lars kaufen
+												td
+													span.badge.bg-success Fertig
+											tr
+												td
+													small vor 3 Tagen
+												td Haushaltseinkommen mit Bank absprechen
+												td
+													span.badge.bg-primary To-Do
+											tr
+												td
+													small vor 3 Tagen
+												td Meine neue Aufgabe
+												td
+													span.badge.bg-info Erinnerung
+											tr
+												td
+													small vor 3 Tagen
+												td Meine neue Aufgabe
+												td
+													span.badge.bg-primary To-Do
+											tr
+												td
+													small Letzte Woche
+												td Meine neue Aufgabe
+												td
+													span.badge.bg-primary To-Do
+											tr
+												td
+													small Letzten Monat
+												td Meine neue Aufgabe
+												td
+													span.badge.bg-success To-Do
+		include /include/userfooter

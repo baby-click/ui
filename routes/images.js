@@ -12,11 +12,11 @@ var storage = multer.diskStorage({
       cb(null, raw.toString('hex') + Date.now() + '.' + mime.extension(file.mimetype));
     });
   }
-})
+});
 
 var upload = multer({
   storage: storage
-})
+});
 
 router.get('/', function(req, res) {
   controller.list(req, res);

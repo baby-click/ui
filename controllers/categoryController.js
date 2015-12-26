@@ -1,19 +1,28 @@
 var model = require('../models/categoryModel.js');
 
-/**
- * categoryController.js
- *
- * @description :: Server-side logic for managing categorys.
- */
 module.exports = {
-  list: function(req, res) {
-    model.find(function(err, categorys) {
+  listJson: function(req, res) {
+    model.find(function(err, categories) {
       if (err) {
         return res.status(500).json({
           message: 'Error getting category.'
         });
       }
-      return res.json(categorys);
+      return res.json(categories);
+    });
+  },
+
+  listUserCatergories: function(req, res) {
+    model.find(function(err, categories) {
+      if (err) {
+        return res.status(500).json({
+          message: 'Error getting category.'
+        });
+      }
+
+      return res.render('admin/list', {
+        categories: categories
+      });
     });
   },
 
@@ -66,7 +75,7 @@ module.exports = {
     });
   },
 
-  hans: function(req, res) {
+  update: function(req, res) {
     var id = req.params.id;
     var title = {
       lang: req.body.lang,
@@ -105,48 +114,6 @@ module.exports = {
 
       category.created = category.created;
       category.modified = Date.now();
-
-      category.save(function(err, category) {
-        if (err) {
-          return res.status(500).json({
-            message: 'Error getting category.'
-          });
-        }
-        if (!category) {
-          return res.status(404).json({
-            message: 'No such category'
-          });
-        }
-        return res.json(category);
-      });
-    });
-  },
-
-  update: function(req, res) {
-    var id = req.params.id;
-
-    model.findOne({
-      _id: id
-    }, function(err, category) {
-      if (err) {
-        return res.status(500).json({
-          message: 'Error saving category',
-          error: err
-        });
-      }
-      if (!category) {
-        return res.status(404).json({
-          message: 'No such category'
-        });
-      }
-
-      category.created = category.created;
-      category.modified = Date.now();
-
-      category.description.push({
-        lang: req.body.lang,
-        value: req.body.description
-      });
 
       category.save(function(err, category) {
         if (err) {

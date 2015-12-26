@@ -1,19 +1,4 @@
 option(value="") Keine Angabe
-option(value="") Umstandsmode
-option(value="") Babyshower
-option(value="") Erstausstattung
-option(value="") Babymöbel
-option(value="") Babykleidung
-option(value="") Babyspielzeug
-option(value="") Schlafparadies
-option(value="") Babynahrung
-option(value="") Babypflege
-option(value="", selected="") Kinderwagen
-option(value="") Unterwegs
-option(value="") Autositze
-option(value="") Sicherheit
-option(value="") Babybücher
-option(value="") Entspannung
-option(value="") Geschenke
-option(value="") Gutscheine
-option(value="") Sale
+if category
+	each val in category
+		option(value="#{val._id}") #{val.title[0].value}

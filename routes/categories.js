@@ -1,25 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/categoryController.js');
+var categoryController = require('../controllers/categoryController.js');
 
 router.get('/', function(req, res) {
-  controller.list(req, res);
+  categoryController.listJson(req, res);
 });
 
 router.get('/:id', function(req, res) {
-  controller.show(req, res);
+  categoryController.show(req, res);
 });
 
 router.post('/', function(req, res) {
-  controller.create(req, res);
+  categoryController.create(req, res);
 });
 
 router.put('/:id', function(req, res) {
-  controller.hans(req, res);
+  categoryController.update(req, res);
 });
 
 router.delete('/:id', function(req, res) {
-  controller.remove(req, res);
+  categoryController.remove(req, res);
 });
 
 module.exports = router;

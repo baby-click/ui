@@ -1,0 +1,25 @@
+doctype
+html(prefix='og: http://ogp.me/ns#', lang='de')
+	head
+		include ../include/metatags
+		include ../include/styles
+	body.padding-top-24
+		.container
+			.well
+				h1.margin-bottom-24 Neue Kategorie hinzufügen
+				form(role="form", action="/category/", method="post", charset="utf-8")
+					.form-group
+						label.control-label.requiredField(for="lang") Sprache 
+							span.asterisk-field.text-action *
+						select#lang.form-control(name="lang", required)
+							include ../include/countrylist
+					.form-group
+						label.control-label.requiredField(for="title") Kategoriename 
+							span.asterisk-field.text-action *
+						input#title.form-control(type="text", name="title", placeholder="Kategoriename", required)
+					.form-group
+						label.control-label.requiredField(for="description") Beschreibung 
+							span.asterisk-field.text-action *
+						textarea#description.form-control(name="description", placeholder="Hier kann eine kurze Beschreibung stehen")
+					.form-group
+						input.btn.btn-success(type="submit", value="Speichern")
