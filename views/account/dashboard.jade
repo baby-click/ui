@@ -9,7 +9,7 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 			.container
 				.row.display-flex-sm
 					.col-xs-12.col-sm-4.col-md-3.display-flex-sm
-						include /include/usersidebar
+						include ../include/usersidebar
 					.col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
 						header.col-xs-12.padding-bottom-15.padding-right-sm-0
 							h2.page-header Übersicht
@@ -33,11 +33,11 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 													.col-xs-12.col-sm-6.padding-bottom-15.padding-bottom-sm-0
 														label(for="category") Kategorie
 														select.form-control(name="")
-															include /include/categorylist
+															include ../include/categorylist
 													.col-xs-12.col-sm-6
 														label(for="brand") Marke
 														select.form-control
-															include /include/brandlist
+															include ../include/brandlist
 											.text-right
 												button.btn.btn-success(type="submit")
 													| Speichern
