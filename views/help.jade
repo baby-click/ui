@@ -1,15 +1,15 @@
 doctype
 html(prefix='og: http://ogp.me/ns#', lang='de')
-  head
-    include /include/metatags
-    include /include/styles
-   body.padding-top-24
-    .container
-      .well
-         if users
-           each val in users
-             h6= val.displayname
-         if images
-           each val in images
-             p.padding-12
-               img.img-responsive(src="/uploads/#{val.path}", alt="")
+	head
+		include ./include/metatags
+		include ./include/styles
+	body.padding-top-24
+		.container
+			.well
+				if users
+					each val in users
+						h6= val.displayname
+				if images
+					each val in images
+						p.padding-12
+							img.img-responsive(src="/uploads/#{val.path}", alt="")

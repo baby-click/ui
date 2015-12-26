@@ -1,10 +1,10 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
 	head
-		include /include/metatags
-		include /include/styles
+		include ../include/metatags
+		include ../include/styles
 	body
-		include /include/userheader
+		include ../include/userheader
 		main.margin-top-51
 			.container
 				.row.display-flex-sm
@@ -38,7 +38,7 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 										label.col-xs-12.col-sm-4.control-label(for="timezone") Zeitzone:
 										.col-xs-12.col-sm-8
 											select#timezone.form-control(name="timezone")
-												include /include/timezonelist
+												include ../include/timezonelist
 									.form-group
 										label.col-xs-12.col-sm-4.control-label(for="hometown") Hometown:
 										.col-xs-12.col-sm-8
@@ -54,4 +54,4 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 									.form-group
 										.col-xs-12.text-right
 											button.btn.btn-success(type="submit") Speichern
-		include /include/userfooter
+		include ../include/userfooter

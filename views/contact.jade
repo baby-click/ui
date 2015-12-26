@@ -1,32 +1,32 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
-  head
-    include /include/metatags
-    include /include/styles
-  body
-    include /include/header
-    main.margin-top-sm-51.bg-white
-      .container
-        .row
-          .col-xs-12.padding-top-15.padding-top-sm-36.padding-bottom-12.padding-bottom-sm-36.text-center
-            p.margin-bottom-15
-              strong.h1.text-action.text-handwriting baby-click.de
-            p.margin-bottom-0
-              strong.h3.text-muted.text-headline Ein klick und alles im Blick
-        form.form-horizontal
-          .form-group
-            label.col-md-2(for="name") Name
-            .col-md-10
-              input#name.form-control(type="text", name="name", placeholder="Name")
-          .form-group
-            label.col-md-2(for="email-contact") Email
-            .col-md-10
-              input#email-contact.form-control(type="email", name="email", placeholder="Email")
-          .form-group
-            label.col-md-2(for="message-contact") Nachricht
-            .col-md-10
-              textarea#message-contact.form-control(placeholder="Deine Nachricht")
-          .form-group
-            .col-md-12.text-right
-              button.btn.btn-primary(type="submit") Senden
-    include /include/footer
+	head
+		include ./include/metatags
+		include ./include/styles
+	body
+		include ./include/header
+		main.margin-top-sm-51.bg-white
+			.container
+				.row
+					.col-xs-12.padding-top-15.padding-top-sm-36.padding-bottom-12.padding-bottom-sm-36.text-center
+						p.margin-bottom-15
+							strong.h1.text-action.text-handwriting baby-click.de
+						p.margin-bottom-0
+							strong.h3.text-muted.text-headline Ein klick und alles im Blick
+				form.form-horizontal
+					.form-group
+						label.col-md-2(for="name") Name
+						.col-md-10
+							input#name.form-control(type="text", name="name", placeholder="Name")
+					.form-group
+						label.col-md-2(for="email-contact") Email
+						.col-md-10
+							input#email-contact.form-control(type="email", name="email", placeholder="Email")
+					.form-group
+						label.col-md-2(for="message-contact") Nachricht
+						.col-md-10
+							textarea#message-contact.form-control(placeholder="Deine Nachricht")
+					.form-group
+						.col-md-12.text-right
+							button.btn.btn-primary(type="submit") Senden
+		include ./include/footer

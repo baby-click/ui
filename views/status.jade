@@ -1,51 +1,51 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
-  head
-    include /include/metatags
-    include /include/styles
-  body
-    include /include/header
-    main.margin-top-sm-51
-      .container
-        .row
-          .col-xs-12.padding-top-15.padding-top-sm-24.padding-bottom-15.padding-bottom-sm-24
-            h2 Status
-        .row.margin-bottom-15.margin-bottom-sm-24
-          .col-md-12
-            .panel.panel-warning
-              .panel-heading
-                h3.panel-title
-                  | Some systems are not operational
-                  small.hidden-xs.margin-top-3.pull-right Aktualisiert vor 39 Sekunden
-            .row
-              .col-xs-12
-                .list-group.margin-bottom-0
-                  .list-group-item
-                    h4.list-group-item-heading
-                      | Website
-                      a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access website and use site API")
-                        i.fa.fa-question-circle
-                    p.list-group-item-text.margin-bottom-6
-                      span.label.label-success Operational
-                  .list-group-item
-                    h4.list-group-item-heading
-                      | API
-                      a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access website and use site API")
-                        i.fa.fa-question-circle
-                    p.list-group-item-text.margin-bottom-6
-                      span.label.label-warning Not Operational
-                  .list-group-item
-                    h4.list-group-item-heading
-                      | SSH
-                      a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access site using SSH terminal")
-                        i.fa.fa-question-circle
-                    p.list-group-item-text.margin-bottom-6
-                      span.label.label-success Operational
-                  .list-group-item
-                    h4.list-group-item-heading
-                      | Datenbank Server
-                      a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access database server and execute queries")
-                        i.fa.fa-question-circle
-                    p.list-group-item-text.margin-bottom-6
-                      span.label.label-success Operational
-    include /include/userfooter
+	head
+		include ./include/metatags
+		include ./include/styles
+	body
+		include ./include/header
+		main.margin-top-sm-51
+			.container
+				.row
+					.col-xs-12.padding-top-15.padding-top-sm-24.padding-bottom-15.padding-bottom-sm-24
+						h2 Status
+				.row.margin-bottom-15.margin-bottom-sm-24
+					.col-md-12
+						.panel.panel-warning
+							.panel-heading
+								h3.panel-title
+									| Some systems are not operational
+									small.hidden-xs.margin-top-3.pull-right Aktualisiert vor 39 Sekunden
+						.row
+							.col-xs-12
+								.list-group.margin-bottom-0
+									.list-group-item
+										h4.list-group-item-heading
+											| Website
+											a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access website and use site API")
+												i.fa.fa-question-circle
+										p.list-group-item-text.margin-bottom-6
+											span.label.label-success Operational
+									.list-group-item
+										h4.list-group-item-heading
+											| API
+											a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access website and use site API")
+												i.fa.fa-question-circle
+										p.list-group-item-text.margin-bottom-6
+											span.label.label-warning Not Operational
+									.list-group-item
+										h4.list-group-item-heading
+											| SSH
+											a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access site using SSH terminal")
+												i.fa.fa-question-circle
+										p.list-group-item-text.margin-bottom-6
+											span.label.label-success Operational
+									.list-group-item
+										h4.list-group-item-heading
+											| Datenbank Server
+											a(href="#", data-toggle="tooltip", data-placement="bottom", title="Access database server and execute queries")
+												i.fa.fa-question-circle
+										p.list-group-item-text.margin-bottom-6
+											span.label.label-success Operational
+		include ./include/userfooter

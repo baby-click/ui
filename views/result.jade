@@ -1,248 +1,248 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
-  head
-    include /include/metatags
-    include /include/styles
-  body
-    include /include/header
-    main.margin-top-sm-51
-      .container
-        .row
-          .col-xs-12.padding-top-15.padding-top-sm-24.padding-bottom-15.padding-bottom-sm-24
-            h3
-              span.text-action 12 
-              | Kinderwägen gefunden
-        .row.margin-bottom-15.margin-bottom-sm-24
-          .col-xs-12.col-sm-4.col-md-3
-            .panel.panel-default
-              .panel-heading Kategorie
-              div
-                ul.list-group.list-unstyled.margin-bottom-0
-                  li.list-group-item.border-top-none
-                    a(href="#") Kategorie 0
-                  li.list-group-item
-                    a(href="#") Kategorie 1
-                  li.list-group-item
-                    a(href="#") Kategorie 2
-                  li.list-group-item.border-bottom-none
-                    a(href="#") Kategorie 3
-            .panel.panel-default
-              .panel-heading Filter
-              .panel-body
-                form
-                  fieldset
-                    .row
-                      .col-xs-12
-                        label(for="sortlist") Sortieren
-                      .col-xs-12.padding-bottom-12
-                        select#sortlist.form-control
-                          include include/sortlist
-                    .row
-                      .col-xs-12
-                        label(for="brandlist") Marke
-                      .col-xs-12.padding-bottom-12
-                        select#brandlist.form-control
-                          include include/brandlist
-                    .row
-                      .col-xs-12
-                        label(for="categorylist") Kategorie
-                      .col-xs-12.padding-bottom-12
-                        select#categorylist.form-control
-                          include include/categorylist
-                    .row
-                      .col-xs-12
-                        label(for="genderlist") Geschlecht
-                      .col-xs-12.padding-bottom-12
-                        select#genderlist.form-control
-                          include include/genderlist
-                    .row
-                      .col-xs-12
-                        label(for="agelist") Alter
-                      .col-xs-12.padding-bottom-12
-                        select#agelist.form-control
-                          include include/agelist
-                    .row
-                      .col-xs-12
-                        label(for="pricelist") Preis
-                      .col-xs-12.padding-bottom-12
-                        select#pricelist.form-control
-                          include include/pricelist
-                      .col-xs-6.padding-right-6
-                        .input-group
-                          span.input-group-addon &#8364;
-                          input.form-control.price-input(type="email", placeholder="min")
-                      .col-xs-6.padding-left-6
-                        .input-group
-                          span.input-group-addon &#8364;
-                          input.form-control.price-input(type="email", placeholder="max")
-          .co-xs-12.col-sm-8.col-md-9
-            .row
-              article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-              article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-              article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-              article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-              article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-              article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-              article.col-xs-12
-                .row.bg-white.thumbnail.margin-0
-                  figure.col-xs-12.col-md-5
-                    .row
-                      a(href="/detail")
-                        img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
-                    .row.border-bottom-thin.border-bottom-md-none
-                      .col-xs-4.text-center
-                        button.btn.btn-comment.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin.border-left-thin
-                        button.btn.btn-love.btn-block(type="button")
-                          i.fa
-                      .col-xs-4.text-center.border-right-thin
-                        button.btn.btn-bell.btn-block(type="button")
-                          i.fa
-                  .col-xs-12.col-md-7
-                    h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
-                      | JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
-                    p.margin-bottom-12.margin-bottom-sm-15
-                      | Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
-                    .margin-bottom-15.margin-bottom-md-0.text-right
-                      a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
-                      a.btn.btn-primary(href="#") Zum Shop
-    include /include/footer
+	head
+		include ./include/metatags
+		include ./include/styles
+	body
+		include ./include/header
+		main.margin-top-sm-51
+			.container
+				.row
+					.col-xs-12.padding-top-15.padding-top-sm-24.padding-bottom-15.padding-bottom-sm-24
+						h3
+							span.text-action 12 
+							| Kinderwägen gefunden
+				.row.margin-bottom-15.margin-bottom-sm-24
+					.col-xs-12.col-sm-4.col-md-3
+						.panel.panel-default
+							.panel-heading Kategorie
+							div
+								ul.list-group.list-unstyled.margin-bottom-0
+									li.list-group-item.border-top-none
+										a(href="#") Kategorie 0
+									li.list-group-item
+										a(href="#") Kategorie 1
+									li.list-group-item
+										a(href="#") Kategorie 2
+									li.list-group-item.border-bottom-none
+										a(href="#") Kategorie 3
+						.panel.panel-default
+							.panel-heading Filter
+							.panel-body
+								form
+									fieldset
+										.row
+											.col-xs-12
+												label(for="sortlist") Sortieren
+											.col-xs-12.padding-bottom-12
+												select#sortlist.form-control
+													include include/sortlist
+										.row
+											.col-xs-12
+												label(for="brandlist") Marke
+											.col-xs-12.padding-bottom-12
+												select#brandlist.form-control
+													include include/brandlist
+										.row
+											.col-xs-12
+												label(for="categorylist") Kategorie
+											.col-xs-12.padding-bottom-12
+												select#categorylist.form-control
+													include include/categorylist
+										.row
+											.col-xs-12
+												label(for="genderlist") Geschlecht
+											.col-xs-12.padding-bottom-12
+												select#genderlist.form-control
+													include include/genderlist
+										.row
+											.col-xs-12
+												label(for="agelist") Alter
+											.col-xs-12.padding-bottom-12
+												select#agelist.form-control
+													include include/agelist
+										.row
+											.col-xs-12
+												label(for="pricelist") Preis
+											.col-xs-12.padding-bottom-12
+												select#pricelist.form-control
+													include include/pricelist
+											.col-xs-6.padding-right-6
+												.input-group
+													span.input-group-addon &#8364;
+													input.form-control.price-input(type="email", placeholder="min")
+											.col-xs-6.padding-left-6
+												.input-group
+													span.input-group-addon &#8364;
+													input.form-control.price-input(type="email", placeholder="max")
+					.co-xs-12.col-sm-8.col-md-9
+						.row
+							article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+							article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+							article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+							article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+							article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+							article.col-xs-12.margin-bottom-15.margin-bottom-sm-24
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+							article.col-xs-12
+								.row.bg-white.thumbnail.margin-0
+									figure.col-xs-12.col-md-5
+										.row
+											a(href="/detail")
+												img.img-responsive(src="/img/loader.gif", data-src="http://placehold.it/800x532", alt="")
+										.row.border-bottom-thin.border-bottom-md-none
+											.col-xs-4.text-center
+												button.btn.btn-comment.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin.border-left-thin
+												button.btn.btn-love.btn-block(type="button")
+													i.fa
+											.col-xs-4.text-center.border-right-thin
+												button.btn.btn-bell.btn-block(type="button")
+													i.fa
+									.col-xs-12.col-md-7
+										h3.margin-top-12.margin-bottom-6.margin-bottom-sm-12.line-clamp-sm-2
+											| JETTE JET13-140-JUP04 Jupiter Kombikinderwagen mit extra breiter Tragtasche und Chrome Gestell, stone
+										p.margin-bottom-12.margin-bottom-sm-15
+											| Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte...
+										.margin-bottom-15.margin-bottom-md-0.text-right
+											a.btn.btn-primary.margin-right-12(href="/detail") Artikel anzeigen
+											a.btn.btn-primary(href="#") Zum Shop
+		include ./include/footer

@@ -1,15 +1,15 @@
 doctype
 html(prefix="og: http://ogp.me/ns#", lang="de")
   head
-    include /include/metatags
-    include /include/styles
+    include ../include/metatags
+    include ../include/styles
   body
-    include /include/userheader
+    include ../include/userheader
     main.margin-top-51
       .container
         .row.display-flex-sm
           .col-xs-12.col-sm-4.col-md-3.display-flex-sm
-            include /include/usersidebar
+            include ../include/usersidebar
           .col-xs-12.col-sm-8.col-md-9.padding-right-sm-0
             header.col-xs-12.padding-bottom-15.padding-right-sm-0
               h2.page-header Profil
@@ -45,14 +45,14 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
               .form-group
                 label.col-xs-12.col-sm-2.control-label Mobile
                 .col-xs-12.col-sm-9
-                  input#mobile.form-control(type="tel", name="phone", placeholder=" ")
+                  input#mobile.form-control(type="tel", name="phone", placeholder="")
               .form-group
                 label.col-xs-12.col-sm-2.control-label Website
                 .col-xs-12.col-sm-9
-                  input#url.form-control(type="url", name="website", placeholder="http://your-domain.com ")
+                  input#url.form-control(type="url", name="website", placeholder="http://your-domain.com")
               .form-group
                 .col-xs-12.col-sm-11.text-right
                   button.btn.btn-success(type="submit")
                     | Speichern
                     i.fa.fa-arrow-circle-right.fa-lg.padding-left-3
-    include /include/userfooter
+    include ../include/userfooter
