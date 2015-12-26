@@ -1,62 +1,62 @@
 .clearfix
-    button.navbar-toggle.offcanvas-toggle.pull-left(type="button", data-toggle="offcanvas", data-target="#offcanvasMenu")
-        span.sr-only Navigation aufklappen
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      nav#offcanvasMenu.navbar.navbar-default.navbar-fixed-top.navbar-offcanvas.navbar-offcanvas-fade
-        .navbar-header.padding-left-sm-36
-          a.navbar-brand(href="/")
-            img.pull-left(src="/img/logo.svg", alt="baby-click.de Logo")
-            span.pull-left.h3.text-handwriting baby-click.de
-        ul.nav.navbar-nav.navbar-right
-          li
-            a(href="/") Startseite
-          li.padding-left-sm-36
-            a(href="/blog") Blog
-          li.padding-left-sm-36.dropdown
-            a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
-              | Kategorien 
-              span.caret
-            ul.dropdown-menu(role="menu")
-              li
-                a(href="/umstandsmode") Umstandsmode
-              li
-                a(href="/babyshower") Babyshower
-              li
-                a(href="/erstausstattung") Erstausstattung
-              li
-                a(href="/babymoebel") Babymöbel
-              li
-                a(href="/babykleidung") Babykleidung
-              li
-                a(href="/babyspielzeug") Babyspielzeug
-              li
-                a(href="/schlafparadies") Schlafparadies
-              li
-                a(href="/result") Babynahrung
-              li
-                a(href="/result") Babypflege
-              li
-                a(href="/result") Kinderwagen
-              li
-                a(href="/result") Unterwegs
-              li
-                a(href="/result") Autositze
-              li
-                a(href="/result") Sicherheit
-              li
-                a(href="/result") Babybücher
-              li
-                a(href="/result") Entspannung
-              li
-                a(href="/gift") Geschenke
-              li
-                a(href="/voucher") Gutscheine
-              li
-                a(href="/sale") Sale
-          li.padding-left-sm-36.padding-right-sm-36.dropdown
-            a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
-              | Mein Konto 
-              strong.caret
-            include /include/loginlayer
+	button.navbar-toggle.offcanvas-toggle.pull-left(type="button", data-toggle="offcanvas", data-target="#offcanvasMenu")
+		span.sr-only Navigation aufklappen
+		span.icon-bar
+		span.icon-bar
+		span.icon-bar
+	nav#offcanvasMenu.navbar.navbar-default.navbar-fixed-top.navbar-offcanvas.navbar-offcanvas-fade
+		.navbar-header.padding-left-sm-36
+			a.navbar-brand(href="/")
+				img.pull-left(src="/img/logo.svg", alt="baby-click.de Logo")
+				span.pull-left.h3.text-handwriting baby-click.de
+		ul.nav.navbar-nav.navbar-right
+			li
+				a(href="/") Startseite
+			li.padding-left-sm-36
+				a(href="/blog") Blog
+			li.padding-left-sm-36.dropdown
+				a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
+					| Kategorien 
+					span.caret
+				ul.dropdown-menu(role="menu")
+					li
+						a(href="/umstandsmode") Umstandsmode
+					li
+						a(href="/babyshower") Babyshower
+					li
+						a(href="/erstausstattung") Erstausstattung
+					li
+						a(href="/babymoebel") Babymöbel
+					li
+						a(href="/babykleidung") Babykleidung
+					li
+						a(href="/babyspielzeug") Babyspielzeug
+					li
+						a(href="/schlafparadies") Schlafparadies
+					li
+						a(href="/result") Babynahrung
+					li
+						a(href="/result") Babypflege
+					li
+						a(href="/result") Kinderwagen
+					li
+						a(href="/result") Unterwegs
+					li
+						a(href="/result") Autositze
+					li
+						a(href="/result") Sicherheit
+					li
+						a(href="/result") Babybücher
+					li
+						a(href="/result") Entspannung
+					li
+						a(href="/gift") Geschenke
+					li
+						a(href="/voucher") Gutscheine
+					li
+						a(href="/sale") Sale
+			li.padding-left-sm-36.padding-right-sm-36.dropdown
+				a.dropdown-toggle(data-toggle="dropdown", role="button", aria-expanded="false")
+					| Mein Konto 
+					strong.caret
+				include ./loginlayer
