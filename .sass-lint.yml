@@ -1,0 +1,53 @@
+# File Options
+files:
+  include: 'sass/**/*.s+(a|c)ss'
+  ignore:
+    - 'sass/vendor/**/*.*'
+# Rule Configuration
+rules:
+  hex-notation:
+    style: lowercase
+  leading-zero: false
+  no-color-literals: false
+  no-vendor-prefixes: false
+  no-duplicate-properties: false
+  no-misspelled-properties: false
+  no-qualifying-elements: false
+  force-attribute-nesting: false
+  force-pseudo-nesting: false
+  force-element-nesting: false
+  empty-line-between-blocks: false
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
+  mixins-before-declarations:
+    - 2
+    -
+      exclude:
+        - breakpoint
+        - mq
+
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  no-important: 2
+  indentation:
+    - 2
+    -
+      size: 2
+  function-name-format:
+    allow-leading-underscore: false
+    convention: snakecase
+  property-sort-order:
+    - 1
+    -
+      order:
+        - display
+        - margin
+      ignore-custom-properties: true
+  variable-for-property:
+    - 2
+    -
+      properties:
+        - margin
+        - content

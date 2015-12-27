@@ -1,6 +1,6 @@
 // optional color classes
 @include bg-variant('.bg-white', #fff);
-@include bg-variant('.bg-contrast', #4682b4);
+@include bg-variant('.bg-secondary', #36d49f);
 @include bg-variant('.bg-special-blue', #609cec);
 @include bg-variant('.bg-special-pink', #ff61e7);
 @include bg-variant('.bg-special-purple', #cb79e6);
@@ -24,11 +24,11 @@
 	@include button-variant(#fff, #d34836, #d34836);
 }
 
-.btn.active.focus, 
-.btn.active:focus, 
-.btn.focus, 
-.btn:active.focus, 
-.btn:active:focus, 
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
 .btn:focus {
 	outline: none;
 }

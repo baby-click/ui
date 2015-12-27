@@ -18,6 +18,7 @@
 @import 'src/sass/custom/offcanvas';
 @import 'src/sass/custom/position';
 @import 'src/sass/custom/border';
+
 @media (min-width: $screen-sm-min) {
   .hvr-grow {
     vertical-align: middle;
@@ -25,7 +26,7 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
-    transition-duration: 0.3s;
+    transition-duration: .3s;
     transition-property: transform;
   }
   .hvr-grow:hover,
@@ -36,8 +37,8 @@
 }
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   .line-clamp-sm-2 {
-    overflow: hidden;
     display: -webkit-box;
+    overflow: hidden;
     text-overflow: -o-ellipsis-lastline;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
@@ -47,11 +48,11 @@
 .list-style-upper-roman {
   list-style-type: upper-roman;
 }
- ::selection {
+::selection {
   background-color: #f881a1;
   color: #fff;
 }
- ::-moz-selection {
+::-moz-selection {
   background-color: #f881a1;
   color: #fff;
 }
@@ -62,10 +63,10 @@
   font-family: 'Cabin', sans-serif;
 }
 .bg-texture-main {
-  background-image: url("../img/canvas.png");
+  background-image: url('../img/canvas.png');
   background-position: center center;
   background-attachment: fixed;
-  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
   -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale")';
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -73,12 +74,19 @@
   background-size: cover;
 }
 .bg-landing-img {
-  background-image: url("../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg");
+  background-image: url('../img/stockphoto/2560x1706_Dollarphotoclub_65497685.jpg');
   background-position: center right;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.border-top-6 {
+  border-top-width: 6px;
+  border-top-style: solid;
+}
+.border-secondary {
+  border-color: #36d49f;
 }
 .btn {
   border: 0;
@@ -126,7 +134,7 @@ fieldset[disabled] .btn-comment {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-transition: color 0.25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out;
   -moz-transition: color 0.25s ease-in-out;
   -ms-transition: color 0.25s ease-in-out;
   -o-transition: color 0.25s ease-in-out;

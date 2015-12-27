@@ -6,13 +6,13 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 	body#top.body-offcanvas
 		include ./include/header
 		main.margin-top-sm-51
-			.container-fluid
-				section.row.panel
+			.container
+				.panel
 					#c-slide.carousel.slide.auto.panel-body
 						.carousel-inner
 							.item.text-center.active
-								figure.col-xs-12.padding-0
-									img.img-responsive.lazyload(src="/img/loader.gif", data-src="http://placehold.it/1900x500", alt="")
+								figure.col-xs-12.padding-top-0.padding-right-0.padding-bottom-15.padding-left-0
+									img.img-responsive.lazyload(src="/img/loader.gif", data-src="/img/stockphoto/Dollarphotoclub_65497685_rsz_rsz.jpg", alt="")
 								h3 Es ist nie zu spät Dir etwas gutes zu tun!
 								small Finde was Du brauchst, tausche. verkaufe. verschenke was Du über hast
 							.item.text-center
@@ -26,19 +26,6 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 						a.right.carousel-control.padding-right-24.display-flex.justify-content-end.align-items-center(data-slide="next", href="#c-slide")
 							i.fa.fa-angle-right.text-action
 			.container
-				.row.margin-bottom-24
-					.col-xs-12.col-sm-4.padding-right-sm-0.padding-right-md-12
-						.padding-top-24.padding-bottom-24.padding-left-36.bg-special-blue
-							h2.text-white.margin-bottom-3 Beliebt.
-							span.text-white.text-capitalize Bald auch in English.
-					.col-xs-12.col-sm-4.padding-left-sm-0.padding-right-sm-0.padding-left-md-12.padding-right-md-12
-						.padding-top-24.padding-bottom-24.padding-left-36.bg-special-pink
-							h2.text-white.margin-bottom-3 WebApp.
-							span.text-white.text-capitalize Von überall erreichbar.
-					.col-xs-12.col-sm-4.padding-left-sm-0.padding-left-md-12
-						.padding-top-24.padding-bottom-24.padding-left-36.bg-special-purple
-							h2.text-white.margin-bottom-3 Aktuell.
-							span.text-white.text-capitalize Wir lieben Produkte.
 				.row.margin-bottom-24
 					.col-xs-12.padding-top-15.padding-top-sm-36.padding-bottom-15.padding-bottom-sm-24
 						h3 Kategorien
