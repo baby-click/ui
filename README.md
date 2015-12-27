@@ -3,7 +3,7 @@
 [![Dependency Status](https://david-dm.org/baby-click/ui.svg)](https://david-dm.org/baby-click/ui)
 [![devDependency Status](https://david-dm.org/baby-click/ui/dev-status.svg)](https://david-dm.org/baby-click/ui#info=devDependencies)
 
-## Synopsis
+# Synopsis
 
 tbd.
 
@@ -33,7 +33,5 @@ tbd.
 
 ## License
 
-Code released under the [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE) license. Docs released under [Creative Commons](https://github.com/twbs/bootstrap/blob/master/docs/LICENSE).
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/baby-click/ui/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+Code released under the [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE) license.
+Docs released under [Creative Commons](https://github.com/twbs/bootstrap/blob/master/docs/LICENSE).

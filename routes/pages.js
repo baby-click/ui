@@ -101,6 +101,13 @@ router.get('/terms', function(req, res) {
   });
 });
 
+router.get('/faq', function(req, res) {
+  res.render('faq', {
+    title: 'mytitle',
+    user: req.user
+  });
+});
+
 router.get('/admin/brands', function(req, res) {
   res.render('admin/brands', {
     title: 'mytitle',
