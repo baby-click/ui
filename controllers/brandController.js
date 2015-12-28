@@ -1,13 +1,13 @@
 var model = require('../models/brandModel.js');
 
-/**
- * brandController.js
- *
- * @description :: Server-side logic for managing brands.
- */
 module.exports = {
   listJson: function(req, res) {
-    model.find(function(err, brands) {
+    model.find({}, {
+      '_id': 0,
+      '__v': 0,
+      'created': 0,
+      'modified': 0
+    }, function(err, brands) {
       if (err) {
         return res.status(500).json({
           message: 'Error getting brand.'
