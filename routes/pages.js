@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var http = require('http');
+var brandController = require('../controllers/brandController.js');
 
 router.get('/', function(req, res) {
   res.render('index', {
@@ -120,6 +121,10 @@ router.get('/admin/categories', function(req, res) {
     title: 'mytitle',
     user: req.user
   });
+});
+
+router.get('/export/brands', function(req, res) {
+  brandController.listJson(req, res);
 });
 
 module.exports = router;
