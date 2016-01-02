@@ -60,6 +60,7 @@ require('./config/passport')(UserModel, passport);
 require('./routes/auth')(passport, app);
 app.use('/', require('./routes/pages'));
 app.use('/', require('./routes/landing'));
+app.use('/tag', require('./routes/tags'));
 app.use('/user', require('./routes/users'));
 app.use('/brand', require('./routes/brands'));
 app.use('/image', require('./routes/images'));
