@@ -1,88 +1,142 @@
+var jade = require('jade');
 var express = require('express');
 var router = express.Router();
 
+// resolve jade templates
+var templatePathBabykleidung = require.resolve('../views/landing/babykleidung.jade');
+var templatePathBabyspielzeug = require.resolve('../views/landing/babyspielzeug.jade');
+var templatePathErstausstattung = require.resolve('../views/landing/erstausstattung.jade');
+var templatePathSchlafparadies = require.resolve('../views/landing/schlafparadies.jade');
+var templatePathUmstandsmode = require.resolve('../views/landing/umstandsmode.jade');
+var templatePathBabymoebel = require.resolve('../views/landing/babymoebel.jade');
+var templatePathBabyshower = require.resolve('../views/landing/babyshower.jade');
+var templatePathSpecial = require.resolve('../views/landing/special.jade');
+var templatePathVoucher = require.resolve('../views/landing/voucher.jade');
+var templatePathWelcome = require.resolve('../views/landing/welcome.jade');
+var templatePathGift = require.resolve('../views/landing/gift.jade');
+var templatePathSale = require.resolve('../views/landing/sale.jade');
+
+// compile jade templates
+var templateBabykleidung = jade.compileFile(templatePathBabykleidung);
+var templateBabyspielzeug = jade.compileFile(templatePathBabyspielzeug);
+var templateErstausstattung = jade.compileFile(templatePathErstausstattung);
+var templateSchlafparadies = jade.compileFile(templatePathSchlafparadies);
+var templateUmstandsmode = jade.compileFile(templatePathUmstandsmode);
+var templateBabymoebel = jade.compileFile(templatePathBabymoebel);
+var templateBabyshower = jade.compileFile(templatePathBabyshower);
+var templateSpecial = jade.compileFile(templatePathSpecial);
+var templateVoucher = jade.compileFile(templatePathVoucher);
+var templateWelcome = jade.compileFile(templatePathWelcome);
+var templateGift = jade.compileFile(templatePathGift);
+var templateSale = jade.compileFile(templatePathSale);
+
+// declare routes
 router.get('/babykleidung', function(req, res) {
-  res.render('landing/babykleidung', {
+  res.write(templateBabykleidung({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/babymoebel', function(req, res) {
-  res.render('landing/babymoebel', {
+  res.write(templateBabymoebel({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/babyshower', function(req, res) {
-  res.render('landing/babyshower', {
+  res.write(templateBabyshower({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/babyspielzeug', function(req, res) {
-  res.render('landing/babyspielzeug', {
+  res.write(templateBabyspielzeug({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/erstausstattung', function(req, res) {
-  res.render('landing/erstausstattung', {
+  res.write(templateErstausstattung({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/gift', function(req, res) {
-  res.render('landing/gift', {
+  res.write(templateGift({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/sale', function(req, res) {
-  res.render('landing/sale', {
+  res.write(templateSale({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/schlafparadies', function(req, res) {
-  res.render('landing/schlafparadies', {
+  res.write(templateSchlafparadies({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/special', function(req, res) {
-  res.render('landing/special', {
+  res.write(templateSpecial({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/umstandsmode', function(req, res) {
-  res.render('landing/umstandsmode', {
+  res.write(templateUmstandsmode({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/voucher', function(req, res) {
-  res.render('landing/voucher', {
+  res.write(templateVoucher({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/welcome', function(req, res) {
-  res.render('landing/welcome', {
-    title: 'mytitle',
+  res.write(templateWelcome({
+    title: 'Baby Online Marktplatz - babyclickDE',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 module.exports = router;

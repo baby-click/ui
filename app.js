@@ -16,22 +16,22 @@ var favicon = require('serve-favicon');
 var app = express();
 
 // port config
-app.set('port', process.env.PORT || 1337);
+app.set('port', process.env.PORT || 3000);
+
+// etag support
+app.enable('etag');
+app.set('etag', 'strong');
 
 // view config
 app.use(morgan('dev'));
 app.use(compression());
-app.locals.basedir = path.join(__dirname, 'views');
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public'), {
   maxAge: 86400000
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.set('view options', {
-  layout: false,
-  pretty: true
-});
+
 app.use(cookieParser());
 app.use(expressSession({
   saveUninitialized: false,

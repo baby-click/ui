@@ -1,4 +1,11 @@
+var jade = require('jade');
 var model = require('../models/categoryModel.js');
+
+// resolve jade templates
+var templatePathAdminList = require.resolve('../views/admin/list.jade');
+
+// compile jade templates
+var templateAdminList = jade.compileFile(templatePathAdminList);
 
 module.exports = {
   listJson: function(req, res) {
@@ -18,21 +25,26 @@ module.exports = {
   },
 
   listUserCatergories: function(req, res) {
-    model.find(function(err, categories) {
+    model.find({}, {
+      '__v': 0,
+      'created': 0,
+      'modified': 0
+    }, function(err, categories) {
       if (err) {
         return res.status(500).json({
-          message: 'Error getting category.'
+          message: 'Error getting categories.'
         });
       }
 
-      return res.render('admin/list', {
+      return res.write(templateAdminList({
         categories: categories
-      });
+      })).end();
     });
   },
 
   show: function(req, res) {
     var id = req.params.id;
+
     model.findOne({
       _id: id
     }, function(err, category) {
@@ -41,11 +53,13 @@ module.exports = {
           message: 'Error getting category.'
         });
       }
+
       if (!category) {
         return res.status(404).json({
           message: 'No such category'
         });
       }
+
       return res.json(category);
     });
   },

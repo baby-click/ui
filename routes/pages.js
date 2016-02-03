@@ -1,56 +1,106 @@
+var http = require('http');
+var jade = require('jade');
 var express = require('express');
 var router = express.Router();
-var http = require('http');
+
+// import controllers
 var brandController = require('../controllers/brandController.js');
 var categoryController = require('../controllers/categoryController.js');
 
+// resolve jade templates
+var templatePathAdminCategories = require.resolve('../views/admin/categories.jade');
+var templatePathAdminBrands = require.resolve('../views/admin/brands.jade');
+var templatePathHome = require.resolve('../views/index.jade');
+var templatePathAbout = require.resolve('../views/about.jade');
+var templatePathBlog = require.resolve('../views/blog.jade');
+var templatePathContact = require.resolve('../views/contact.jade');
+var templatePathDetail = require.resolve('../views/detail.jade');
+var templatePathLegal = require.resolve('../views/legal.jade');
+var templatePathPrivacy = require.resolve('../views/privacy.jade');
+var templatePathResult = require.resolve('../views/result.jade');
+var templatePathStatus = require.resolve('../views/status.jade');
+var templatePathTeam = require.resolve('../views/team.jade');
+var templatePathTerms = require.resolve('../views/terms.jade');
+var templatePathFaq = require.resolve('../views/faq.jade');
+
+// compile jade templates
+var templateAdminCategories = jade.compileFile(templatePathAdminCategories);
+var templateAdminBrands = jade.compileFile(templatePathAdminBrands);
+var templateHome = jade.compileFile(templatePathHome);
+var templateAbout = jade.compileFile(templatePathAbout);
+var templateBlog = jade.compileFile(templatePathBlog);
+var templateContact = jade.compileFile(templatePathContact);
+var templateDetail = jade.compileFile(templatePathDetail);
+var templateLegal = jade.compileFile(templatePathLegal);
+var templatePrivacy = jade.compileFile(templatePathPrivacy);
+var templateResult = jade.compileFile(templatePathResult);
+var templateStatus = jade.compileFile(templatePathStatus);
+var templateTeam = jade.compileFile(templatePathTeam);
+var templateTerms = jade.compileFile(templatePathTerms);
+var templateFaq = jade.compileFile(templatePathFaq);
+
+// declare routes
 router.get('/', function(req, res) {
-  res.render('index', {
+  res.write(templateHome({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/about', function(req, res) {
-  res.render('about', {
+  res.write(templateAbout({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/blog', function(req, res) {
-  res.render('blog', {
+  res.write(templateBlog({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/contact', function(req, res) {
-  res.render('contact', {
+  res.write(templateContact({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/detail', function(req, res) {
-  res.render('detail', {
+  res.write(templateDetail({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/legal', function(req, res) {
-  res.render('legal', {
+  res.write(templateLegal({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/privacy', function(req, res) {
-  res.render('privacy', {
+  res.write(templatePrivacy({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/result', function(req, res) {
@@ -74,54 +124,69 @@ router.get('/result', function(req, res) {
 
     // this event fires *one* time, after all the `data` events/chunks have been gathered
     http_res.on('end', function() {
-      res.render('result', {
+      res.write(templateResult({
         title: 'mytitle',
         user: req.user,
         category: JSON.parse(data)
-      });
+      }));
+
+      res.end();
     });
   });
 });
 
 router.get('/status', function(req, res) {
-  res.render('status', {
+  res.write(templateStatus({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/team', function(req, res) {
-  res.render('team', {
+  res.write(templateTeam({
+    title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/terms', function(req, res) {
-  res.render('terms', {
+  res.write(templateTerms({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/faq', function(req, res) {
-  res.render('faq', {
+  res.write(templateFaq({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/admin/brands', function(req, res) {
-  res.render('admin/brands', {
+  res.write(templateAdminBrands({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/admin/categories', function(req, res) {
-  res.render('admin/categories', {
+  res.write(templateAdminCategories({
     title: 'mytitle',
     user: req.user
-  });
+  }));
+
+  res.end();
 });
 
 router.get('/export/brands', function(req, res) {
