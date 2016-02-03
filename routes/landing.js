@@ -32,6 +32,8 @@ var templateSale = jade.compileFile(templatePathSale);
 
 // declare routes
 router.get('/babykleidung', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateBabykleidung({
     title: 'mytitle',
     user: req.user
@@ -41,6 +43,8 @@ router.get('/babykleidung', function(req, res) {
 });
 
 router.get('/babymoebel', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateBabymoebel({
     title: 'mytitle',
     user: req.user
@@ -50,6 +54,8 @@ router.get('/babymoebel', function(req, res) {
 });
 
 router.get('/babyshower', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateBabyshower({
     title: 'mytitle',
     user: req.user
@@ -59,6 +65,8 @@ router.get('/babyshower', function(req, res) {
 });
 
 router.get('/babyspielzeug', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateBabyspielzeug({
     title: 'mytitle',
     user: req.user
@@ -68,6 +76,8 @@ router.get('/babyspielzeug', function(req, res) {
 });
 
 router.get('/erstausstattung', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateErstausstattung({
     title: 'mytitle',
     user: req.user
@@ -77,6 +87,8 @@ router.get('/erstausstattung', function(req, res) {
 });
 
 router.get('/gift', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateGift({
     title: 'mytitle',
     user: req.user
@@ -86,6 +98,8 @@ router.get('/gift', function(req, res) {
 });
 
 router.get('/sale', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateSale({
     title: 'mytitle',
     user: req.user
@@ -95,6 +109,8 @@ router.get('/sale', function(req, res) {
 });
 
 router.get('/schlafparadies', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateSchlafparadies({
     title: 'mytitle',
     user: req.user
@@ -104,6 +120,8 @@ router.get('/schlafparadies', function(req, res) {
 });
 
 router.get('/special', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateSpecial({
     title: 'mytitle',
     user: req.user
@@ -113,6 +131,8 @@ router.get('/special', function(req, res) {
 });
 
 router.get('/umstandsmode', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateUmstandsmode({
     title: 'mytitle',
     user: req.user
@@ -122,6 +142,8 @@ router.get('/umstandsmode', function(req, res) {
 });
 
 router.get('/voucher', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateVoucher({
     title: 'mytitle',
     user: req.user
@@ -131,6 +153,8 @@ router.get('/voucher', function(req, res) {
 });
 
 router.get('/welcome', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateWelcome({
     title: 'Baby Online Marktplatz - babyclickDE',
     user: req.user

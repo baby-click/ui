@@ -41,6 +41,8 @@ var templateFaq = jade.compileFile(templatePathFaq);
 
 // declare routes
 router.get('/', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateHome({
     title: 'mytitle',
     user: req.user
@@ -50,6 +52,8 @@ router.get('/', function(req, res) {
 });
 
 router.get('/about', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateAbout({
     title: 'mytitle',
     user: req.user
@@ -59,6 +63,8 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/blog', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateBlog({
     title: 'mytitle',
     user: req.user
@@ -68,6 +74,8 @@ router.get('/blog', function(req, res) {
 });
 
 router.get('/contact', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateContact({
     title: 'mytitle',
     user: req.user
@@ -77,6 +85,8 @@ router.get('/contact', function(req, res) {
 });
 
 router.get('/detail', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateDetail({
     title: 'mytitle',
     user: req.user
@@ -86,6 +96,8 @@ router.get('/detail', function(req, res) {
 });
 
 router.get('/legal', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateLegal({
     title: 'mytitle',
     user: req.user
@@ -95,6 +107,8 @@ router.get('/legal', function(req, res) {
 });
 
 router.get('/privacy', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templatePrivacy({
     title: 'mytitle',
     user: req.user
@@ -124,6 +138,8 @@ router.get('/result', function(req, res) {
 
     // this event fires *one* time, after all the `data` events/chunks have been gathered
     http_res.on('end', function() {
+      res.header('Content-Type', 'text/html');
+
       res.write(templateResult({
         title: 'mytitle',
         user: req.user,
@@ -136,6 +152,8 @@ router.get('/result', function(req, res) {
 });
 
 router.get('/status', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateStatus({
     title: 'mytitle',
     user: req.user
@@ -145,6 +163,8 @@ router.get('/status', function(req, res) {
 });
 
 router.get('/team', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateTeam({
     title: 'mytitle',
     user: req.user
@@ -154,6 +174,8 @@ router.get('/team', function(req, res) {
 });
 
 router.get('/terms', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateTerms({
     title: 'mytitle',
     user: req.user
@@ -163,6 +185,8 @@ router.get('/terms', function(req, res) {
 });
 
 router.get('/faq', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateFaq({
     title: 'mytitle',
     user: req.user
@@ -172,6 +196,8 @@ router.get('/faq', function(req, res) {
 });
 
 router.get('/admin/brands', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateAdminBrands({
     title: 'mytitle',
     user: req.user
@@ -181,6 +207,8 @@ router.get('/admin/brands', function(req, res) {
 });
 
 router.get('/admin/categories', function(req, res) {
+  res.header('Content-Type', 'text/html');
+
   res.write(templateAdminCategories({
     title: 'mytitle',
     user: req.user
