@@ -22,6 +22,9 @@ app.set('port', process.env.PORT || 3000);
 app.enable('etag');
 app.set('etag', 'strong');
 
+// header config
+app.disable('x-powered-by');
+
 // view config
 app.use(morgan('dev'));
 app.use(compression());
