@@ -1,24 +1,20 @@
 // import bootstrap
 @import 'src/sass/overrides/bootstrap';
 @import 'src/sass/overrides/bootstrap-custom';
-
 // import fontawesome
 @import 'src/sass//overrides/fontawesome';
-
 // import custom mixins
 @import 'src/sass/mixin/offset';
 @import 'src/sass/mixin/flexbox';
-
 // import custom classes
 @import 'src/sass/custom/offset-classes';
+@import 'src/sass/custom/table-classes';
 @import 'src/sass/custom/flex-classes';
-
 // import custom styles
 @import 'src/sass/custom/reset';
 @import 'src/sass/custom/offcanvas';
 @import 'src/sass/custom/position';
 @import 'src/sass/custom/border';
-
 @media (min-width: $screen-sm-min) {
   .hvr-grow {
     vertical-align: middle;
@@ -26,7 +22,7 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-property: transform;
   }
   .hvr-grow:hover,
@@ -48,11 +44,11 @@
 .list-style-upper-roman {
   list-style-type: upper-roman;
 }
-::selection {
+ ::selection {
   background-color: #f881a1;
   color: #fff;
 }
-::-moz-selection {
+ ::-moz-selection {
   background-color: #f881a1;
   color: #fff;
 }
@@ -66,7 +62,7 @@
   background-image: url('../img/canvas.png');
   background-position: center center;
   background-attachment: fixed;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale");
   -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/canvas.png", sizingMethod="scale")';
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -134,7 +130,7 @@ fieldset[disabled] .btn-comment {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-transition: color .25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out;
   -moz-transition: color 0.25s ease-in-out;
   -ms-transition: color 0.25s ease-in-out;
   -o-transition: color 0.25s ease-in-out;
@@ -241,4 +237,51 @@ fieldset[disabled] .btn-comment {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
+}
+.teaser-pattern {
+  padding-bottom: 12px;
+}
+.teaser-pattern:nth-of-type(even) {
+  padding-right: 6px;
+}
+.teaser-pattern:nth-of-type(odd) {
+  padding-left: 6px;
+}
+@media (min-width: $screen-sm-min) {
+  .teaser-pattern {
+    padding-bottom: 12px;
+  }
+  .teaser-pattern:nth-of-type(3n+0) {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .teaser-pattern:nth-of-type(3n+1) {
+    padding-left: 6px;
+    padding-right: 12px;
+  }
+  .teaser-pattern:nth-of-type(3n+2) {
+    padding-left: 12px;
+    padding-right: 6px;
+  }
+}
+@media (min-width: $screen-md-min) {
+  .teaser-pattern {
+    padding-bottom: 24px;
+  }
+  .teaser-pattern:nth-of-type(4n+0) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .teaser-pattern:nth-of-type(4n+1) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .teaser-pattern:nth-of-type(4n+2) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .teaser-pattern:nth-of-type(4n+3) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }

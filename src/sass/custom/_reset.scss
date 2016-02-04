@@ -1,25 +1,28 @@
 html {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
-
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-	margin: 0;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0;
 }
-
 p {
-	margin: 0 0 6px;
+  margin: 0 0 6px;
 }
-
 a {
-	transition: background-color .3s ease 0s, border .3s ease 0s, color .3s ease 0s, opacity .3s ease-in-out 0s;
+  transition: background-color 0.3s ease 0s, border 0.3s ease 0s, color 0.3s ease 0s, opacity 0.3s ease-in-out 0s;
 }

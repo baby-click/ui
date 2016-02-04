@@ -17,18 +17,13 @@ html(prefix="og: http://ogp.me/ns#", lang="de")
 							i.fa.fa-twitter
 			.display-flex.full-width.align-items-end.justify-content-center.padding-top-24.padding-bottom-36
 				.col-xs-12.col-sm-9.col-lg-6.padding-top-12.padding-bottom-12.bg-overlay-light
-					h1.padding-left-6.text-white
-						| Werde
-						strong zuerst
-						| informiert!
+					h1.padding-left-6.text-white Werde zuerst informiert!
 					p.padding-left-9.padding-right-9.padding-bottom-9.text-white
 						| babyclickDE ist ein gemeinschaftlicher Marktplatz für einzigartige Produkte rund ums Baby
-					form(method="POST", action="http://baby-click.us11.list-manage.com/subscribe/post?u=3abbb74e64db75f4fa014be0a&id=1fc79d3afd", name="mc-embedded-subscribe-form", target="_blank")
+					form(method="POST", action="http://baby-click.us11.list-manage.com/subscribe/post?u=3abbb74e64db75f4fa014be0a&amp;id=1fc79d3afd", name="mc-embedded-subscribe-form", target="_blank")
 						input(type="hidden", name="b_3abbb74e64db75f4fa014be0a_1fc79d3afd")
-						.text-right.text-white.margin-bottom-3
-							small Kein Spam, versprochen!
 						.input-group.input-group-lg
-							input.form-control(type="email", placeholder="mail@domain.com", name="email", required="")
+							input.form-control(type="email", placeholder="mail@domain.com", name="EMAIL", required)
 							span.input-group-btn
 								button.btn.btn-action(type="submit")
 									| Anmelden

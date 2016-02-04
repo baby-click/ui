@@ -156,7 +156,7 @@ router.get('/welcome', function(req, res) {
   res.header('Content-Type', 'text/html');
 
   res.write(templateWelcome({
-    title: 'Baby Online Marktplatz - babyclickDE',
+    title: 'Marktplatz für einzigartige Produkte rund ums Baby - babyclickDE',
     user: req.user
   }));
 

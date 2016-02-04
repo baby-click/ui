@@ -1,87 +1,78 @@
+.col-auto {
+  width: auto;
+}
 .pos-top-0 {
-    top: 0
+  top: 0;
 }
-
 .pos-right-0 {
-    right: 0
+  right: 0;
 }
-
 .pos-bottom-0 {
-    bottom: 0
+  bottom: 0;
 }
-
 .pos-left-0 {
-    left: 0
+  left: 0;
 }
-
-
-// position classes
 .pos-static {
-    position: static
+  position: static;
 }
-
 .pos-relative {
-    position: relative
+  position: relative;
 }
-
 .pos-absolute {
-    position: absolute
+  position: absolute;
 }
-
 .pos-fixed {
-    position: fixed
+  position: fixed;
 }
-
 @media only screen and (min-width: $screen-sm-min) {
-    .pos-static-sm {
-        position: static
-    }
-
-    .pos-relative-sm {
-        position: relative
-    }
-
-    .pos-absolute-sm {
-        position: absolute
-    }
-
-    .pos-fixed-sm {
-        position: fixed
-    }
+  .col-sm-auto {
+    width: auto;
+  }
+  .pos-static-sm {
+    position: static;
+  }
+  .pos-relative-sm {
+    position: relative;
+  }
+  .pos-absolute-sm {
+    position: absolute;
+  }
+  .pos-fixed-sm {
+    position: fixed;
+  }
 }
-
 @media only screen and (min-width: $screen-md-min) {
-    .pos-static-md {
-        position: static
-    }
-
-    .pos-relative-md {
-        position: relative
-    }
-
-    .pos-absolute-md {
-        position: absolute
-    }
-
-    .pos-fixed-md {
-        position: fixed
-    }
+  .col-md-auto {
+    width: auto;
+  }
+  .pos-static-md {
+    position: static;
+  }
+  .pos-relative-md {
+    position: relative;
+  }
+  .pos-absolute-md {
+    position: absolute;
+  }
+  .pos-fixed-md {
+    position: fixed;
+  }
 }
-
 @media only screen and (min-width: $screen-lg-min) {
-    .pos-static-lg {
-        position: static
-    }
-
-    .pos-relative-lg {
-        position: relative
-    }
-
-    .pos-absolute-lg {
-        position: absolute
-    }
-
-    .pos-fixed-lg {
-        position: fixed
-    }
+  .col-lg-auto {
+    width: auto;
+  }
+  .pos-static-lg {
+    position: static;
+  }
+  .pos-relative-lg {
+    position: relative;
+  }
+  .pos-absolute-lg {
+    position: absolute;
+  }
+  .pos-fixed-lg {
+    position: fixed;
+  }
 }
