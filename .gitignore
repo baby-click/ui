@@ -7,7 +7,5 @@ node_modules
 config/config.js
 config/auth.js
 .sass-cache
-*.css.map
-*.min.css
 .grunt
 *.log
