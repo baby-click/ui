@@ -4411,15 +4411,6 @@ a.text-white:focus {
   box-shadow: inset 0 -2px #3fc3ff; }
 
 .text-action {
-  color: #f7f7f7; }
-
-.text-action {
-  color: #f881a1; }
-
-.text-action:hover,
-.text-action:focus,
-.text-action:active {
-  outline: none;
   color: #f801a1; }
 
 a.text-white:visited,
